@@ -7,7 +7,20 @@
 		<key>SmartContrakt.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>02A4D09921A9740400427491</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>02A4D0B021A9740700427491</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -14,6 +14,8 @@
 		02A4D0A821A9740700427491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A721A9740700427491 /* Assets.xcassets */; };
 		02A4D0AB21A9740700427491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A921A9740700427491 /* LaunchScreen.storyboard */; };
 		02A4D0B621A9740700427491 /* SmartContraktUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0B521A9740700427491 /* SmartContraktUITests.swift */; };
+		02A4D0C421A9D2A100427491 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C321A9D2A100427491 /* API.swift */; };
+		85E45CE300FEECA73434C5FE /* Pods_SmartContrakt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,10 @@
 		02A4D0B121A9740700427491 /* SmartContraktUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartContraktUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A4D0B521A9740700427491 /* SmartContraktUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContraktUITests.swift; sourceTree = "<group>"; };
 		02A4D0B721A9740700427491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02A4D0C321A9D2A100427491 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartContrakt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.release.xcconfig"; sourceTree = "<group>"; };
+		C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartContrakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.debug.xcconfig"; sourceTree = "<group>"; };
+		CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartContrakt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E45CE300FEECA73434C5FE /* Pods_SmartContrakt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +71,8 @@
 				02A4D09C21A9740400427491 /* SmartContrakt */,
 				02A4D0B421A9740700427491 /* SmartContraktUITests */,
 				02A4D09B21A9740400427491 /* Products */,
+				FD6834C7D98BEC209451C6D2 /* Pods */,
+				F727CAD21E41F715348F4979 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				02A4D09D21A9740400427491 /* AppDelegate.swift */,
+				02A4D0C321A9D2A100427491 /* API.swift */,
 				02A4D09F21A9740400427491 /* ViewController.swift */,
 				02A4D0A121A9740400427491 /* Main.storyboard */,
 				02A4D0A721A9740700427491 /* Assets.xcassets */,
@@ -99,6 +109,23 @@
 			path = SmartContraktUITests;
 			sourceTree = "<group>";
 		};
+		F727CAD21E41F715348F4979 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD6834C7D98BEC209451C6D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */,
+				3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02A4D0BA21A9740700427491 /* Build configuration list for PBXNativeTarget "SmartContrakt" */;
 			buildPhases = (
+				A60436608C0C0498A8F1E97A /* [CP] Check Pods Manifest.lock */,
 				02A4D09621A9740400427491 /* Sources */,
 				02A4D09721A9740400427491 /* Frameworks */,
 				02A4D09821A9740400427491 /* Resources */,
+				FC25EC10AD67C8D011DCFCAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +178,7 @@
 				TargetAttributes = {
 					02A4D09921A9740400427491 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					02A4D0B021A9740700427491 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -195,6 +225,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A60436608C0C0498A8F1E97A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartContrakt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC25EC10AD67C8D011DCFCAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		02A4D09621A9740400427491 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,6 +271,7 @@
 			files = (
 				02A4D0A021A9740400427491 /* ViewController.swift in Sources */,
 				02A4D09E21A9740400427491 /* AppDelegate.swift in Sources */,
+				02A4D0C421A9D2A100427491 /* API.swift in Sources */,
 				02A4D0A621A9740400427491 /* SmartContrakt.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,8 +430,10 @@
 		};
 		02A4D0BB21A9740700427491 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98P29UBAY6;
 				INFOPLIST_FILE = SmartContrakt/Info.plist;
@@ -371,6 +443,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContrakt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -378,8 +452,10 @@
 		};
 		02A4D0BC21A9740700427491 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98P29UBAY6;
 				INFOPLIST_FILE = SmartContrakt/Info.plist;
@@ -389,6 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContrakt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

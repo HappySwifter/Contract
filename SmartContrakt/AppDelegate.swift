@@ -9,15 +9,48 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
+
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        
+api.login(name: "jamsmp", password: "12345")
+        
+        
+//        let headers: [String: Any] = ["SOAPAction": "http://tempuri.org/IService1/GetSession",
+//                                      "Content-Type": "text/xml"]
+        
+//        Alamofire.request("<#T##url: URLConvertible##URLConvertible#>", method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: URLEncoding.default, headers: headers)
+
+//        #import <SOAPEngine64/SOAPEngine.h>
+//
+//        // TODO: your user object
+//        MyClass myObject = [[MyClass alloc] init];
+//
+//        SOAPEngine *soap = [[SOAPEngine alloc] init];
+//        soap.userAgent = @"SOAPEngine";
+//        soap.version = VERSION_WCF_1_1; // WCF service (.svc)
+//
+//        // service url without ?WSDL, and you can search the soapAction in the WSDL
+//        [soap requestURL:@"http://www.my-web.com/my-service.svc"
+//        soapAction:@"http://www.my-web.com/my-interface/my-method"
+//        value:myObject
+//        completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
+//        NSLog(@"%@", dict);
+//        } failWithError:^(NSError *error) {
+//        NSLog(@"%@", error);
+//        }]
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
