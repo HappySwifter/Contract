@@ -8,7 +8,16 @@
 
 import UIKit
 import CoreData
+import DrawerController
 
+let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+func getController<T: UIViewController>() -> T {
+    let desk = T.description().components(separatedBy: ".").last ?? ""
+    let storyboard = UIStoryboard(name: desk, bundle: nil)
+    let vc = (storyboard.instantiateViewController(withIdentifier: desk)) as! T
+    return vc
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,42 +25,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        
-        
-api.login(name: "jamsmp", password: "12345")
-        
-        
-//        let headers: [String: Any] = ["SOAPAction": "http://tempuri.org/IService1/GetSession",
-//                                      "Content-Type": "text/xml"]
-        
-//        Alamofire.request("<#T##url: URLConvertible##URLConvertible#>", method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: URLEncoding.default, headers: headers)
-
-//        #import <SOAPEngine64/SOAPEngine.h>
-//
-//        // TODO: your user object
-//        MyClass myObject = [[MyClass alloc] init];
-//
-//        SOAPEngine *soap = [[SOAPEngine alloc] init];
-//        soap.userAgent = @"SOAPEngine";
-//        soap.version = VERSION_WCF_1_1; // WCF service (.svc)
-//
-//        // service url without ?WSDL, and you can search the soapAction in the WSDL
-//        [soap requestURL:@"http://www.my-web.com/my-service.svc"
-//        soapAction:@"http://www.my-web.com/my-interface/my-method"
-//        value:myObject
-//        completeWithDictionary:^(NSInteger statusCode, NSDictionary *dict) {
-//        NSLog(@"%@", dict);
-//        } failWithError:^(NSError *error) {
-//        NSLog(@"%@", error);
-//        }]
-        return true
+    func applicationDidFinishLaunching(_ application: UIApplication) {
         
     }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        let centerViewController: UIViewController
+        if CurrentUser.getToken() != nil {
+            let contr: ProfileViewController = getController()
+            centerViewController = contr
+        } else {
+            let contr: LoginViewController = getController()
+            centerViewController = contr
+        }
+        let nav = UINavigationController(rootViewController: centerViewController)
+        
+        let menuVC: MenuViewController = getController()
+        
+        let drawerController = DrawerController(centerViewController: nav,
+                                                leftDrawerViewController: menuVC,
+                                                rightDrawerViewController: nil)
+        
+        drawerController.maximumLeftDrawerWidth = UIScreen.main.bounds.size.width / 1.5
+        drawerController.maximumRightDrawerWidth = UIScreen.main.bounds.size.width - 75
+        
+        drawerController.closeDrawerGestureModeMask = [.all]
+        
+        window?.rootViewController = centerViewController
+        return true
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

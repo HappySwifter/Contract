@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-
+import SWXMLHash
 
 enum Result<U>
 {
@@ -41,8 +41,9 @@ enum CustomError: Equatable, Error
 
 let api = API()
 
+
+
 class API {
-    
     
     enum Action {
         case getSession
@@ -60,7 +61,7 @@ class API {
 
     
     
-    func login(name: String, password: String) {
+    func login(name: String, password: String, cb: @escaping (Result<User>) -> Void) {
          let loginRequest = """
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
             <s:Body>
@@ -74,17 +75,33 @@ class API {
         makeRequest(with: .getSession, env: loginRequest) { result in
             switch result {
             case .Success(let data):
-                print(data.count)
+                let xml = api.getXML(for: data)
+                let result = xml["GetSessionResponse"]["GetSessionResult"]
+                let token = result["a:GUID"].element!.text
+                print("token: ", token)
+                let user = User.saveUser(xml: result)
+                cb(Result.Success(data: user))
             case .Failure(let error):
-                print("error!", error)
+                cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
             }
         }
     }
     
     
     
+    private func getXML(for data: Data) -> XMLIndexer {
+        return SWXMLHash.parse(data)["s:Envelope"]["s:Body"]
+    }
+    
     
     private func makeRequest(with action: Action, env: String, cb: @escaping (Result<Data>) -> Void) {
+        
+        func returnOnMainQueue(res: Result<Data>) {
+            DispatchQueue.main.async {
+                cb(res)
+            }
+        }
+        
         let headers = [
             "SOAPAction": "http://tempuri.org/IService1/\(action.description)",
             "Content-Type": "text/xml"
@@ -100,11 +117,12 @@ class API {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
             if let data = data, data.count > 0 {
-                cb(Result.Success(data: data))
+                returnOnMainQueue(res: Result.Success(data: data))
+                
             } else if let error = error {
-                cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                returnOnMainQueue(res: Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
             } else {
-                cb(Result.Failure(error: CustomError.CannotFetch("Неопознанная ошибка \(response?.description ?? "")")))
+                returnOnMainQueue(res: Result.Failure(error: CustomError.CannotFetch("Неопознанная ошибка \(response?.description ?? "")")))
             }
         }
         dataTask.resume()

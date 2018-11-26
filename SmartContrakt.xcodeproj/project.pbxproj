@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027BFDFC21AB24D800DFD095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027BFDFB21AB24D800DFD095 /* Main.storyboard */; };
 		02A4D09E21A9740400427491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D09D21A9740400427491 /* AppDelegate.swift */; };
-		02A4D0A021A9740400427491 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D09F21A9740400427491 /* ViewController.swift */; };
-		02A4D0A321A9740400427491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A121A9740400427491 /* Main.storyboard */; };
+		02A4D0A021A9740400427491 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D09F21A9740400427491 /* LoginViewController.swift */; };
+		02A4D0A321A9740400427491 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A121A9740400427491 /* LoginViewController.storyboard */; };
 		02A4D0A621A9740400427491 /* SmartContrakt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */; };
 		02A4D0A821A9740700427491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A721A9740700427491 /* Assets.xcassets */; };
 		02A4D0AB21A9740700427491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A921A9740700427491 /* LaunchScreen.storyboard */; };
 		02A4D0B621A9740700427491 /* SmartContraktUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0B521A9740700427491 /* SmartContraktUITests.swift */; };
 		02A4D0C421A9D2A100427491 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C321A9D2A100427491 /* API.swift */; };
+		02A4D0C621AA025300427491 /* User+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C521AA025300427491 /* User+Extensions.swift */; };
+		02A4D0C921AA045600427491 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C821AA045600427491 /* Log.swift */; };
+		02A4D0CB21AB147500427491 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0CA21AB147500427491 /* CurrentUser.swift */; };
+		02CC8B2B21AB188F006112E4 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC8B2A21AB188F006112E4 /* ProfileController.swift */; };
+		02CC8B2E21AB1995006112E4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC8B2D21AB1995006112E4 /* MenuViewController.swift */; };
+		02CC8B3021AB1A07006112E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC8B2F21AB1A07006112E4 /* Default-568h@2x.png */; };
+		02CC8B3221AB1AF7006112E4 /* ProfileController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CC8B3121AB1AF7006112E4 /* ProfileController.storyboard */; };
+		02CC8B3421AB1B65006112E4 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CC8B3321AB1B65006112E4 /* MenuViewController.storyboard */; };
 		85E45CE300FEECA73434C5FE /* Pods_SmartContrakt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		027BFDFB21AB24D800DFD095 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02A4D09A21A9740400427491 /* SmartContrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartContrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A4D09D21A9740400427491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02A4D09F21A9740400427491 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		02A4D0A221A9740400427491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02A4D09F21A9740400427491 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		02A4D0A221A9740400427491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginViewController.storyboard; sourceTree = "<group>"; };
 		02A4D0A521A9740400427491 /* SmartContrakt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartContrakt.xcdatamodel; sourceTree = "<group>"; };
 		02A4D0A721A9740700427491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02A4D0AA21A9740700427491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +51,14 @@
 		02A4D0B521A9740700427491 /* SmartContraktUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContraktUITests.swift; sourceTree = "<group>"; };
 		02A4D0B721A9740700427491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A4D0C321A9D2A100427491 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		02A4D0C521AA025300427491 /* User+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Extensions.swift"; sourceTree = "<group>"; };
+		02A4D0C821AA045600427491 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		02A4D0CA21AB147500427491 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		02CC8B2A21AB188F006112E4 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		02CC8B2D21AB1995006112E4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		02CC8B2F21AB1A07006112E4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		02CC8B3121AB1AF7006112E4 /* ProfileController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileController.storyboard; sourceTree = "<group>"; };
+		02CC8B3321AB1B65006112E4 /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartContrakt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.release.xcconfig"; sourceTree = "<group>"; };
 		C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartContrakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.debug.xcconfig"; sourceTree = "<group>"; };
 		CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartContrakt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +86,7 @@
 		02A4D09121A9740400427491 = {
 			isa = PBXGroup;
 			children = (
+				02CC8B2F21AB1A07006112E4 /* Default-568h@2x.png */,
 				02A4D09C21A9740400427491 /* SmartContrakt */,
 				02A4D0B421A9740700427491 /* SmartContraktUITests */,
 				02A4D09B21A9740400427491 /* Products */,
@@ -88,14 +107,16 @@
 		02A4D09C21A9740400427491 /* SmartContrakt */ = {
 			isa = PBXGroup;
 			children = (
+				02CC8B2C21AB197B006112E4 /* Controllers */,
+				02A4D0C821AA045600427491 /* Log.swift */,
 				02A4D09D21A9740400427491 /* AppDelegate.swift */,
 				02A4D0C321A9D2A100427491 /* API.swift */,
-				02A4D09F21A9740400427491 /* ViewController.swift */,
-				02A4D0A121A9740400427491 /* Main.storyboard */,
+				02A4D0CA21AB147500427491 /* CurrentUser.swift */,
 				02A4D0A721A9740700427491 /* Assets.xcassets */,
 				02A4D0A921A9740700427491 /* LaunchScreen.storyboard */,
 				02A4D0AC21A9740700427491 /* Info.plist */,
-				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
+				02A4D0C721AA025800427491 /* Model */,
+				027BFDFB21AB24D800DFD095 /* Main.storyboard */,
 			);
 			path = SmartContrakt;
 			sourceTree = "<group>";
@@ -107,6 +128,28 @@
 				02A4D0B721A9740700427491 /* Info.plist */,
 			);
 			path = SmartContraktUITests;
+			sourceTree = "<group>";
+		};
+		02A4D0C721AA025800427491 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
+				02A4D0C521AA025300427491 /* User+Extensions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02CC8B2C21AB197B006112E4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				02A4D09F21A9740400427491 /* LoginViewController.swift */,
+				02A4D0A121A9740400427491 /* LoginViewController.storyboard */,
+				02CC8B2A21AB188F006112E4 /* ProfileController.swift */,
+				02CC8B3121AB1AF7006112E4 /* ProfileController.storyboard */,
+				02CC8B2D21AB1995006112E4 /* MenuViewController.swift */,
+				02CC8B3321AB1B65006112E4 /* MenuViewController.storyboard */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		F727CAD21E41F715348F4979 /* Frameworks */ = {
@@ -210,9 +253,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027BFDFC21AB24D800DFD095 /* Main.storyboard in Resources */,
 				02A4D0AB21A9740700427491 /* LaunchScreen.storyboard in Resources */,
+				02CC8B3021AB1A07006112E4 /* Default-568h@2x.png in Resources */,
+				02CC8B3421AB1B65006112E4 /* MenuViewController.storyboard in Resources */,
 				02A4D0A821A9740700427491 /* Assets.xcassets in Resources */,
-				02A4D0A321A9740400427491 /* Main.storyboard in Resources */,
+				02CC8B3221AB1AF7006112E4 /* ProfileController.storyboard in Resources */,
+				02A4D0A321A9740400427491 /* LoginViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +299,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DrawerController/DrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,10 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A4D0A021A9740400427491 /* ViewController.swift in Sources */,
+				02A4D0A021A9740400427491 /* LoginViewController.swift in Sources */,
 				02A4D09E21A9740400427491 /* AppDelegate.swift in Sources */,
+				02A4D0C921AA045600427491 /* Log.swift in Sources */,
 				02A4D0C421A9D2A100427491 /* API.swift in Sources */,
+				02CC8B2E21AB1995006112E4 /* MenuViewController.swift in Sources */,
+				02A4D0C621AA025300427491 /* User+Extensions.swift in Sources */,
+				02A4D0CB21AB147500427491 /* CurrentUser.swift in Sources */,
 				02A4D0A621A9740400427491 /* SmartContrakt.xcdatamodeld in Sources */,
+				02CC8B2B21AB188F006112E4 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,12 +351,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		02A4D0A121A9740400427491 /* Main.storyboard */ = {
+		02A4D0A121A9740400427491 /* LoginViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				02A4D0A221A9740400427491 /* Base */,
 			);
-			name = Main.storyboard;
+			name = LoginViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		02A4D0A921A9740700427491 /* LaunchScreen.storyboard */ = {
@@ -445,7 +501,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -466,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContrakt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
