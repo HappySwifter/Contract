@@ -45,6 +45,9 @@
                                                             <state key="normal" title="Авторизоваться">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="login" destination="jGg-pk-Ph4" eventType="touchUpInside" id="tx7-ej-d5X"/>
+                                                            </connections>
                                                         </button>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fP-gl-XyV">
                                                             <rect key="frame" x="16" y="240" width="288" height="40"/>
@@ -102,6 +105,10 @@
                             <outlet property="delegate" destination="jGg-pk-Ph4" id="hxK-3b-2L6"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="loginTextField" destination="5ho-wV-dff" id="LRa-a8-XdL"/>
+                        <outlet property="passwordTextField" destination="0fP-gl-XyV" id="4u5-Sn-zx8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTA-Y9-uIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

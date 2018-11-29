@@ -12,12 +12,6 @@ import DrawerController
 
 let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-func getController<T: UIViewController>() -> T {
-    let desk = T.description().components(separatedBy: ".").last ?? ""
-    let storyboard = UIStoryboard(name: desk, bundle: nil)
-    let vc = (storyboard.instantiateViewController(withIdentifier: desk)) as! T
-    return vc
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,19 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        api = API()
+        
         let centerViewController: UIViewController
         if CurrentUser.getToken() != nil {
-            let contr: ProfileViewController = getController()
-            centerViewController = contr
+            let contr = getController(forName: ObjectListViewController.self)
+            let nav = UINavigationController(rootViewController: contr)
+            centerViewController = nav
         } else {
-            let contr: LoginViewController = getController()
+            let contr = getController(forName: LoginViewController.self, showMenuButton: false)
             centerViewController = contr
         }
-        let nav = UINavigationController(rootViewController: centerViewController)
         
-        let menuVC: MenuViewController = getController()
+        let menuVC: MenuVC = getController(forName: MenuVC.self, showMenuButton: false)
         
-        let drawerController = DrawerController(centerViewController: nav,
+        let drawerController = DrawerController(centerViewController: centerViewController,
                                                 leftDrawerViewController: menuVC,
                                                 rightDrawerViewController: nil)
         
@@ -51,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         drawerController.closeDrawerGestureModeMask = [.all]
         
-        window?.rootViewController = centerViewController
+        window?.rootViewController = drawerController
         return true
     }
 

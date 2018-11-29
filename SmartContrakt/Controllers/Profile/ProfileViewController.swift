@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  ProfileController.swift
 //  SmartContrakt
 //
 //  Created by Артем Валиев on 25/11/2018.
@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
-class MenuViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
+
 }
