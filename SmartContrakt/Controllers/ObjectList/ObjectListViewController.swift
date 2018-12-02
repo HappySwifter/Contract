@@ -30,7 +30,7 @@ class ObjectListViewController: UIViewController {
     }
     
     func getObjects() {
-        api.getObjects(action: API.Action.getObjects) { [weak self] (result) in
+        api.getObjects(action: API.Action.getTemplates) { [weak self] (result) in
             switch result {
             case .Success(let objs):
                 self?.objects = objs

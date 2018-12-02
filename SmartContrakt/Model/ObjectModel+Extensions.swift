@@ -33,8 +33,8 @@ extension ObjectModel {
                 object.id = id
             }
             
-            object.name = xml["a:НАЗВАНИЕ"].element!.text
-            object.recvisits = xml["a:РЕКВИЗИТЫ"].element!.text
+            object.name = xml["a:TITLE"].element!.text
+            object.recvisits = xml["a:REQUISITES"].element!.text
             
             objects.append(object)
         }

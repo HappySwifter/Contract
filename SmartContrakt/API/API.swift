@@ -16,6 +16,7 @@ protocol APIProtocol {
     func login(action: API.Action, cb: @escaping (Result<(user: User, token: String)>) -> Void)
     func getObjects(action: API.Action, cb: @escaping (Result<[ObjectModel]>) -> Void)
     func getCheckList(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
+    func setCheckListItem(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
 }
 
 class API: APIProtocol {
@@ -26,18 +27,32 @@ class API: APIProtocol {
     
     enum Action {
         case getSession(logn: String, pass: String)
-        case getObjects
-        case getCheckList(objectId: String)
+        case checkGUID
+        case getTemplates
+        case getRequirementsFor(templateId: String)
         
         var description: String {
             get {
                 switch self {
                 case .getSession:
                     return "GetSession"
-                case .getObjects:
-                    return "GetCheckList"
-                case .getCheckList:
-                    return "GetCheckListDetail"
+                case .checkGUID:
+                    return "CheckGuid"
+                case .getTemplates:
+                    return "GetCheckListTemplate"
+                case .getRequirementsFor:
+                    return "GetRequirementsTemplate"
+                }
+            }
+        }
+        
+        var mustCheckGuid: Bool {
+            get {
+                switch self {
+                case .checkGUID:
+                    return false
+                default:
+                    return true
                 }
             }
         }
@@ -56,7 +71,7 @@ class API: APIProtocol {
                     </s:Body>
                     </s:Envelope>
                     """
-                case .getObjects:
+                case .checkGUID:
                     return """
                     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
                     <s:Body>
@@ -66,13 +81,23 @@ class API: APIProtocol {
                     </s:Body>
                     </s:Envelope>
                     """
-                case .getCheckList(let objectId):
+                case .getTemplates:
                     return """
                     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
                     <s:Body>
                     <\(description) xmlns="http://tempuri.org/">
                     <guid>\(CurrentUser.getToken()!)</guid>
-                    <id_checkList>\(objectId)</id_checkList>
+                    </\(description)>
+                    </s:Body>
+                    </s:Envelope>
+                    """
+                case .getRequirementsFor(let templateId):
+                    return """
+                    <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+                    <s:Body>
+                    <\(description) xmlns="http://tempuri.org/">
+                    <guid>\(CurrentUser.getToken()!)</guid>
+                    <id_checkList>\(templateId)</id_checkList>
                     </\(description)>
                     </s:Body>
                     </s:Envelope>
@@ -83,14 +108,13 @@ class API: APIProtocol {
     }
     
 
+    
     func login(action: API.Action, cb: @escaping (Result<(user: User, token: String)>) -> Void) {
         switch action {
         case .getSession:
-            makeRequest(with: action.description, env: action.envelope) { [unowned self] result in
+            checkGuidAndSendRequest(with: action) { result in
                 switch result {
-                case .Success(let data):
-                    let xml = self.getXML(for: data)
-                    let result = xml["GetSessionResponse"]["GetSessionResult"]
+                case .Success(let result):
                     let token = result["a:GUID"].element!.text
                     print("token: ", token)
                     let user = User.saveUser(xml: result)
@@ -101,6 +125,7 @@ class API: APIProtocol {
             }
         default:
             assert(false)
+            break
         }
     }
     
@@ -110,13 +135,11 @@ class API: APIProtocol {
             return
         }
         switch action {
-        case .getObjects:
-            makeRequest(with: action.description, env: action.envelope) { [unowned self] result in
+        case .getTemplates:
+            checkGuidAndSendRequest(with: action) { result in
                 switch result {
-                case .Success(let data):
-                    let xml = self.getXML(for: data)
-                    let result = xml["GetCheckListResponse"]["GetCheckListResult"]
-                    let array = result["a:список_чек_листов"]
+                case .Success(let result):
+                    let array = result["a:checkList"]
                     let obj = ObjectModel.saveObjects(xmlObjects: array.all)
                     cb(Result.Success(data: obj))
                 case .Failure(let error):
@@ -125,6 +148,7 @@ class API: APIProtocol {
             }
         default:
             assert(false)
+            break
         }
     }
     
@@ -134,12 +158,10 @@ class API: APIProtocol {
             return
         }
         switch action {
-        case .getCheckList:
-            makeRequest(with: action.description, env: action.envelope) { [unowned self] result in
+        case .getRequirementsFor:
+            checkGuidAndSendRequest(with: action) { result in
                 switch result {
-                case .Success(let data):
-                    let xml = self.getXML(for: data)
-                    let result = xml["GetCheckListDetailResponse"]["GetCheckListDetailResult"]
+                case .Success(let result):
                     let array = result["a:требования"]
                     let obj = CheckListModel.saveObjects(xmlObjects: array.all)
                     cb(Result.Success(data: obj))
@@ -149,6 +171,11 @@ class API: APIProtocol {
             }
         default:
             assert(false)
+            break
         }
+    }
+    
+    func setCheckListItem(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void) {
+        
     }
 }

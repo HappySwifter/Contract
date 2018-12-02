@@ -60,15 +60,15 @@ extension User {
             user.id = id
         }
         
-        user.fio = xml["a:ФИО"].element!.text
-        user.doljnost = xml["a:Должность"].element!.text
-        user.organisation = xml["a:Организация"].element!.text
-        user.otdel = xml["a:Отдел"].element!.text
-        user.mail = xml["a:Почта"].element!.text
-        user.status = xml["a:Статус"].element!.text
-        user.phone_home = xml["a:Телефон_моб"].element!.text
-        user.phone_work = xml["a:Телефон_раб"].element!.text
-        user.photoString = xml["a:Фото"].element!.text
+        user.fio = xml["a:FIO"].element!.text
+        user.doljnost = xml["a:POSITION"].element!.text
+        user.organisation = xml["a:ORGANIZATION"].element!.text
+        user.otdel = xml["a:DEPARTMENT"].element!.text
+        user.mail = xml["a:MAIL"].element!.text
+        user.status = xml["a:STATUS"].element!.text
+        user.phone_home = xml["a:MOBILEPHONE"].element!.text
+        user.phone_work = xml["a:WORKPHONE"].element!.text
+        user.photoString = xml["a:PHOTO"].element!.text
         
         return user
     }
