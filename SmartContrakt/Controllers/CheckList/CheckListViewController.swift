@@ -40,7 +40,7 @@ class CheckListViewController: UIViewController {
         lay.sectionInset = UIEdgeInsets(top: edgeInset, left: edgeInset, bottom: edgeInset, right: edgeInset)
         lay.minimumInteritemSpacing = edgeInset * 2
         lay.minimumLineSpacing = edgeInset * 2
-        api.getCheckList(action: API.Action.getRequirementsFor(templateId: object.id!)) { [weak self] (result) in
+        api.getCheckList(action: API.Action.getRequirementsFor(checkListId: object.id!)) { [weak self] (result) in
             switch result {
             case .Success(let objs):
                 self?.checkListItems = objs

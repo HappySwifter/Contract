@@ -12,9 +12,10 @@
 		020C924921B30E3400135A65 /* CheckList+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924821B30E3400135A65 /* CheckList+Action.swift */; };
 		020C924B21B3225200135A65 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924A21B3225200135A65 /* Logs.swift */; };
 		020C924D21B32B9700135A65 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924C21B32B9700135A65 /* PhotoCell.swift */; };
+		020C924F21B5136800135A65 /* API+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924E21B5136800135A65 /* API+Actions.swift */; };
 		02278E6621ADA90600860BEC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E6521ADA90600860BEC /* Result.swift */; };
 		02278E6821ADA92B00860BEC /* API+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E6721ADA92B00860BEC /* API+Private.swift */; };
-		02278E6A21ADB1EE00860BEC /* ObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E6921ADB1EE00860BEC /* ObjectModel+Extensions.swift */; };
+		02278E6A21ADB1EE00860BEC /* Templater+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E6921ADB1EE00860BEC /* Templater+Extensions.swift */; };
 		02278E6C21ADBEAD00860BEC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E6B21ADBEAD00860BEC /* Extensions.swift */; };
 		02278E6E21ADBF7600860BEC /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E6D21ADBF7600860BEC /* MenuCell.swift */; };
 		02278E7121ADBFA000860BEC /* MenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E7021ADBFA000860BEC /* MenuVM.swift */; };
@@ -59,9 +60,10 @@
 		020C924821B30E3400135A65 /* CheckList+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckList+Action.swift"; sourceTree = "<group>"; };
 		020C924A21B3225200135A65 /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		020C924C21B32B9700135A65 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		020C924E21B5136800135A65 /* API+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Actions.swift"; sourceTree = "<group>"; };
 		02278E6521ADA90600860BEC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		02278E6721ADA92B00860BEC /* API+Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Private.swift"; sourceTree = "<group>"; };
-		02278E6921ADB1EE00860BEC /* ObjectModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectModel+Extensions.swift"; sourceTree = "<group>"; };
+		02278E6921ADB1EE00860BEC /* Templater+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Templater+Extensions.swift"; sourceTree = "<group>"; };
 		02278E6B21ADBEAD00860BEC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		02278E6D21ADBF7600860BEC /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		02278E7021ADBFA000860BEC /* MenuVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVM.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				02A4D0C321A9D2A100427491 /* API.swift */,
 				02278E6521ADA90600860BEC /* Result.swift */,
 				02278E6721ADA92B00860BEC /* API+Private.swift */,
+				020C924E21B5136800135A65 /* API+Actions.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -246,7 +249,7 @@
 			children = (
 				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
 				02A4D0C521AA025300427491 /* User+Extensions.swift */,
-				02278E6921ADB1EE00860BEC /* ObjectModel+Extensions.swift */,
+				02278E6921ADB1EE00860BEC /* Templater+Extensions.swift */,
 				02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */,
 			);
 			path = Model;
@@ -439,13 +442,14 @@
 				02278E7521ADBFB000860BEC /* MenuCellVM.swift in Sources */,
 				020C924921B30E3400135A65 /* CheckList+Action.swift in Sources */,
 				020C924B21B3225200135A65 /* Logs.swift in Sources */,
-				02278E6A21ADB1EE00860BEC /* ObjectModel+Extensions.swift in Sources */,
+				02278E6A21ADB1EE00860BEC /* Templater+Extensions.swift in Sources */,
 				02A4D09E21A9740400427491 /* AppDelegate.swift in Sources */,
 				02278E7321ADBFA500860BEC /* MenuVC.swift in Sources */,
 				02A4D0C921AA045600427491 /* Log.swift in Sources */,
 				02A4D0C421A9D2A100427491 /* API.swift in Sources */,
 				02278E7E21ADCCB900860BEC /* ObjectListViewController.swift in Sources */,
 				02278E6621ADA90600860BEC /* Result.swift in Sources */,
+				020C924F21B5136800135A65 /* API+Actions.swift in Sources */,
 				020C924721B30B2800135A65 /* ItemCell.swift in Sources */,
 				02278E6C21ADBEAD00860BEC /* Extensions.swift in Sources */,
 				020C924D21B32B9700135A65 /* PhotoCell.swift in Sources */,

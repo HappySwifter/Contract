@@ -59,6 +59,22 @@ extension ObjectListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let obj = objects[indexPath.row]
+        
+        let date = Date()
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions.insert(.withFractionalSeconds)
+        let strDate = formatter.string(from: date)
+        
+        api.createCheckListFromTemplate(action: API.Action.createCheckListFromTemplate(requisit: obj.recvisits ?? "", title: obj.name ?? "", date: strDate)) { (result) in
+            switch result {
+            case .Success(let objs):
+                break
+            case .Failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         let contr = getController(forName: CheckListViewController.self, showMenuButton: false)
         contr.object = objects[indexPath.row]
         navigationController?.pushViewController(contr, animated: true)

@@ -11,11 +11,30 @@ import SWXMLHash
 
 var api: APIProtocol!
 
+extension ISO8601DateFormatter {
+    convenience init(_ formatOptions: Options, timeZone: TimeZone? = nil) {
+        self.init()
+        self.formatOptions = formatOptions
+        self.timeZone = timeZone ?? TimeZone(abbreviation: "UTC")!
+    }
+}
+
+extension Formatter {
+    struct Date {
+        static let iso8601 = ISO8601DateFormatter([.withInternetDateTime, .withFractionalSeconds])
+    }
+}
+
+//let date = Date()
+//let formatter = ISO8601DateFormatter()
+//formatter.formatOptions.insert(.withFractionalSeconds)  // this is only available effective iOS 11 and macOS 10.13
+//print(formatter.string(from: date))
 
 protocol APIProtocol {
     func login(action: API.Action, cb: @escaping (Result<(user: User, token: String)>) -> Void)
     func getObjects(action: API.Action, cb: @escaping (Result<[ObjectModel]>) -> Void)
     func getCheckList(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
+    func createCheckListFromTemplate(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
     func setCheckListItem(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
 }
 
@@ -23,88 +42,6 @@ class API: APIProtocol {
     
     init() {
         api = self
-    }
-    
-    enum Action {
-        case getSession(logn: String, pass: String)
-        case checkGUID
-        case getTemplates
-        case getRequirementsFor(templateId: String)
-        
-        var description: String {
-            get {
-                switch self {
-                case .getSession:
-                    return "GetSession"
-                case .checkGUID:
-                    return "CheckGuid"
-                case .getTemplates:
-                    return "GetCheckListTemplate"
-                case .getRequirementsFor:
-                    return "GetRequirementsTemplate"
-                }
-            }
-        }
-        
-        var mustCheckGuid: Bool {
-            get {
-                switch self {
-                case .checkGUID:
-                    return false
-                default:
-                    return true
-                }
-            }
-        }
-        
-        var envelope: String {
-            get {
-                switch self {
-                case .getSession(let login, let pass):
-                    return """
-                    <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-                    <s:Body>
-                    <\(description) xmlns="http://tempuri.org/">
-                    <login>\(login)</login>
-                    <pass>\(pass)</pass>
-                    </\(description)>
-                    </s:Body>
-                    </s:Envelope>
-                    """
-                case .checkGUID:
-                    return """
-                    <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-                    <s:Body>
-                    <\(description) xmlns="http://tempuri.org/">
-                    <guid>\(CurrentUser.getToken()!)</guid>
-                    </\(description)>
-                    </s:Body>
-                    </s:Envelope>
-                    """
-                case .getTemplates:
-                    return """
-                    <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-                    <s:Body>
-                    <\(description) xmlns="http://tempuri.org/">
-                    <guid>\(CurrentUser.getToken()!)</guid>
-                    </\(description)>
-                    </s:Body>
-                    </s:Envelope>
-                    """
-                case .getRequirementsFor(let templateId):
-                    return """
-                    <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-                    <s:Body>
-                    <\(description) xmlns="http://tempuri.org/">
-                    <guid>\(CurrentUser.getToken()!)</guid>
-                    <id_checkList>\(templateId)</id_checkList>
-                    </\(description)>
-                    </s:Body>
-                    </s:Envelope>
-                    """
-                }
-            }
-        }
     }
     
 
@@ -162,6 +99,26 @@ class API: APIProtocol {
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
+                    let array = result["a:требования"]
+                    let obj = CheckListModel.saveObjects(xmlObjects: array.all)
+                    cb(Result.Success(data: obj))
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func createCheckListFromTemplate(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void) {
+        switch action {
+        case .createCheckListFromTemplate:
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    print(result)
                     let array = result["a:требования"]
                     let obj = CheckListModel.saveObjects(xmlObjects: array.all)
                     cb(Result.Success(data: obj))
