@@ -23,20 +23,22 @@ extension CheckListModel {
         var objects = [CheckListModel]()
         
         for xml in xmlObjects {
-            let id = xml["a:ID"].element!.text
-            
-            let object: CheckListModel
-            if let c: CheckListModel = getObjects(withId: id).first {
-                object = c
+            if let id = xml["a:ID"].element?.text, id.count > 0 {
+                let object: CheckListModel
+                if let c: CheckListModel = getObjects(withId: id).first {
+                    object = c
+                } else {
+                    object = createNew()
+                    object.id = id
+                }
+                object.name = xml["a:TITLE"].element!.text
+                object.requests = xml["a:REQUISITES"].element!.text
+                objects.append(object)
             } else {
-                object = createNew()
-                object.id = id
+                Log("ID is empty", type: .warning)
             }
-            
-            object.name = xml["a:ТРЕБОВАНИЕ"].element!.text
-            objects.append(object)
         }
-        
+        appDelegate.saveContext()
         return objects
         
     }

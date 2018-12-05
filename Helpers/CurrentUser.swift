@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct CurrentUser {
@@ -42,5 +43,10 @@ struct CurrentUser {
         def.removeObject(forKey: "current_user_token_key")
         def.removeObject(forKey: "current_user_id_key")
         def.synchronize()
+        
+        let contr = getController(forName: LoginViewController.self, showMenuButton: false)
+        appDelegate.drawerController?.centerViewController = contr
+//        UIViewController.topMostViewController()?.
+
     }
 }

@@ -28,7 +28,7 @@ extension API {
         case deleteCheckList(checkListId: String)
         
         /// получить шаблонные пункты чеклиста
-        case getRequirementsFor(checkListId: String)
+        case getTemplateRequirementsFor(checkListId: String)
         /// получить список требований, которые я сохранял для данного чеклиста
         case getRequirementsForMy(checkListId: String)
         /// требование сохраняется, возвращается id_requirement созданный
@@ -55,7 +55,7 @@ extension API {
                     return "GetCheckListTemplate"
                 case .createCheckListFromTemplate:
                     return "SetCheckList"
-                case .getRequirementsFor:
+                case .getTemplateRequirementsFor:
                     return "GetRequirementsTemplate"
                 case .deleteCheckList:
                     return "DeleteCheckList"
@@ -97,7 +97,7 @@ extension API {
                     <dateTime>\(dateString)</dateTime>
                     """
                     return insertParamsToEnvelope(params: params, withToken: true)
-                case .getRequirementsFor(let checkListId):
+                case .getTemplateRequirementsFor(let checkListId):
                     let params = """
                     <id_checkList>\(checkListId)</id_checkList>
                     """

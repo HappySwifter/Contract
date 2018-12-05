@@ -21,7 +21,8 @@ extension API {
                     if isGood == "1" {
                         guidIsGoodCallback()
                     } else {
-                        cb(Result.Failure(error: CustomError.CannotFetch("GUID is not valid")))
+                        CurrentUser.logout()
+                        cb(Result.Failure(error: CustomError.badGUID))
                     }
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
@@ -51,11 +52,15 @@ extension API {
             }
         }
         
+        if !isConnectedToInternet() {
+            returnOnMainQueue(res: Result.Failure(error: CustomError.NoNetwork))
+        }
+        
         let headers = [
             "SOAPAction": "http://tempuri.org/IService1/\(action.description)",
             "Content-Type": "text/xml"
         ]
-        let request = NSMutableURLRequest(url: NSURL(string: "http://195.128.127.188:54321/SmartService/Service1.svc")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: serviceURL)! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 60.0)
         request.httpMethod = "POST"
@@ -67,9 +72,12 @@ extension API {
         let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
             if let data = data, data.count > 0 {
                 let xml = SWXMLHash.parse(data)["s:Envelope"]["s:Body"]
-                let result = xml["\(action.description)Response"]["\(action.description)Result"]
-                returnOnMainQueue(res: Result.Success(data: result))
-                
+                if let error = xml["s:Fault"]["faultstring"].element?.text {
+                    returnOnMainQueue(res: Result.Failure(error: CustomError.CannotFetch(error)))
+                } else {
+                    let result = xml["\(action.description)Response"]["\(action.description)Result"]
+                    returnOnMainQueue(res: Result.Success(data: result))
+                }
             } else if let error = error {
                 returnOnMainQueue(res: Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
             } else {

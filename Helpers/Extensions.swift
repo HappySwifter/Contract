@@ -126,3 +126,44 @@ extension UIFont {
         return UIFont.init(name: "HelveticaNeue-Bold", size: size)!
     }
 }
+
+
+
+extension UIViewController {
+    
+    /// Returns the current application's top most view controller.
+    open class func topMostViewController() -> UIViewController? {
+        let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        return self.topMostViewControllerOfViewController(rootViewController)
+    }
+    
+    /// Returns the top most view controller from given view controller's stack.
+    class func topMostViewControllerOfViewController(_ viewController: UIViewController?) -> UIViewController? {
+        // UITabBarController
+        if let tabBarController = viewController as? UITabBarController,
+            let selectedViewController = tabBarController.selectedViewController {
+            return self.topMostViewControllerOfViewController(selectedViewController)
+        }
+        
+        // UINavigationController
+        if let navigationController = viewController as? UINavigationController,
+            let visibleViewController = navigationController.visibleViewController {
+            return self.topMostViewControllerOfViewController(visibleViewController)
+        }
+        
+        // presented view controller
+        if let presentedViewController = viewController?.presentedViewController {
+            return self.topMostViewControllerOfViewController(presentedViewController)
+        }
+        
+        // child view controller
+        for subview in viewController?.view?.subviews ?? [] {
+            if let childViewController = subview.next as? UIViewController, childViewController !== viewController {
+                return self.topMostViewControllerOfViewController(childViewController)
+            }
+        }
+        
+        return viewController
+    }
+    
+}

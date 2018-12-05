@@ -10,14 +10,28 @@ import UIKit
 import CoreData
 import DrawerController
 
-let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+let context = appDelegate.persistentContainer.viewContext
+let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+
+func clearEntity<T: NSManagedObject>() -> T? {
+    let fetchRequest = NSFetchRequest<T>(entityName: T.description())
+    do {
+        let result = try context.fetch(fetchRequest)
+        for obj in result {
+            context.delete(obj)
+        }
+    } catch {
+        Log("Error \(error.localizedDescription)", type: .error)
+    }
+    return nil
+}
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var drawerController: DrawerController?
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         
@@ -29,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let centerViewController: UIViewController
         if CurrentUser.getToken() != nil {
-            let contr = getController(forName: ObjectListViewController.self)
+            let contr = getController(forName: CheckListsViewController.self, showMenuButton: false)
             let nav = UINavigationController(rootViewController: contr)
             centerViewController = nav
         } else {
@@ -39,15 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let menuVC: MenuVC = getController(forName: MenuVC.self, showMenuButton: false)
         
-        let drawerController = DrawerController(centerViewController: centerViewController,
+        drawerController = DrawerController(centerViewController: centerViewController,
                                                 leftDrawerViewController: menuVC,
                                                 rightDrawerViewController: nil)
         
-        drawerController.maximumLeftDrawerWidth = UIScreen.main.bounds.size.width / 1.5
-        drawerController.maximumRightDrawerWidth = UIScreen.main.bounds.size.width - 75
-        
-        drawerController.closeDrawerGestureModeMask = [.all]
-        
+        drawerController?.maximumLeftDrawerWidth = UIScreen.main.bounds.size.width / 1.5
+        drawerController?.maximumRightDrawerWidth = UIScreen.main.bounds.size.width - 75
+        drawerController?.closeDrawerGestureModeMask = [.all]
+        drawerController?.openDrawerGestureModeMask = [.all]
         window?.rootViewController = drawerController
         return true
     }

@@ -70,21 +70,19 @@ class MenuVC: UITableViewController {
             }
         }
         let item = viewModel.getMenuItemFor(index: indexPath.row)
-        let contr: UIViewController
+        var contr: UIViewController?
         switch item {
         case .Profile:
             contr = getController(forName: ProfileViewController.self, showMenuButton: true)
         case .CheckList:
-            contr = getController(forName: ObjectListViewController.self, showMenuButton: true)
+            contr = getController(forName: TemplatesViewController.self, showMenuButton: true)
         case .Exit:
             CurrentUser.logout()
-            contr = getController(forName: LoginViewController.self, showMenuButton: false)
-        default:
-            assert(false)
-            return
+            evo_drawerController?.toggleDrawerSide(.left, animated: true, completion: nil)
         }
-        setCenter(controller: contr)
-
+        if let contr = contr {
+            setCenter(controller: contr)
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -98,7 +96,7 @@ class MenuVC: UITableViewController {
         let controller = navContr.topViewController
         if controller is ProfileViewController {
             return MenuObject.Profile.rawValue
-        } else if controller is ObjectListViewController {
+        } else if controller is TemplatesViewController {
             return MenuObject.CheckList.rawValue
         } else {
             return 100

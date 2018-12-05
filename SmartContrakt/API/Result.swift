@@ -22,6 +22,8 @@ enum CustomError: Equatable, Error
     case CannotCreate(String)
     case CannotUpdate(String)
     case CannotDelete(String)
+    case NoNetwork
+    case badGUID
     
     var localizedDescription: String {
         switch self {
@@ -33,6 +35,11 @@ enum CustomError: Equatable, Error
             return error
         case .CannotDelete(let error):
             return error
+        case .NoNetwork:
+            return "Проверьте подключение к интернету"
+        case .badGUID:
+            return "Сессия прервана. Войдите в систему заново"
+            
         }
     }
 }

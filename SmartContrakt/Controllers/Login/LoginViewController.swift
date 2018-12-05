@@ -38,7 +38,7 @@ class LoginViewController: UITableViewController {
             switch result {
             case .Success(let tuple):
                 CurrentUser.save(user: tuple.user, token: tuple.token)
-                let contr = getController(forName: ObjectListViewController.self, showMenuButton: true)
+                let contr = getController(forName: CheckListsViewController.self, showMenuButton: false)
                 self?.setCenter(controller: contr)
             case .Failure(let error):
                 print(error.localizedDescription)

@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 
 typealias dispatch_cancelable_closure = (_ cancel: Bool) -> Void
@@ -40,4 +41,11 @@ func cancel_delay(_ closure: dispatch_cancelable_closure?) {
     if closure != nil {
         closure!(true)
     }
+}
+
+func presentAlert(title: String, text: String) {
+    let contr = UIAlertController(title: title, message: text, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    contr.addAction(okAction)
+    UIViewController.topMostViewController()?.present(contr, animated: true, completion: nil)
 }
