@@ -38,7 +38,7 @@ protocol APIProtocol {
     func createCheckListFromTemplate(action: API.Action, cb: @escaping (Result<String>) -> Void)
     func removeCheckList(action: API.Action, cb: @escaping (Result<Void>) -> Void)
     
-    func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
+    func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[RequirementTemplate]>) -> Void)
 
 }
 
@@ -103,7 +103,7 @@ class API: APIProtocol {
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-                    let array = result["a:checkList"]
+                    let array = result["a:checkList_"]
                     let serverTemplates = TemplateModel.saveObjects(xmlObjects: array.all)
                     cb(Result.Success(data: serverTemplates))
                 case .Failure(let error):
@@ -180,18 +180,19 @@ class API: APIProtocol {
         }
     }
     
-    func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void) {
+    func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[RequirementTemplate]>) -> Void) {
         guard let _ = CurrentUser.getToken() else {
             cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
             return
         }
         switch action {
-        case .getTemplateRequirementsFor:
+        case .getTemplateRequirementsFor(let templateCheckListId):
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-                    let array = result["a:требования"]
-                //                    cb(Result.Success(data: obj))
+                    let array = result["a:requirementsTemplate"]
+                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+                    cb(Result.Success(data: templates))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }

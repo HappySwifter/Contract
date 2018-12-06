@@ -25,6 +25,7 @@
 		02278E8021ADCCDE00860BEC /* TemplatesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02278E7F21ADCCDE00860BEC /* TemplatesViewController.storyboard */; };
 		02278E8521AE757A00860BEC /* RequirementsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02278E8421AE757A00860BEC /* RequirementsViewController.storyboard */; };
 		02278E8721AE774700860BEC /* CheckListModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */; };
+		02620D9C21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */; };
 		0264588621B59CDF00CCA094 /* CheckListsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264588021B59CDF00CCA094 /* CheckListsPresenter.swift */; };
 		0264588721B59CDF00CCA094 /* CheckListsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264588121B59CDF00CCA094 /* CheckListsWorker.swift */; };
 		0264588821B59CDF00CCA094 /* CheckListsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264588221B59CDF00CCA094 /* CheckListsRouter.swift */; };
@@ -93,6 +94,7 @@
 		02278E7F21ADCCDE00860BEC /* TemplatesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TemplatesViewController.storyboard; sourceTree = "<group>"; };
 		02278E8421AE757A00860BEC /* RequirementsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RequirementsViewController.storyboard; sourceTree = "<group>"; };
 		02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckListModel+Extensions.swift"; sourceTree = "<group>"; };
+		02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequirementTemplate+Extensions.swift"; sourceTree = "<group>"; };
 		0264588021B59CDF00CCA094 /* CheckListsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListsPresenter.swift; sourceTree = "<group>"; };
 		0264588121B59CDF00CCA094 /* CheckListsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListsWorker.swift; sourceTree = "<group>"; };
 		0264588221B59CDF00CCA094 /* CheckListsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListsRouter.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
 				02A4D0C521AA025300427491 /* User+Extensions.swift */,
 				02278E6921ADB1EE00860BEC /* Template+Extensions.swift */,
+				02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */,
 				02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */,
 			);
 			path = Model;
@@ -534,6 +537,7 @@
 				02FE0BB421B6BD6B007624E4 /* RequirementsViewController.swift in Sources */,
 				02FE0BB121B6BD6B007624E4 /* RequirementsWorker.swift in Sources */,
 				02278E6E21ADBF7600860BEC /* MenuCell.swift in Sources */,
+				02620D9C21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift in Sources */,
 				02278E6821ADA92B00860BEC /* API+Private.swift in Sources */,
 				02FE0BB021B6BD6B007624E4 /* RequirementsPresenter.swift in Sources */,
 				0264589021B5B5EA00CCA094 /* MyCheckListCell.swift in Sources */,

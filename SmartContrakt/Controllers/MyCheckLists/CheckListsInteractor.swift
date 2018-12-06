@@ -50,10 +50,13 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions.insert(.withFractionalSeconds)
         let strDate = formatter.string(from: request.date)
-        let action = API.Action.createCheckListFromTemplate(requisit: request.requisites, title: request.title, date: strDate)
+        let action = API.Action.createCheckListFromTemplate(requisit: request.model.requisits!,
+                                                            title: request.model.name!,
+                                                            date: strDate)
+        
         api.createCheckListFromTemplate(action: action) { [weak self] (result) in
             switch result {
-            case .Success:
+            case .Success(let id):
                 let req = CheckLists.Something.Request()
                 self?.getMyCheckLists(request: req)
             case .Failure(let error):

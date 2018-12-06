@@ -116,7 +116,7 @@ class CheckListsViewController: UIViewController, CheckListsDisplayLogic
         templateController.selectHandler = { [weak self] template in
             self?.getDate() { [weak self] date in
                 self?.navigationController?.popViewController(animated: true)
-                let request = CheckLists.CreateCheckList.Request(title: template.name!, requisites: template.requisits!, date: date)
+                let request = CheckLists.CreateCheckList.Request(model: template, date: date)
                 self?.interactor?.createNewCheckList(request: request)
             }
         }

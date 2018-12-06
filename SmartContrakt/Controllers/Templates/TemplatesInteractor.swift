@@ -36,7 +36,22 @@ class TemplatesInteractor: TemplatesBusinessLogic, TemplatesDataStore
             serverWorker?.getTemplates(action: API.Action.getTemplates, cb: { [weak self] (result) in
             switch result {
             case .Success(let newLocalTemplates):
-                self?.present(templates: newLocalTemplates)
+                
+                let gr = DispatchGroup()
+                newLocalTemplates.forEach({ (checkListTemplate) in
+                    gr.enter()
+                    self?.getRequirementsTemplate(checklistId: checkListTemplate.id!, cb: { (requirTemps) in
+                        if let requirTemps = requirTemps {
+                            checkListTemplate.addRequirementTemplates(data: requirTemps)
+                        }
+                        gr.leave()
+                    })
+                })
+                
+                gr.notify(queue: .main, execute: { [weak self] in
+                    self?.present(templates: newLocalTemplates)
+                })
+                
             case .Failure(let error):
                 switch error {
                 case .NoNetwork:
@@ -51,6 +66,18 @@ class TemplatesInteractor: TemplatesBusinessLogic, TemplatesDataStore
         }
     }
     
+    
+    func getRequirementsTemplate(checklistId: String, cb: @escaping ([RequirementTemplate]?) -> ()) {
+        api.getTemplateRequirementsFor(action: API.Action.getTemplateRequirementsFor(templateCheckListId: checklistId)) { (result) in
+            switch result {
+            case .Success(let requirTemplates):
+                cb(requirTemplates)
+            case .Failure(let error):
+                presentAlert(title: "Ошибка", text: error.localizedDescription)
+                cb(nil)
+            }
+        }
+    }
     
     func presentLocalTemplates() {
         present(templates: localWorker.getTemplates())

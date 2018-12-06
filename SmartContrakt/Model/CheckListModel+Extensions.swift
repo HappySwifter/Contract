@@ -32,7 +32,7 @@ extension CheckListModel {
                     object.id = id
                 }
                 object.name = xml["a:TITLE"].element!.text
-                object.requests = xml["a:REQUISITES"].element!.text
+                object.requisits = xml["a:REQUISITES"].element!.text
                 objects.append(object)
             } else {
                 Log("ID is empty", type: .warning)

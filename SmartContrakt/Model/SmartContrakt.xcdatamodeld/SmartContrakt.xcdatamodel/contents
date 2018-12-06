@@ -3,11 +3,19 @@
     <entity name="CheckListModel" representedClassName="CheckListModel" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="requests" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requisits" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trebovaniya" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="RequirementTemplate" representedClassName="RequirementTemplate" syncable="YES" codeGenerationType="class">
+        <attribute name="checkListId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="checkListTemplate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TemplateModel" inverseName="requirementTemplates" inverseEntity="TemplateModel" syncable="YES"/>
     </entity>
     <entity name="TemplateModel" representedClassName="TemplateModel" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="requisits" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="requirementTemplates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RequirementTemplate" inverseName="checkListTemplate" inverseEntity="RequirementTemplate" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="doljnost" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,8 +30,9 @@
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TemplateModel" positionX="-45" positionY="54" width="128" height="75"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="195"/>
-        <element name="CheckListModel" positionX="-45" positionY="54" width="128" height="90"/>
+        <element name="CheckListModel" positionX="104.76171875" positionY="-285.94140625" width="128" height="103"/>
+        <element name="TemplateModel" positionX="191.44140625" positionY="39.13671875" width="128" height="103"/>
+        <element name="User" positionX="-89.6875" positionY="-249.29296875" width="128" height="195"/>
+        <element name="RequirementTemplate" positionX="8.734375" positionY="40" width="128" height="88"/>
     </elements>
 </model>

@@ -86,20 +86,14 @@ class TemplatesViewController: UIViewController, TemplatesDisplayLogic
     }
     
     func getObjects() {
-        api.getTemplates(action: API.Action.getTemplates) { [weak self] (result) in
-            switch result {
-            case .Success(let objs):
-                self?.objects = objs
-            case .Failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        let req = Templates.Something.Request()
+        interactor?.getTemplates(request: req)
     }
   
 
   func displaySomething(viewModel: Templates.Something.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+        objects = viewModel.templates
   }
 }
 
@@ -112,7 +106,8 @@ extension TemplatesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let obj = objects[indexPath.row]
-        cell.textLabel?.text = obj.name
+        let count = obj.requirementTemplates?.count ?? 0
+        cell.textLabel?.text = "\(count): " + obj.name!
         cell.textLabel?.numberOfLines = 0
         cell.detailTextLabel?.text = obj.requisits
         cell.detailTextLabel?.numberOfLines = 0

@@ -19,8 +19,7 @@ enum CheckLists
     
     enum CreateCheckList {
         struct Request {
-            let title: String
-            let requisites: String
+            let model: TemplateModel
             let date: Date
         }
         

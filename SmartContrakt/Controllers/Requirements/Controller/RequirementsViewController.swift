@@ -84,17 +84,6 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
         lay.minimumInteritemSpacing = edgeInset * 2
         lay.minimumLineSpacing = edgeInset * 2
         
-        let action = API.Action.getTemplateRequirementsFor(checkListId: object.id!)
-        api.getTemplateRequirementsFor(action: action) { (result) in
-            switch result {
-            case .Success(let requirements):
-                break
-            //                self?.checkListItems = objs
-            case .Failure(let error):
-                presentAlert(title: "Ошибка", text: error.localizedDescription)
-            }
-        }
-        
     }
     
     func configureBottomView() {
