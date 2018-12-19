@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_SmartContraktVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_SmartContraktVersionString[];
+FOUNDATION_EXPORT double Pods_ContractVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ContractVersionString[];
 

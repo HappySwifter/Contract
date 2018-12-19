@@ -49,7 +49,6 @@
 		02A4D0A621A9740400427491 /* SmartContrakt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */; };
 		02A4D0A821A9740700427491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A721A9740700427491 /* Assets.xcassets */; };
 		02A4D0AB21A9740700427491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A4D0A921A9740700427491 /* LaunchScreen.storyboard */; };
-		02A4D0B621A9740700427491 /* SmartContraktUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0B521A9740700427491 /* SmartContraktUITests.swift */; };
 		02A4D0C421A9D2A100427491 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C321A9D2A100427491 /* API.swift */; };
 		02A4D0C621AA025300427491 /* User+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C521AA025300427491 /* User+Extensions.swift */; };
 		02A4D0C921AA045600427491 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0C821AA045600427491 /* Log.swift */; };
@@ -62,18 +61,8 @@
 		02FE0BB321B6BD6B007624E4 /* RequirementsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE0BAD21B6BD6B007624E4 /* RequirementsModels.swift */; };
 		02FE0BB421B6BD6B007624E4 /* RequirementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE0BAE21B6BD6B007624E4 /* RequirementsViewController.swift */; };
 		02FE0BB521B6BD6B007624E4 /* RequirementsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE0BAF21B6BD6B007624E4 /* RequirementsInteractor.swift */; };
-		85E45CE300FEECA73434C5FE /* Pods_SmartContrakt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */; };
+		4D9B9A1B45D35C9BD1351D19 /* Pods_Contract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79ACF3FFBBCC76B2AE06EF6 /* Pods_Contract.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		02A4D0B221A9740700427491 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 02A4D09221A9740400427491 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 02A4D09921A9740400427491;
-			remoteInfo = SmartContrakt;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		020C924421B30A0100135A65 /* Requirements+CollectionV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requirements+CollectionV.swift"; sourceTree = "<group>"; };
@@ -112,7 +101,7 @@
 		029899AA21B575F600DEEC3B /* TemplatesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesInteractor.swift; sourceTree = "<group>"; };
 		029899B321B580C400DEEC3B /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		029899B521B583AF00DEEC3B /* WorkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkMode.swift; sourceTree = "<group>"; };
-		02A4D09A21A9740400427491 /* SmartContrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartContrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A4D09A21A9740400427491 /* Contract.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contract.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A4D09D21A9740400427491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02A4D09F21A9740400427491 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02A4D0A221A9740400427491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -120,9 +109,6 @@
 		02A4D0A721A9740700427491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02A4D0AA21A9740700427491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A4D0AC21A9740700427491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02A4D0B121A9740700427491 /* SmartContraktUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartContraktUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02A4D0B521A9740700427491 /* SmartContraktUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContraktUITests.swift; sourceTree = "<group>"; };
-		02A4D0B721A9740700427491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A4D0C321A9D2A100427491 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		02A4D0C521AA025300427491 /* User+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Extensions.swift"; sourceTree = "<group>"; };
 		02A4D0C821AA045600427491 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -136,8 +122,11 @@
 		02FE0BAE21B6BD6B007624E4 /* RequirementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsViewController.swift; sourceTree = "<group>"; };
 		02FE0BAF21B6BD6B007624E4 /* RequirementsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsInteractor.swift; sourceTree = "<group>"; };
 		3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartContrakt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.release.xcconfig"; sourceTree = "<group>"; };
+		58B92A85546A08EA845A9F8D /* Pods-Contract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contract.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Contract/Pods-Contract.debug.xcconfig"; sourceTree = "<group>"; };
+		B822A0A0C85C9E42B59D3D9F /* Pods-Contract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contract.release.xcconfig"; path = "Pods/Target Support Files/Pods-Contract/Pods-Contract.release.xcconfig"; sourceTree = "<group>"; };
 		C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartContrakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.debug.xcconfig"; sourceTree = "<group>"; };
 		CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartContrakt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F79ACF3FFBBCC76B2AE06EF6 /* Pods_Contract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,14 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85E45CE300FEECA73434C5FE /* Pods_SmartContrakt.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02A4D0AE21A9740700427491 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				4D9B9A1B45D35C9BD1351D19 /* Pods_Contract.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +258,9 @@
 		02A4D09121A9740400427491 = {
 			isa = PBXGroup;
 			children = (
-				02A4D09C21A9740400427491 /* SmartContrakt */,
+				02A4D09C21A9740400427491 /* Contract */,
 				02278E7A21ADCBFB00860BEC /* Helpers */,
 				02278E7B21ADCC1700860BEC /* Other */,
-				02A4D0B421A9740700427491 /* SmartContraktUITests */,
 				02A4D09B21A9740400427491 /* Products */,
 				FD6834C7D98BEC209451C6D2 /* Pods */,
 				F727CAD21E41F715348F4979 /* Frameworks */,
@@ -289,13 +270,12 @@
 		02A4D09B21A9740400427491 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02A4D09A21A9740400427491 /* SmartContrakt.app */,
-				02A4D0B121A9740700427491 /* SmartContraktUITests.xctest */,
+				02A4D09A21A9740400427491 /* Contract.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		02A4D09C21A9740400427491 /* SmartContrakt */ = {
+		02A4D09C21A9740400427491 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
 				029899B321B580C400DEEC3B /* NetworkReachability.swift */,
@@ -305,16 +285,7 @@
 				02278E6421ADA8ED00860BEC /* API */,
 				02A4D0C721AA025800427491 /* Model */,
 			);
-			path = SmartContrakt;
-			sourceTree = "<group>";
-		};
-		02A4D0B421A9740700427491 /* SmartContraktUITests */ = {
-			isa = PBXGroup;
-			children = (
-				02A4D0B521A9740700427491 /* SmartContraktUITests.swift */,
-				02A4D0B721A9740700427491 /* Info.plist */,
-			);
-			path = SmartContraktUITests;
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		02A4D0C721AA025800427491 /* Model */ = {
@@ -366,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB58064D344879E9084CE65 /* Pods_SmartContrakt.framework */,
+				F79ACF3FFBBCC76B2AE06EF6 /* Pods_Contract.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -375,6 +347,8 @@
 			children = (
 				C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */,
 				3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */,
+				58B92A85546A08EA845A9F8D /* Pods-Contract.debug.xcconfig */,
+				B822A0A0C85C9E42B59D3D9F /* Pods-Contract.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -382,9 +356,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02A4D09921A9740400427491 /* SmartContrakt */ = {
+		02A4D09921A9740400427491 /* Contract */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02A4D0BA21A9740700427491 /* Build configuration list for PBXNativeTarget "SmartContrakt" */;
+			buildConfigurationList = 02A4D0BA21A9740700427491 /* Build configuration list for PBXNativeTarget "Contract" */;
 			buildPhases = (
 				A60436608C0C0498A8F1E97A /* [CP] Check Pods Manifest.lock */,
 				02A4D09621A9740400427491 /* Sources */,
@@ -396,28 +370,10 @@
 			);
 			dependencies = (
 			);
-			name = SmartContrakt;
+			name = Contract;
 			productName = SmartContrakt;
-			productReference = 02A4D09A21A9740400427491 /* SmartContrakt.app */;
+			productReference = 02A4D09A21A9740400427491 /* Contract.app */;
 			productType = "com.apple.product-type.application";
-		};
-		02A4D0B021A9740700427491 /* SmartContraktUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02A4D0BD21A9740700427491 /* Build configuration list for PBXNativeTarget "SmartContraktUITests" */;
-			buildPhases = (
-				02A4D0AD21A9740700427491 /* Sources */,
-				02A4D0AE21A9740700427491 /* Frameworks */,
-				02A4D0AF21A9740700427491 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				02A4D0B321A9740700427491 /* PBXTargetDependency */,
-			);
-			name = SmartContraktUITests;
-			productName = SmartContraktUITests;
-			productReference = 02A4D0B121A9740700427491 /* SmartContraktUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -433,13 +389,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
 					};
-					02A4D0B021A9740700427491 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 02A4D09921A9740400427491;
-					};
 				};
 			};
-			buildConfigurationList = 02A4D09521A9740400427491 /* Build configuration list for PBXProject "SmartContrakt" */;
+			buildConfigurationList = 02A4D09521A9740400427491 /* Build configuration list for PBXProject "Contract" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -452,8 +404,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02A4D09921A9740400427491 /* SmartContrakt */,
-				02A4D0B021A9740700427491 /* SmartContraktUITests */,
+				02A4D09921A9740400427491 /* Contract */,
 			);
 		};
 /* End PBXProject section */
@@ -475,13 +426,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02A4D0AF21A9740700427491 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -496,7 +440,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SmartContrakt-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Contract-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,7 +453,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Contract/Pods-Contract-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DrawerController/DrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/RMActionController/RMActionController.framework",
 				"${BUILT_PRODUCTS_DIR}/RMDateSelectionViewController/RMDateSelectionViewController.framework",
@@ -524,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Contract/Pods-Contract-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -582,23 +526,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02A4D0AD21A9740700427491 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02A4D0B621A9740700427491 /* SmartContraktUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		02A4D0B321A9740700427491 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 02A4D09921A9740400427491 /* SmartContrakt */;
-			targetProxy = 02A4D0B221A9740700427491 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		02A4D0A121A9740400427491 /* LoginViewController.storyboard */ = {
@@ -736,7 +664,7 @@
 		};
 		02A4D0BB21A9740700427491 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C436691698728363EE44C2FF /* Pods-SmartContrakt.debug.xcconfig */;
+			baseConfigurationReference = 58B92A85546A08EA845A9F8D /* Pods-Contract.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -747,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContrakt;
+				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.contract;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -758,7 +686,7 @@
 		};
 		02A4D0BC21A9740700427491 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A10DBCC6365315DF82C35AB /* Pods-SmartContrakt.release.xcconfig */;
+			baseConfigurationReference = B822A0A0C85C9E42B59D3D9F /* Pods-Contract.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -769,7 +697,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContrakt;
+				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.contract;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
@@ -777,50 +705,10 @@
 			};
 			name = Release;
 		};
-		02A4D0BE21A9740700427491 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98P29UBAY6;
-				INFOPLIST_FILE = SmartContraktUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContraktUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SmartContrakt;
-			};
-			name = Debug;
-		};
-		02A4D0BF21A9740700427491 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98P29UBAY6;
-				INFOPLIST_FILE = SmartContraktUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = artemvaliev.SmartContraktUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SmartContrakt;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02A4D09521A9740400427491 /* Build configuration list for PBXProject "SmartContrakt" */ = {
+		02A4D09521A9740400427491 /* Build configuration list for PBXProject "Contract" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02A4D0B821A9740700427491 /* Debug */,
@@ -829,20 +717,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02A4D0BA21A9740700427491 /* Build configuration list for PBXNativeTarget "SmartContrakt" */ = {
+		02A4D0BA21A9740700427491 /* Build configuration list for PBXNativeTarget "Contract" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02A4D0BB21A9740700427491 /* Debug */,
 				02A4D0BC21A9740700427491 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		02A4D0BD21A9740700427491 /* Build configuration list for PBXNativeTarget "SmartContraktUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02A4D0BE21A9740700427491 /* Debug */,
-				02A4D0BF21A9740700427491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,6 @@
+framework module Pods_Contract {
+  umbrella header "Pods-Contract-umbrella.h"
+
+  export *
+  module * { export * }
+}

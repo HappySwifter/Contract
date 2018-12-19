@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDFC9DD2DC100A29DA51516D39FEFF22"
-               BuildableName = "Pods_SmartContrakt.framework"
-               BlueprintName = "Pods-SmartContrakt"
+               BlueprintIdentifier = "0087091906CAEA938348F627EA7AA4AD"
+               BuildableName = "Pods_Contract.framework"
+               BlueprintName = "Pods-Contract"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EDFC9DD2DC100A29DA51516D39FEFF22"
-            BuildableName = "Pods_SmartContrakt.framework"
-            BlueprintName = "Pods-SmartContrakt"
+            BlueprintIdentifier = "0087091906CAEA938348F627EA7AA4AD"
+            BuildableName = "Pods_Contract.framework"
+            BlueprintName = "Pods-Contract"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

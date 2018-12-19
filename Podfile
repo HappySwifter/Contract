@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'SmartContrakt' do
+target 'Contract' do
   use_frameworks!
 
   pod 'SWXMLHash', '~> 4.7.0'

@@ -7,90 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05CE01BE4C698AF41170A860768C457E /* RMActionControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EE3C9C2B4E383166B5F52E52646B5 /* RMActionControllerTransition.m */; };
-		067DDD8CBD0194A2DB1546D16A284761 /* Pods-SmartContrakt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1E9C046D59E4CD158B83E77F0A57A8 /* Pods-SmartContrakt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09A1A037453B5222B8119743260C37FD /* RMActionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D6A73B67E65BCDB202A2293DCD9B4C /* RMActionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DA4D9A1964E0865269306A0488B1816 /* RMDateSelectionViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A856A6500C6B50F27CF84A0450C60E /* RMDateSelectionViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F1E66B22D6EB46268C3FC270204ACD2 /* RMGroupedAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 094B479E268E90C3882104519A3535C7 /* RMGroupedAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		267A4DF6B1917D047BFE7EE8B27D67CF /* RMGroupedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA5F946C4C458A439DFA398586D4DC /* RMGroupedAction.m */; };
-		2B02E187F416F0C55AD68649FE4EE53E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
-		33C268262EF453039AFFBE54E9B5037B /* RMDateSelectionViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCB4F117A9E0168FF627212CED43FE /* RMDateSelectionViewController-dummy.m */; };
-		3948327813C20C894488EFDA4D643645 /* SWXMLHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C732283FB552C3A25C674351274F28E9 /* SWXMLHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11BDD320234C8E57AEA35B3022ABDDC2 /* RMActionController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6DCB518E287483850F7ECBB92A3EF /* RMActionController-dummy.m */; };
+		189672F6E9FFCE4027FBA0BFCFC0DB19 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14391DE5D57AD6D9D48292AAE060E /* SWXMLHash+TypeConversion.swift */; };
+		1A24044E426A59E87833E8132941CC00 /* NSProcessInfo+RMActionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 275F4A76967850E7F78B5BDAE53702B9 /* NSProcessInfo+RMActionController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1DF053B6AF1346611674DC440A233B67 /* RMImageAction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1D09C55C3DF79C42B5F0F4D9898CE3 /* RMImageAction.m */; };
+		20CF56B7A118992BCBF428935A48A964 /* RMGroupedAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 094B479E268E90C3882104519A3535C7 /* RMGroupedAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29616E7816E5F38DC9280316B6C92825 /* Pods-Contract-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C17E84B7ACAA861E57475727750F426D /* Pods-Contract-dummy.m */; };
+		35980B046D7C40CE06F22F6601FBBAAC /* RMActionController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC391297E6CFB5EFE115B098CF436757 /* RMActionController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CD8E8DC05657E3DDCF0CCB0B0E94230 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5570612E4744517DDAF0AC8798CCD80 /* QuartzCore.framework */; };
 		4244CFA8390C04372A45E14B11A3764D /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A07771020B2EBED4057DCC42C4DB8 /* DrawerController.swift */; };
 		4558870E67BCAF8BBCF08B8CD456F130 /* DrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCED904710C70D0A6F13E2B6E0406B /* DrawerController-dummy.m */; };
-		47B01588C66D6C575AFE7C84DBC250C6 /* RMAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 80CFCFAFA667BC27FC48F76A04B52E44 /* RMAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BE68CAA1FFC2F1B35F24940A9D20E57 /* SWXMLHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 979974CE339B2CF35D9E112D967E2F81 /* SWXMLHash-dummy.m */; };
-		4DAC128F58D59C44F8D83EF64343CE66 /* NSProcessInfo+RMActionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 275F4A76967850E7F78B5BDAE53702B9 /* NSProcessInfo+RMActionController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		46FA10F91A1CC92992E3215C8344C447 /* RMGroupedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA5F946C4C458A439DFA398586D4DC /* RMGroupedAction.m */; };
+		487AD3DC0F0DA4F3200A2BF7BF5532F3 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22032835962FD4DE05A163DD1716A603 /* SWXMLHash.swift */; };
+		4E0E901B85C089D4C932C9433849682E /* RMScrollableGroupedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FFECAC25AF0D1743C008E0804AF1F5B1 /* RMScrollableGroupedAction.m */; };
+		52864F2B0EB7D120FB5453818C884639 /* UIView+RMActionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EDAE30E3D8EF7F81DC332B71451BA1 /* UIView+RMActionController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		55B54AD4C6AE46CD32C406B9EC93EB5C /* RMActionController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CE3B4DBB97C0416518A4059D99AB1C4B /* RMActionController+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5912AC24627F531EF067199C5B63759C /* UIView+RMActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47C15DB5AD6818E3784506A1D2615A /* UIView+RMActionController.m */; };
+		595482C9B5F5FCA071789A9522869DDE /* shim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB96666B8DC55EE09ED4E78895A8D59 /* shim.swift */; };
 		5B2D3DABE5111567759377953C11FD65 /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA280295A459A16D4EF0A3970CB3497 /* DrawerVisualState.swift */; };
-		5C6B4E1F517CB67A78C756AB800F0E5C /* NSProcessInfo+RMActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F138DB60D9BF089C3401BA1350C8D77B /* NSProcessInfo+RMActionController.m */; };
 		5CC8D75027554580E9E68F55B2DD05CE /* DrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66132A1DCE28CA0E8DD54633D2A159EB /* DrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F61ADC2E2395DF79D7E51B0A3AAE121 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
 		619D435A7C10A78F4A0978643A3F5B64 /* DrawerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21B91B6560A18A4BA19C61EDC8FE55 /* DrawerSegue.swift */; };
-		6649C0676C052D9080EBB3A4C8747E06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
+		6238F85F148278A724DBDB9D06B2EE21 /* SWXMLHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 979974CE339B2CF35D9E112D967E2F81 /* SWXMLHash-dummy.m */; };
 		699E723A8830D51DC36DC1A0592FB0F7 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DB80593C13DAAD48C0492AC6F26287 /* AnimatedMenuButton.swift */; };
-		6E443D4D56607D945E404E5FC711E2A5 /* RMAction+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 9500B03FE310F69313402C8C6B688CEA /* RMAction+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		70757D8BD603627641F49A5E34C97D61 /* UIView+RMActionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EDAE30E3D8EF7F81DC332B71451BA1 /* UIView+RMActionController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7428A0AA643CD9953B42B8495D52C5DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5570612E4744517DDAF0AC8798CCD80 /* QuartzCore.framework */; };
-		7CF7F554D114FB5595EED8C0C066C759 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066159A7840FFC908F15356EF3EEC884 /* CoreGraphics.framework */; };
-		840887367816C157DAD2F1E65C09E7FF /* RMScrollableGroupedAction.h in Headers */ = {isa = PBXBuildFile; fileRef = F3579F77E9317D64C893383272620885 /* RMScrollableGroupedAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D13AE1E0F8F8E13CED39F9F3D787315 /* RMActionController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D5DEB124ADFBE9D606C695F4803C78 /* RMActionController.framework */; };
-		8DA25DE00ED4DDB18B078551889599DA /* RMScrollableGroupedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FFECAC25AF0D1743C008E0804AF1F5B1 /* RMScrollableGroupedAction.m */; };
-		91357A73807D398F5EF3FA372DCBEBEA /* RMActionController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6DCB518E287483850F7ECBB92A3EF /* RMActionController-dummy.m */; };
-		955B2E4AA510CC5D601688719B80708A /* RMActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D22FE7104D8DF63F98B2F9F71ADD8 /* RMActionController.m */; };
-		98C06FCA01E2419CC3D89C2A3DD83542 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22032835962FD4DE05A163DD1716A603 /* SWXMLHash.swift */; };
-		98DF858E70417EAD9FE4F925D4AED7F9 /* RMActionController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CE3B4DBB97C0416518A4059D99AB1C4B /* RMActionController+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A01653D857032746DE8FFC7C98665FBE /* RMDateSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5346CFA06237D4DD2A9441C147216829 /* RMDateSelectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DE9FF5BF1863F4BC4BA39876D6E98E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
+		759FFF8FD85A8480D864C61665D45BA2 /* Pods-Contract-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE1BCD16A762689D76F6623C5069E02 /* Pods-Contract-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B050FA652C4FD240693E5EF8348FAEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
+		7B6C8DA0FD52BF15597C4F983FE04B90 /* RMScrollableGroupedAction.h in Headers */ = {isa = PBXBuildFile; fileRef = F3579F77E9317D64C893383272620885 /* RMScrollableGroupedAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F10744672514E7125B43A8CBC2819F9 /* RMActionController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D5DEB124ADFBE9D606C695F4803C78 /* RMActionController.framework */; };
+		834FEE3AF39D52C6D8B4ABC78FED06F1 /* SWXMLHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C732283FB552C3A25C674351274F28E9 /* SWXMLHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8357B2E95821BFCAA7963C365201C54B /* RMImageAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B62D96DD909AF796EDA39437E2F82B0 /* RMImageAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		860E83665813185639ACF8B04B7DD9E1 /* RMActionControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EE3C9C2B4E383166B5F52E52646B5 /* RMActionControllerTransition.m */; };
+		99CDECB9B7FA72ED7A4B5CECEA8E6DF2 /* RMAction+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 9500B03FE310F69313402C8C6B688CEA /* RMAction+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9C766109B31D00850ADDD0B1E710F0A8 /* RMDateSelectionViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCB4F117A9E0168FF627212CED43FE /* RMDateSelectionViewController-dummy.m */; };
 		A354EC7949D17161DDC7FEB7C90C4C6B /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA82E21118651580FC5A167FAF28D /* DrawerBarButtonItem.swift */; };
-		A684E535C28B1D34C144542693FF0F61 /* UIView+RMActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47C15DB5AD6818E3784506A1D2615A /* UIView+RMActionController.m */; };
-		B70F29189EF73821A93ACA0DF5C5810A /* shim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB96666B8DC55EE09ED4E78895A8D59 /* shim.swift */; };
-		BA688FE01A81EFA2BEDCC4109115C850 /* RMImageAction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1D09C55C3DF79C42B5F0F4D9898CE3 /* RMImageAction.m */; };
-		C9A325A58D6ACACF2BCAB75089F2E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
-		CC46E747904E64C0631BD911D1780588 /* Pods-SmartContrakt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B216714B1E077705F19F9A797DFA1EC /* Pods-SmartContrakt-dummy.m */; };
-		CE67A1BCCE2CBAAE5B0BECABBC8A9326 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B14391DE5D57AD6D9D48292AAE060E /* SWXMLHash+TypeConversion.swift */; };
-		CF0A942988A7E06BBBD3E8B4A5D7F95C /* RMAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A13CA086081142EA930202BEF7EFEA /* RMAction.m */; };
-		D1E5041B89F3FDA945F921A4E874759C /* RMImageAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B62D96DD909AF796EDA39437E2F82B0 /* RMImageAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD501B4C7F653524D3803071AB0E83B4 /* RMActionController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC391297E6CFB5EFE115B098CF436757 /* RMActionController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A0D599B8958A26ADAFD778C40A3BFF /* RMAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 80CFCFAFA667BC27FC48F76A04B52E44 /* RMAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B50E836D71B322C65CA898B8664664F5 /* RMActionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D6A73B67E65BCDB202A2293DCD9B4C /* RMActionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B61A30B996EDEA3D7EE6F6E67586140A /* RMActionControllerTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = E2639B584A375598092CEA7FF9DA67D3 /* RMActionControllerTransition.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C4619CBCE10A08D0D91D9E86307238A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5570612E4744517DDAF0AC8798CCD80 /* QuartzCore.framework */; };
+		C60278F82153DA9368B932F8BD071EDE /* RMDateSelectionViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A856A6500C6B50F27CF84A0450C60E /* RMDateSelectionViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF6DBCB0AD85516F84B41C32D6255F40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
+		D42CE13E47F7962611BA7381F8620D04 /* RMActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D22FE7104D8DF63F98B2F9F71ADD8 /* RMActionController.m */; };
+		DA346774A0592F230A2B8B3331B72491 /* RMAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A13CA086081142EA930202BEF7EFEA /* RMAction.m */; };
 		E694C8874A34041E65A11AFF6865E33B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
-		EB5773FF8541B842EBA5F0C9F9ADEF7B /* RMActionControllerTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = E2639B584A375598092CEA7FF9DA67D3 /* RMActionControllerTransition.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F6AC8A4A0C298902F0BF1DE2F5CBC018 /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B536DE71EEB2C6889C0645D09224AE98 /* RMDateSelectionViewController.m */; };
-		F76E02CF9FE20209745EBD1A32690DEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */; };
+		E8F3BF76AB61164A3247A60BB17AF118 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066159A7840FFC908F15356EF3EEC884 /* CoreGraphics.framework */; };
+		EF1109F01061281CE363829FA326EFAF /* NSProcessInfo+RMActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F138DB60D9BF089C3401BA1350C8D77B /* NSProcessInfo+RMActionController.m */; };
+		F3BA6A3096BDC43295AFD184323E9121 /* RMDateSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5346CFA06237D4DD2A9441C147216829 /* RMDateSelectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5C458E829DE9454C893AAF6ED7AA82C /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B536DE71EEB2C6889C0645D09224AE98 /* RMDateSelectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B8D147CD7A74F81DB9DA95431AAA71B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E3760E72B17C4D4A388AC5127CB1089F;
-			remoteInfo = SWXMLHash;
-		};
-		628F4766DE728B06C32C37F679DEBEBE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 54304EA9C80B973B296BEC5AE5979E28;
-			remoteInfo = RMDateSelectionViewController;
-		};
-		6DB8F69E4E52B3DEED6EB31AE5EE47F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0EEDACB92090C7971B13BD3BA1F24E85;
-			remoteInfo = RMActionController;
-		};
-		EB0BE53E65CCFF0CB64D883DBE9B24F0 /* PBXContainerItemProxy */ = {
+		1D33E73FA98106F633BA92B29B79D164 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 07CF70CCFBB375C487780FBB9148FDE3;
 			remoteInfo = DrawerController;
 		};
-		F593F79E6D1EFD10DA8A648725CEF0BC /* PBXContainerItemProxy */ = {
+		45A501B47F453AE30925349F836EFF04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0EEDACB92090C7971B13BD3BA1F24E85;
+			remoteGlobalIDString = 0577215224A6BE07F60F0DD83A567301;
+			remoteInfo = RMDateSelectionViewController;
+		};
+		733D17DF7321CC796B4235C2C990F7F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A26084EE0DEA46DFFC70E1E62B43714;
 			remoteInfo = RMActionController;
+		};
+		D51F122C8FFAD2E3127EAB24ABFF9835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A26084EE0DEA46DFFC70E1E62B43714;
+			remoteInfo = RMActionController;
+		};
+		F17A723891B0096AFAEB98A0C2AFBD34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A6B6B466AF97904024ADF4E7029318A;
+			remoteInfo = SWXMLHash;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -98,7 +98,6 @@
 		066159A7840FFC908F15356EF3EEC884 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		094B479E268E90C3882104519A3535C7 /* RMGroupedAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMGroupedAction.h; path = "RMActionController/Grouping Actions/RMGroupedAction.h"; sourceTree = "<group>"; };
 		0A1EE3C9C2B4E383166B5F52E52646B5 /* RMActionControllerTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMActionControllerTransition.m; path = RMActionController/Animations/RMActionControllerTransition.m; sourceTree = "<group>"; };
-		0B216714B1E077705F19F9A797DFA1EC /* Pods-SmartContrakt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SmartContrakt-dummy.m"; sourceTree = "<group>"; };
 		12CCB4F117A9E0168FF627212CED43FE /* RMDateSelectionViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RMDateSelectionViewController-dummy.m"; sourceTree = "<group>"; };
 		13D128BBB1D909DDA29E0782815B7DED /* RMDateSelectionViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RMDateSelectionViewController.modulemap; sourceTree = "<group>"; };
 		143A07771020B2EBED4057DCC42C4DB8 /* DrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerController.swift; path = DrawerController/DrawerController.swift; sourceTree = "<group>"; };
@@ -108,13 +107,12 @@
 		22EDAE30E3D8EF7F81DC332B71451BA1 /* UIView+RMActionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+RMActionController.h"; path = "RMActionController/Categories/UIView+RMActionController.h"; sourceTree = "<group>"; };
 		23308D35F96DC751C4114CE477B0598E /* DrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DrawerController.modulemap; sourceTree = "<group>"; };
 		275F4A76967850E7F78B5BDAE53702B9 /* NSProcessInfo+RMActionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSProcessInfo+RMActionController.h"; path = "RMActionController/Categories/NSProcessInfo+RMActionController.h"; sourceTree = "<group>"; };
+		384A8612BB0D0266D5664D2091439901 /* Pods-Contract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Contract.release.xcconfig"; sourceTree = "<group>"; };
 		401B11C88348243C45F38D02AB42A076 /* DrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DrawerController.xcconfig; sourceTree = "<group>"; };
 		47A1E18DFC515B80FA62088E51A5EA11 /* RMDateSelectionViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RMDateSelectionViewController.xcconfig; sourceTree = "<group>"; };
-		4924F528B74AE3DE88EB8FB18AD6826A /* Pods-SmartContrakt-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmartContrakt-frameworks.sh"; sourceTree = "<group>"; };
-		4DA75DA1BBE0261AE3C65D53558C8CBE /* Pods-SmartContrakt-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmartContrakt-resources.sh"; sourceTree = "<group>"; };
+		51B9863599ABD477199BE60A540AADCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528F9D4D764CD21F6ECD7B2AAD0D454C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5346CFA06237D4DD2A9441C147216829 /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMDateSelectionViewController.h; path = RMDateSelectionViewController/RMDateSelectionViewController.h; sourceTree = "<group>"; };
-		54DCCD9CD8024509FFE2D6BC688E353C /* Pods-SmartContrakt-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartContrakt-acknowledgements.plist"; sourceTree = "<group>"; };
 		57ED6A904C62E9FBD358F477ABE22D96 /* RMDateSelectionViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RMDateSelectionViewController-prefix.pch"; sourceTree = "<group>"; };
 		58A13CA086081142EA930202BEF7EFEA /* RMAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMAction.m; path = RMActionController/Actions/RMAction.m; sourceTree = "<group>"; };
 		5B62D96DD909AF796EDA39437E2F82B0 /* RMImageAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMImageAction.h; path = RMActionController/Actions/RMImageAction.h; sourceTree = "<group>"; };
@@ -123,18 +121,15 @@
 		6A4B7E0938AEFE73C214C67AC119C6A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6C21B91B6560A18A4BA19C61EDC8FE55 /* DrawerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerSegue.swift; path = DrawerController/DrawerSegue.swift; sourceTree = "<group>"; };
 		6FF2FCD6ED1C0AF5C9D221D2D4F6873B /* SWXMLHash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWXMLHash-prefix.pch"; sourceTree = "<group>"; };
-		792F4EA5FD99152A0DD6EB1A76036986 /* Pods-SmartContrakt-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SmartContrakt-acknowledgements.markdown"; sourceTree = "<group>"; };
 		79D6A73B67E65BCDB202A2293DCD9B4C /* RMActionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMActionController.h; path = RMActionController/RMActionController.h; sourceTree = "<group>"; };
-		7D267AE30DF792C34B6ED71533C571A2 /* RMActionController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RMActionController.framework; path = RMActionController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E33B64DAF74EDBE5347770C3573A9FD /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWXMLHash.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEFE8B61532B549A9A3A6C1404A389B /* Pods-Contract-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Contract-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7EB35311B37597E899F5C8FC1494F927 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FBCED904710C70D0A6F13E2B6E0406B /* DrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DrawerController-dummy.m"; sourceTree = "<group>"; };
 		80CFCFAFA667BC27FC48F76A04B52E44 /* RMAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMAction.h; path = RMActionController/Actions/RMAction.h; sourceTree = "<group>"; };
 		84D54CE83999929B14F790D6F3A40FD1 /* RMActionController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RMActionController.xcconfig; sourceTree = "<group>"; };
 		85D5DEB124ADFBE9D606C695F4803C78 /* RMActionController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMActionController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DB80593C13DAAD48C0492AC6F26287 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedMenuButton.swift; path = DrawerController/AnimatedMenuButton.swift; sourceTree = "<group>"; };
-		8A9DC99BCB6A065867F776839EA59945 /* Pods_SmartContrakt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SmartContrakt.framework; path = "Pods-SmartContrakt.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E1E9C046D59E4CD158B83E77F0A57A8 /* Pods-SmartContrakt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SmartContrakt-umbrella.h"; sourceTree = "<group>"; };
+		8CBBA4B3ECD4915F02506C2C7D59CF83 /* DrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DrawerController.framework; path = DrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F35DA153BE341F67C66777328F22801 /* SWXMLHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SWXMLHash.modulemap; sourceTree = "<group>"; };
 		8FA280295A459A16D4EF0A3970CB3497 /* DrawerVisualState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerVisualState.swift; path = DrawerController/DrawerVisualState.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -143,38 +138,53 @@
 		9A51AAD70D972FCDEA27A13FFA358191 /* RMActionController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RMActionController.modulemap; sourceTree = "<group>"; };
 		9AD68BC7D7F742A336349E03977BA160 /* RMActionController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RMActionController-prefix.pch"; sourceTree = "<group>"; };
 		9B7BA82E21118651580FC5A167FAF28D /* DrawerBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerBarButtonItem.swift; path = DrawerController/DrawerBarButtonItem.swift; sourceTree = "<group>"; };
+		9BAE7388464C24498CAF46ED3FC04EA2 /* Pods-Contract-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Contract-resources.sh"; sourceTree = "<group>"; };
+		9FC8A178B51673D8B159095D763F170D /* Pods-Contract-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Contract-acknowledgements.plist"; sourceTree = "<group>"; };
+		A53D77A138292E0EC32FBD15CBD6206E /* Pods-Contract.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Contract.modulemap"; sourceTree = "<group>"; };
 		A7A6DCB518E287483850F7ECBB92A3EF /* RMActionController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RMActionController-dummy.m"; sourceTree = "<group>"; };
+		A828F7F531CBD88FA1CA7B96466113E3 /* Pods-Contract-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Contract-frameworks.sh"; sourceTree = "<group>"; };
 		AE1D09C55C3DF79C42B5F0F4D9898CE3 /* RMImageAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMImageAction.m; path = RMActionController/Actions/RMImageAction.m; sourceTree = "<group>"; };
 		B0B14391DE5D57AD6D9D48292AAE060E /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SWXMLHash+TypeConversion.swift"; path = "Source/SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
-		B2181B9D7F23EA6FCED5CA46E151AF6F /* RMDateSelectionViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RMDateSelectionViewController.framework; path = RMDateSelectionViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26FE8551716D2D7D96D72DF7B233A63 /* SWXMLHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWXMLHash.xcconfig; sourceTree = "<group>"; };
 		B536DE71EEB2C6889C0645D09224AE98 /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMDateSelectionViewController.m; path = RMDateSelectionViewController/RMDateSelectionViewController.m; sourceTree = "<group>"; };
-		C4C7393EA42A2E25F24A54C5B76FADF9 /* DrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DrawerController.framework; path = DrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17E84B7ACAA861E57475727750F426D /* Pods-Contract-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Contract-dummy.m"; sourceTree = "<group>"; };
 		C5570612E4744517DDAF0AC8798CCD80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		C732283FB552C3A25C674351274F28E9 /* SWXMLHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWXMLHash-umbrella.h"; sourceTree = "<group>"; };
-		CBFF93A742D181E262348B0BDD1E9677 /* Pods-SmartContrakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartContrakt.debug.xcconfig"; sourceTree = "<group>"; };
 		CCA683872511C3BD589D09429FAD245A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD47C15DB5AD6818E3784506A1D2615A /* UIView+RMActionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+RMActionController.m"; path = "RMActionController/Categories/UIView+RMActionController.m"; sourceTree = "<group>"; };
 		CE3B4DBB97C0416518A4059D99AB1C4B /* RMActionController+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RMActionController+Private.h"; path = "RMActionController/Private/RMActionController+Private.h"; sourceTree = "<group>"; };
-		D5E4A7F27BEB63E2871EABC0BE913663 /* Pods-SmartContrakt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SmartContrakt.modulemap"; sourceTree = "<group>"; };
+		D2C51DB05B745B86D1C51300E7B6C57B /* RMDateSelectionViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RMDateSelectionViewController.framework; path = RMDateSelectionViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D36029D3F703F12DC064FFDFC79C377C /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWXMLHash.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE1BCD16A762689D76F6623C5069E02 /* Pods-Contract-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Contract-umbrella.h"; sourceTree = "<group>"; };
 		DEAECAFB31DB7A07D79010F09DEF6354 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0EBE45F22F89F9481E3DB37B0E75DF0 /* RMActionController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RMActionController.framework; path = RMActionController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2639B584A375598092CEA7FF9DA67D3 /* RMActionControllerTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMActionControllerTransition.h; path = RMActionController/Animations/RMActionControllerTransition.h; sourceTree = "<group>"; };
 		E33A18BCDECF2E1B7816D5CB96202DD7 /* DrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DrawerController-prefix.pch"; sourceTree = "<group>"; };
-		E9847F776A19FDFAD6E69F428D3616B9 /* Pods-SmartContrakt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartContrakt.release.xcconfig"; sourceTree = "<group>"; };
 		EABA5F946C4C458A439DFA398586D4DC /* RMGroupedAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMGroupedAction.m; path = "RMActionController/Grouping Actions/RMGroupedAction.m"; sourceTree = "<group>"; };
 		EC391297E6CFB5EFE115B098CF436757 /* RMActionController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RMActionController-umbrella.h"; sourceTree = "<group>"; };
 		F138DB60D9BF089C3401BA1350C8D77B /* NSProcessInfo+RMActionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSProcessInfo+RMActionController.m"; path = "RMActionController/Categories/NSProcessInfo+RMActionController.m"; sourceTree = "<group>"; };
-		F335D955C393E5570E97996424F25110 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3579F77E9317D64C893383272620885 /* RMScrollableGroupedAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMScrollableGroupedAction.h; path = "RMActionController/Grouping Actions/RMScrollableGroupedAction.h"; sourceTree = "<group>"; };
+		F8438A5F93013BC7A7F8FA37C7E9D81D /* Pods-Contract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Contract.debug.xcconfig"; sourceTree = "<group>"; };
+		FC720A1DE8ED90EBFC3C934C013CEA89 /* Pods_Contract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Contract.framework; path = "Pods-Contract.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFECAC25AF0D1743C008E0804AF1F5B1 /* RMScrollableGroupedAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMScrollableGroupedAction.m; path = "RMActionController/Grouping Actions/RMScrollableGroupedAction.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0C23B9D3ED7112FC7B96FC8A244606AD /* Frameworks */ = {
+		00B7FE3AEE1430ADDCDE5E26C5A05F24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76E02CF9FE20209745EBD1A32690DEF /* Foundation.framework in Frameworks */,
+				E8F3BF76AB61164A3247A60BB17AF118 /* CoreGraphics.framework in Frameworks */,
+				5F61ADC2E2395DF79D7E51B0A3AAE121 /* Foundation.framework in Frameworks */,
+				C4619CBCE10A08D0D91D9E86307238A6 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E2F910578078EED25EEFA30BBCCE341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE9FF5BF1863F4BC4BA39876D6E98E3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,30 +197,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4186F7DA520B995841797B0CAA421233 /* Frameworks */ = {
+		76709CD587B0AA7AF6B06EF3AFC30F30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B02E187F416F0C55AD68649FE4EE53E /* Foundation.framework in Frameworks */,
-				8D13AE1E0F8F8E13CED39F9F3D787315 /* RMActionController.framework in Frameworks */,
+				7B050FA652C4FD240693E5EF8348FAEC /* Foundation.framework in Frameworks */,
+				7F10744672514E7125B43A8CBC2819F9 /* RMActionController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59F91340A023DBA2EAC011E05F1F454C /* Frameworks */ = {
+		87BD253ED1AC472231C99A0803CEFEB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF7F554D114FB5595EED8C0C066C759 /* CoreGraphics.framework in Frameworks */,
-				C9A325A58D6ACACF2BCAB75089F2E26E /* Foundation.framework in Frameworks */,
-				7428A0AA643CD9953B42B8495D52C5DE /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FDDBB0A798FACDDE180332781202E2D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6649C0676C052D9080EBB3A4C8747E06 /* Foundation.framework in Frameworks */,
+				CF6DBCB0AD85516F84B41C32D6255F40 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +241,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SWXMLHash";
+			sourceTree = "<group>";
+		};
+		23FD472B1B3CEB0A28B03A21103B5920 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C123E868A1FC8130189379060AAB4544 /* Pods-Contract */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		28AD6902794665F3F3A0523F0723D35D /* DrawerController */ = {
@@ -279,21 +287,9 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				9049F92777A97F5DFBC82A4B8D5F1271 /* Frameworks */,
 				AAE9625C568D35E1DF4EBF9DFC252A10 /* Pods */,
-				7FE58AC0B22481B883BC125DA270C511 /* Products */,
-				DA35E1DA10D05C08BDD4DC5AF9E42DAB /* Targets Support Files */,
+				BE41666E0603B992AC37356045360996 /* Products */,
+				23FD472B1B3CEB0A28B03A21103B5920 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		7FE58AC0B22481B883BC125DA270C511 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C4C7393EA42A2E25F24A54C5B76FADF9 /* DrawerController.framework */,
-				8A9DC99BCB6A065867F776839EA59945 /* Pods_SmartContrakt.framework */,
-				7D267AE30DF792C34B6ED71533C571A2 /* RMActionController.framework */,
-				B2181B9D7F23EA6FCED5CA46E151AF6F /* RMDateSelectionViewController.framework */,
-				7E33B64DAF74EDBE5347770C3573A9FD /* SWXMLHash.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8140F72A87AA0E06B7F7634AA87C4C6C /* RMActionController */ = {
@@ -378,24 +374,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AF7E7F4017119C3905668659211C03DE /* Pods-SmartContrakt */ = {
-			isa = PBXGroup;
-			children = (
-				F335D955C393E5570E97996424F25110 /* Info.plist */,
-				D5E4A7F27BEB63E2871EABC0BE913663 /* Pods-SmartContrakt.modulemap */,
-				792F4EA5FD99152A0DD6EB1A76036986 /* Pods-SmartContrakt-acknowledgements.markdown */,
-				54DCCD9CD8024509FFE2D6BC688E353C /* Pods-SmartContrakt-acknowledgements.plist */,
-				0B216714B1E077705F19F9A797DFA1EC /* Pods-SmartContrakt-dummy.m */,
-				4924F528B74AE3DE88EB8FB18AD6826A /* Pods-SmartContrakt-frameworks.sh */,
-				4DA75DA1BBE0261AE3C65D53558C8CBE /* Pods-SmartContrakt-resources.sh */,
-				8E1E9C046D59E4CD158B83E77F0A57A8 /* Pods-SmartContrakt-umbrella.h */,
-				CBFF93A742D181E262348B0BDD1E9677 /* Pods-SmartContrakt.debug.xcconfig */,
-				E9847F776A19FDFAD6E69F428D3616B9 /* Pods-SmartContrakt.release.xcconfig */,
-			);
-			name = "Pods-SmartContrakt";
-			path = "Target Support Files/Pods-SmartContrakt";
-			sourceTree = "<group>";
-		};
 		B4D16E9988E05B3EB8A2657C4F0EC379 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,12 +388,34 @@
 			path = "../Target Support Files/RMDateSelectionViewController";
 			sourceTree = "<group>";
 		};
-		DA35E1DA10D05C08BDD4DC5AF9E42DAB /* Targets Support Files */ = {
+		BE41666E0603B992AC37356045360996 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF7E7F4017119C3905668659211C03DE /* Pods-SmartContrakt */,
+				8CBBA4B3ECD4915F02506C2C7D59CF83 /* DrawerController.framework */,
+				FC720A1DE8ED90EBFC3C934C013CEA89 /* Pods_Contract.framework */,
+				E0EBE45F22F89F9481E3DB37B0E75DF0 /* RMActionController.framework */,
+				D2C51DB05B745B86D1C51300E7B6C57B /* RMDateSelectionViewController.framework */,
+				D36029D3F703F12DC064FFDFC79C377C /* SWXMLHash.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C123E868A1FC8130189379060AAB4544 /* Pods-Contract */ = {
+			isa = PBXGroup;
+			children = (
+				51B9863599ABD477199BE60A540AADCE /* Info.plist */,
+				A53D77A138292E0EC32FBD15CBD6206E /* Pods-Contract.modulemap */,
+				7CEFE8B61532B549A9A3A6C1404A389B /* Pods-Contract-acknowledgements.markdown */,
+				9FC8A178B51673D8B159095D763F170D /* Pods-Contract-acknowledgements.plist */,
+				C17E84B7ACAA861E57475727750F426D /* Pods-Contract-dummy.m */,
+				A828F7F531CBD88FA1CA7B96466113E3 /* Pods-Contract-frameworks.sh */,
+				9BAE7388464C24498CAF46ED3FC04EA2 /* Pods-Contract-resources.sh */,
+				DBE1BCD16A762689D76F6623C5069E02 /* Pods-Contract-umbrella.h */,
+				F8438A5F93013BC7A7F8FA37C7E9D81D /* Pods-Contract.debug.xcconfig */,
+				384A8612BB0D0266D5664D2091439901 /* Pods-Contract.release.xcconfig */,
+			);
+			name = "Pods-Contract";
+			path = "Target Support Files/Pods-Contract";
 			sourceTree = "<group>";
 		};
 		EDC8A879EDCE910E1CCC909E02BD58FD /* Support Files */ = {
@@ -435,6 +435,31 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		10A7106B940C1FBA8194371EECD1C268 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60278F82153DA9368B932F8BD071EDE /* RMDateSelectionViewController-umbrella.h in Headers */,
+				F3BA6A3096BDC43295AFD184323E9121 /* RMDateSelectionViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4810EA7FBC748FF55C88B70BAE599AED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834FEE3AF39D52C6D8B4ABC78FED06F1 /* SWXMLHash-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8B87313179D7D38BF58366DCA33CF8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				759FFF8FD85A8480D864C61665D45BA2 /* Pods-Contract-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D8F02A69704A5FA773166D3AA84EDF5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,52 +468,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FABA65913A7664B13CE02664CC9BC35 /* Headers */ = {
+		DA023470B7CFDD11B798BB5AB7C3018C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3948327813C20C894488EFDA4D643645 /* SWXMLHash-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9E790B3EB4B53CA05B3BA0870363965 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DAC128F58D59C44F8D83EF64343CE66 /* NSProcessInfo+RMActionController.h in Headers */,
-				6E443D4D56607D945E404E5FC711E2A5 /* RMAction+Private.h in Headers */,
-				47B01588C66D6C575AFE7C84DBC250C6 /* RMAction.h in Headers */,
-				98DF858E70417EAD9FE4F925D4AED7F9 /* RMActionController+Private.h in Headers */,
-				DD501B4C7F653524D3803071AB0E83B4 /* RMActionController-umbrella.h in Headers */,
-				09A1A037453B5222B8119743260C37FD /* RMActionController.h in Headers */,
-				EB5773FF8541B842EBA5F0C9F9ADEF7B /* RMActionControllerTransition.h in Headers */,
-				0F1E66B22D6EB46268C3FC270204ACD2 /* RMGroupedAction.h in Headers */,
-				D1E5041B89F3FDA945F921A4E874759C /* RMImageAction.h in Headers */,
-				840887367816C157DAD2F1E65C09E7FF /* RMScrollableGroupedAction.h in Headers */,
-				70757D8BD603627641F49A5E34C97D61 /* UIView+RMActionController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B47057ADFE08BDE93032383C3D74EC21 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DA4D9A1964E0865269306A0488B1816 /* RMDateSelectionViewController-umbrella.h in Headers */,
-				A01653D857032746DE8FFC7C98665FBE /* RMDateSelectionViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FDA5BDB428ADE35C5F6924B9501F0995 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				067DDD8CBD0194A2DB1546D16A284761 /* Pods-SmartContrakt-umbrella.h in Headers */,
+				1A24044E426A59E87833E8132941CC00 /* NSProcessInfo+RMActionController.h in Headers */,
+				99CDECB9B7FA72ED7A4B5CECEA8E6DF2 /* RMAction+Private.h in Headers */,
+				B3A0D599B8958A26ADAFD778C40A3BFF /* RMAction.h in Headers */,
+				55B54AD4C6AE46CD32C406B9EC93EB5C /* RMActionController+Private.h in Headers */,
+				35980B046D7C40CE06F22F6601FBBAAC /* RMActionController-umbrella.h in Headers */,
+				B50E836D71B322C65CA898B8664664F5 /* RMActionController.h in Headers */,
+				B61A30B996EDEA3D7EE6F6E67586140A /* RMActionControllerTransition.h in Headers */,
+				20CF56B7A118992BCBF428935A48A964 /* RMGroupedAction.h in Headers */,
+				8357B2E95821BFCAA7963C365201C54B /* RMImageAction.h in Headers */,
+				7B6C8DA0FD52BF15597C4F983FE04B90 /* RMScrollableGroupedAction.h in Headers */,
+				52864F2B0EB7D120FB5453818C884639 /* UIView+RMActionController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0087091906CAEA938348F627EA7AA4AD /* Pods-Contract */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 259935AB774D7547A3A6EE07E8559383 /* Build configuration list for PBXNativeTarget "Pods-Contract" */;
+			buildPhases = (
+				5A8B87313179D7D38BF58366DCA33CF8 /* Headers */,
+				13ACFB4066165DB35CFE8FECDF526751 /* Sources */,
+				87BD253ED1AC472231C99A0803CEFEB1 /* Frameworks */,
+				F1A834E72D5EB7B7C61C68610108E3FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDCF6FBEED96AE501323DD7C3FA83E35 /* PBXTargetDependency */,
+				5F392CEC6A204862335B90BA3FE81519 /* PBXTargetDependency */,
+				16E179E17808984A133EFBCDFCEDE735 /* PBXTargetDependency */,
+				882EBB5EA021EE2F613A68585F4F6390 /* PBXTargetDependency */,
+			);
+			name = "Pods-Contract";
+			productName = "Pods-Contract";
+			productReference = FC720A1DE8ED90EBFC3C934C013CEA89 /* Pods_Contract.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0577215224A6BE07F60F0DD83A567301 /* RMDateSelectionViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C63AAA51F37DA55E029908F510C1926B /* Build configuration list for PBXNativeTarget "RMDateSelectionViewController" */;
+			buildPhases = (
+				10A7106B940C1FBA8194371EECD1C268 /* Headers */,
+				93ECCF23CAAB8212855DC17CA24F7BE0 /* Sources */,
+				76709CD587B0AA7AF6B06EF3AFC30F30 /* Frameworks */,
+				655D627BA9BFB0F0D93FE57332D6627E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9A7E7E050AF262A63ACB883556070B4 /* PBXTargetDependency */,
+			);
+			name = RMDateSelectionViewController;
+			productName = RMDateSelectionViewController;
+			productReference = D2C51DB05B745B86D1C51300E7B6C57B /* RMDateSelectionViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		07CF70CCFBB375C487780FBB9148FDE3 /* DrawerController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D60F9AB496AEA9AC795FFFA9506EB479 /* Build configuration list for PBXNativeTarget "DrawerController" */;
@@ -504,17 +545,17 @@
 			);
 			name = DrawerController;
 			productName = DrawerController;
-			productReference = C4C7393EA42A2E25F24A54C5B76FADF9 /* DrawerController.framework */;
+			productReference = 8CBBA4B3ECD4915F02506C2C7D59CF83 /* DrawerController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0EEDACB92090C7971B13BD3BA1F24E85 /* RMActionController */ = {
+		2A26084EE0DEA46DFFC70E1E62B43714 /* RMActionController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 034CB53968E610AAA26E727FBD396B16 /* Build configuration list for PBXNativeTarget "RMActionController" */;
+			buildConfigurationList = 0D66068A8FC810717B4200037AB31C72 /* Build configuration list for PBXNativeTarget "RMActionController" */;
 			buildPhases = (
-				A9E790B3EB4B53CA05B3BA0870363965 /* Headers */,
-				15BC92C0DCF19CA7F286D600CD3CD982 /* Sources */,
-				59F91340A023DBA2EAC011E05F1F454C /* Frameworks */,
-				0F3BA31CCC35A6067AB9E6CF15ACE356 /* Resources */,
+				DA023470B7CFDD11B798BB5AB7C3018C /* Headers */,
+				5DFFEDDFEE8C16064106F6930FBEA77E /* Sources */,
+				00B7FE3AEE1430ADDCDE5E26C5A05F24 /* Frameworks */,
+				8B56624643032F4362457BB3716C6B30 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -522,36 +563,17 @@
 			);
 			name = RMActionController;
 			productName = RMActionController;
-			productReference = 7D267AE30DF792C34B6ED71533C571A2 /* RMActionController.framework */;
+			productReference = E0EBE45F22F89F9481E3DB37B0E75DF0 /* RMActionController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		54304EA9C80B973B296BEC5AE5979E28 /* RMDateSelectionViewController */ = {
+		4A6B6B466AF97904024ADF4E7029318A /* SWXMLHash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEFAB5730582597732B145F15BADD61E /* Build configuration list for PBXNativeTarget "RMDateSelectionViewController" */;
+			buildConfigurationList = EC760D4FB4D2F993E0D3E1DBD40A88C9 /* Build configuration list for PBXNativeTarget "SWXMLHash" */;
 			buildPhases = (
-				B47057ADFE08BDE93032383C3D74EC21 /* Headers */,
-				560EE9AF5C6E20D99FA5051C5014853B /* Sources */,
-				4186F7DA520B995841797B0CAA421233 /* Frameworks */,
-				FBBC187AD7003B118617D7EF7FFE2098 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				687186E3326A1BD37F80E587B8C9A637 /* PBXTargetDependency */,
-			);
-			name = RMDateSelectionViewController;
-			productName = RMDateSelectionViewController;
-			productReference = B2181B9D7F23EA6FCED5CA46E151AF6F /* RMDateSelectionViewController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E3760E72B17C4D4A388AC5127CB1089F /* SWXMLHash */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB4BF5E791388E8BD4DCC46DB10B6078 /* Build configuration list for PBXNativeTarget "SWXMLHash" */;
-			buildPhases = (
-				8FABA65913A7664B13CE02664CC9BC35 /* Headers */,
-				3DE34CFB79A927C73BF0CFD977ACC15F /* Sources */,
-				5FDDBB0A798FACDDE180332781202E2D /* Frameworks */,
-				87B2B3F88EC7BA59DFE2F7FF8338584C /* Resources */,
+				4810EA7FBC748FF55C88B70BAE599AED /* Headers */,
+				B5F7BCB86FA3B07499079E5D8C9007EB /* Sources */,
+				0E2F910578078EED25EEFA30BBCCE341 /* Frameworks */,
+				B6F6332AC637F193818C65E226BD01DC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -559,29 +581,7 @@
 			);
 			name = SWXMLHash;
 			productName = SWXMLHash;
-			productReference = 7E33B64DAF74EDBE5347770C3573A9FD /* SWXMLHash.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EDFC9DD2DC100A29DA51516D39FEFF22 /* Pods-SmartContrakt */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6BF69ED717DB157213744DEB4250E88 /* Build configuration list for PBXNativeTarget "Pods-SmartContrakt" */;
-			buildPhases = (
-				FDA5BDB428ADE35C5F6924B9501F0995 /* Headers */,
-				69EDB06CAA7817CDADE390A309BB571A /* Sources */,
-				0C23B9D3ED7112FC7B96FC8A244606AD /* Frameworks */,
-				CB62E895F4FA58615EFB964D40BD5A7B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2B9EF54C3A17A76B8A95F3CEE1B5F834 /* PBXTargetDependency */,
-				42AEA89887C798DBF4285811D5089A6F /* PBXTargetDependency */,
-				DBBA4C8F480A4A60B4C9C1578A07415A /* PBXTargetDependency */,
-				60BFDD7347D56EB7EAA54BE9E260C708 /* PBXTargetDependency */,
-			);
-			name = "Pods-SmartContrakt";
-			productName = "Pods-SmartContrakt";
-			productReference = 8A9DC99BCB6A065867F776839EA59945 /* Pods_SmartContrakt.framework */;
+			productReference = D36029D3F703F12DC064FFDFC79C377C /* SWXMLHash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -601,28 +601,28 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7FE58AC0B22481B883BC125DA270C511 /* Products */;
+			productRefGroup = BE41666E0603B992AC37356045360996 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				07CF70CCFBB375C487780FBB9148FDE3 /* DrawerController */,
-				EDFC9DD2DC100A29DA51516D39FEFF22 /* Pods-SmartContrakt */,
-				0EEDACB92090C7971B13BD3BA1F24E85 /* RMActionController */,
-				54304EA9C80B973B296BEC5AE5979E28 /* RMDateSelectionViewController */,
-				E3760E72B17C4D4A388AC5127CB1089F /* SWXMLHash */,
+				0087091906CAEA938348F627EA7AA4AD /* Pods-Contract */,
+				2A26084EE0DEA46DFFC70E1E62B43714 /* RMActionController */,
+				0577215224A6BE07F60F0DD83A567301 /* RMDateSelectionViewController */,
+				4A6B6B466AF97904024ADF4E7029318A /* SWXMLHash */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0F3BA31CCC35A6067AB9E6CF15ACE356 /* Resources */ = {
+		655D627BA9BFB0F0D93FE57332D6627E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B2B3F88EC7BA59DFE2F7FF8338584C /* Resources */ = {
+		8B56624643032F4362457BB3716C6B30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -636,14 +636,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB62E895F4FA58615EFB964D40BD5A7B /* Resources */ = {
+		B6F6332AC637F193818C65E226BD01DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBBC187AD7003B118617D7EF7FFE2098 /* Resources */ = {
+		F1A834E72D5EB7B7C61C68610108E3FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -653,47 +653,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		15BC92C0DCF19CA7F286D600CD3CD982 /* Sources */ = {
+		13ACFB4066165DB35CFE8FECDF526751 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C6B4E1F517CB67A78C756AB800F0E5C /* NSProcessInfo+RMActionController.m in Sources */,
-				CF0A942988A7E06BBBD3E8B4A5D7F95C /* RMAction.m in Sources */,
-				91357A73807D398F5EF3FA372DCBEBEA /* RMActionController-dummy.m in Sources */,
-				955B2E4AA510CC5D601688719B80708A /* RMActionController.m in Sources */,
-				05CE01BE4C698AF41170A860768C457E /* RMActionControllerTransition.m in Sources */,
-				267A4DF6B1917D047BFE7EE8B27D67CF /* RMGroupedAction.m in Sources */,
-				BA688FE01A81EFA2BEDCC4109115C850 /* RMImageAction.m in Sources */,
-				8DA25DE00ED4DDB18B078551889599DA /* RMScrollableGroupedAction.m in Sources */,
-				A684E535C28B1D34C144542693FF0F61 /* UIView+RMActionController.m in Sources */,
+				29616E7816E5F38DC9280316B6C92825 /* Pods-Contract-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DE34CFB79A927C73BF0CFD977ACC15F /* Sources */ = {
+		5DFFEDDFEE8C16064106F6930FBEA77E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B70F29189EF73821A93ACA0DF5C5810A /* shim.swift in Sources */,
-				CE67A1BCCE2CBAAE5B0BECABBC8A9326 /* SWXMLHash+TypeConversion.swift in Sources */,
-				4BE68CAA1FFC2F1B35F24940A9D20E57 /* SWXMLHash-dummy.m in Sources */,
-				98C06FCA01E2419CC3D89C2A3DD83542 /* SWXMLHash.swift in Sources */,
+				EF1109F01061281CE363829FA326EFAF /* NSProcessInfo+RMActionController.m in Sources */,
+				DA346774A0592F230A2B8B3331B72491 /* RMAction.m in Sources */,
+				11BDD320234C8E57AEA35B3022ABDDC2 /* RMActionController-dummy.m in Sources */,
+				D42CE13E47F7962611BA7381F8620D04 /* RMActionController.m in Sources */,
+				860E83665813185639ACF8B04B7DD9E1 /* RMActionControllerTransition.m in Sources */,
+				46FA10F91A1CC92992E3215C8344C447 /* RMGroupedAction.m in Sources */,
+				1DF053B6AF1346611674DC440A233B67 /* RMImageAction.m in Sources */,
+				4E0E901B85C089D4C932C9433849682E /* RMScrollableGroupedAction.m in Sources */,
+				5912AC24627F531EF067199C5B63759C /* UIView+RMActionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		560EE9AF5C6E20D99FA5051C5014853B /* Sources */ = {
+		93ECCF23CAAB8212855DC17CA24F7BE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C268262EF453039AFFBE54E9B5037B /* RMDateSelectionViewController-dummy.m in Sources */,
-				F6AC8A4A0C298902F0BF1DE2F5CBC018 /* RMDateSelectionViewController.m in Sources */,
+				9C766109B31D00850ADDD0B1E710F0A8 /* RMDateSelectionViewController-dummy.m in Sources */,
+				F5C458E829DE9454C893AAF6ED7AA82C /* RMDateSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69EDB06CAA7817CDADE390A309BB571A /* Sources */ = {
+		B5F7BCB86FA3B07499079E5D8C9007EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC46E747904E64C0631BD911D1780588 /* Pods-SmartContrakt-dummy.m in Sources */,
+				595482C9B5F5FCA071789A9522869DDE /* shim.swift in Sources */,
+				189672F6E9FFCE4027FBA0BFCFC0DB19 /* SWXMLHash+TypeConversion.swift in Sources */,
+				6238F85F148278A724DBDB9D06B2EE21 /* SWXMLHash-dummy.m in Sources */,
+				487AD3DC0F0DA4F3200A2BF7BF5532F3 /* SWXMLHash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,35 +713,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2B9EF54C3A17A76B8A95F3CEE1B5F834 /* PBXTargetDependency */ = {
+		16E179E17808984A133EFBCDFCEDE735 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RMDateSelectionViewController;
+			target = 0577215224A6BE07F60F0DD83A567301 /* RMDateSelectionViewController */;
+			targetProxy = 45A501B47F453AE30925349F836EFF04 /* PBXContainerItemProxy */;
+		};
+		5F392CEC6A204862335B90BA3FE81519 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RMActionController;
+			target = 2A26084EE0DEA46DFFC70E1E62B43714 /* RMActionController */;
+			targetProxy = D51F122C8FFAD2E3127EAB24ABFF9835 /* PBXContainerItemProxy */;
+		};
+		882EBB5EA021EE2F613A68585F4F6390 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SWXMLHash;
+			target = 4A6B6B466AF97904024ADF4E7029318A /* SWXMLHash */;
+			targetProxy = F17A723891B0096AFAEB98A0C2AFBD34 /* PBXContainerItemProxy */;
+		};
+		CDCF6FBEED96AE501323DD7C3FA83E35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DrawerController;
 			target = 07CF70CCFBB375C487780FBB9148FDE3 /* DrawerController */;
-			targetProxy = EB0BE53E65CCFF0CB64D883DBE9B24F0 /* PBXContainerItemProxy */;
+			targetProxy = 1D33E73FA98106F633BA92B29B79D164 /* PBXContainerItemProxy */;
 		};
-		42AEA89887C798DBF4285811D5089A6F /* PBXTargetDependency */ = {
+		E9A7E7E050AF262A63ACB883556070B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RMActionController;
-			target = 0EEDACB92090C7971B13BD3BA1F24E85 /* RMActionController */;
-			targetProxy = F593F79E6D1EFD10DA8A648725CEF0BC /* PBXContainerItemProxy */;
-		};
-		60BFDD7347D56EB7EAA54BE9E260C708 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SWXMLHash;
-			target = E3760E72B17C4D4A388AC5127CB1089F /* SWXMLHash */;
-			targetProxy = 2B8D147CD7A74F81DB9DA95431AAA71B /* PBXContainerItemProxy */;
-		};
-		687186E3326A1BD37F80E587B8C9A637 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RMActionController;
-			target = 0EEDACB92090C7971B13BD3BA1F24E85 /* RMActionController */;
-			targetProxy = 6DB8F69E4E52B3DEED6EB31AE5EE47F9 /* PBXContainerItemProxy */;
-		};
-		DBBA4C8F480A4A60B4C9C1578A07415A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RMDateSelectionViewController;
-			target = 54304EA9C80B973B296BEC5AE5979E28 /* RMDateSelectionViewController */;
-			targetProxy = 628F4766DE728B06C32C37F679DEBEBE /* PBXContainerItemProxy */;
+			target = 2A26084EE0DEA46DFFC70E1E62B43714 /* RMActionController */;
+			targetProxy = 733D17DF7321CC796B4235C2C990F7F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -805,7 +805,7 @@
 			};
 			name = Release;
 		};
-		21E5DE2C09248B18C9AC16CE925A1A11 /* Debug */ = {
+		22D8C3D15366F38389B1EEBCEFFDEEE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47A1E18DFC515B80FA62088E51A5EA11 /* RMDateSelectionViewController.xcconfig */;
 			buildSettings = {
@@ -840,12 +840,10 @@
 			};
 			name = Debug;
 		};
-		2F6C1D6587801344D4AE1309C5DF019F /* Debug */ = {
+		3C14C653FF580E28797F5BA9CE443DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBFF93A742D181E262348B0BDD1E9677 /* Pods-SmartContrakt.debug.xcconfig */;
+			baseConfigurationReference = 84D54CE83999929B14F790D6F3A40FD1 /* RMActionController.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -855,25 +853,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SmartContrakt/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/RMActionController/RMActionController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RMActionController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/RMActionController/RMActionController.modulemap";
+				PRODUCT_MODULE_NAME = RMActionController;
+				PRODUCT_NAME = RMActionController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -918,7 +913,7 @@
 			};
 			name = Release;
 		};
-		47CD370671CC612C223961E24E7CBDC0 /* Debug */ = {
+		5780C8507DE679C54E7A22F37BB186AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B26FE8551716D2D7D96D72DF7B233A63 /* SWXMLHash.xcconfig */;
 			buildSettings = {
@@ -946,120 +941,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		74F6C8635744C6227E2F9EFA1727B469 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D54CE83999929B14F790D6F3A40FD1 /* RMActionController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RMActionController/RMActionController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RMActionController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/RMActionController/RMActionController.modulemap";
-				PRODUCT_MODULE_NAME = RMActionController;
-				PRODUCT_NAME = RMActionController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9B8B5A98335FF360FF72E652250EA12F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47A1E18DFC515B80FA62088E51A5EA11 /* RMDateSelectionViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RMDateSelectionViewController/RMDateSelectionViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RMDateSelectionViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/RMDateSelectionViewController/RMDateSelectionViewController.modulemap";
-				PRODUCT_MODULE_NAME = RMDateSelectionViewController;
-				PRODUCT_NAME = RMDateSelectionViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A43B06119BF0CD9BE476BC0ED2F91FFB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9847F776A19FDFAD6E69F428D3616B9 /* Pods-SmartContrakt.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SmartContrakt/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SmartContrakt/Pods-SmartContrakt.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1103,7 +987,160 @@
 			};
 			name = Debug;
 		};
-		B9D447DC6C4D61C14DB4FD848648D074 /* Release */ = {
+		ADD3430F605A54E2E65E6289CD081320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D54CE83999929B14F790D6F3A40FD1 /* RMActionController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RMActionController/RMActionController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RMActionController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RMActionController/RMActionController.modulemap";
+				PRODUCT_MODULE_NAME = RMActionController;
+				PRODUCT_NAME = RMActionController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B9106A9B0332937AC7AED368A15163D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 384A8612BB0D0266D5664D2091439901 /* Pods-Contract.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Contract/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Contract/Pods-Contract.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B9B69A2CAD2A8EB69D07928E4220AEA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8438A5F93013BC7A7F8FA37C7E9D81D /* Pods-Contract.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Contract/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Contract/Pods-Contract.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BBA00E360C1DEB5F65C0BE5E99FEFE62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47A1E18DFC515B80FA62088E51A5EA11 /* RMDateSelectionViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RMDateSelectionViewController/RMDateSelectionViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RMDateSelectionViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RMDateSelectionViewController/RMDateSelectionViewController.modulemap";
+				PRODUCT_MODULE_NAME = RMDateSelectionViewController;
+				PRODUCT_NAME = RMDateSelectionViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D17A28B81F4ABECF1F59DE56C8A1C866 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B26FE8551716D2D7D96D72DF7B233A63 /* SWXMLHash.xcconfig */;
 			buildSettings = {
@@ -1131,15 +1168,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		E246FC26AF4A9832D7AA01080188D618 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1205,49 +1240,23 @@
 			};
 			name = Debug;
 		};
-		E74308908E501653BA2D13C0D67B247A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84D54CE83999929B14F790D6F3A40FD1 /* RMActionController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RMActionController/RMActionController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RMActionController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/RMActionController/RMActionController.modulemap";
-				PRODUCT_MODULE_NAME = RMActionController;
-				PRODUCT_NAME = RMActionController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		034CB53968E610AAA26E727FBD396B16 /* Build configuration list for PBXNativeTarget "RMActionController" */ = {
+		0D66068A8FC810717B4200037AB31C72 /* Build configuration list for PBXNativeTarget "RMActionController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E74308908E501653BA2D13C0D67B247A /* Debug */,
-				74F6C8635744C6227E2F9EFA1727B469 /* Release */,
+				3C14C653FF580E28797F5BA9CE443DB0 /* Debug */,
+				ADD3430F605A54E2E65E6289CD081320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		259935AB774D7547A3A6EE07E8559383 /* Build configuration list for PBXNativeTarget "Pods-Contract" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9B69A2CAD2A8EB69D07928E4220AEA0 /* Debug */,
+				B9106A9B0332937AC7AED368A15163D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1261,29 +1270,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6BF69ED717DB157213744DEB4250E88 /* Build configuration list for PBXNativeTarget "Pods-SmartContrakt" */ = {
+		C63AAA51F37DA55E029908F510C1926B /* Build configuration list for PBXNativeTarget "RMDateSelectionViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F6C1D6587801344D4AE1309C5DF019F /* Debug */,
-				A43B06119BF0CD9BE476BC0ED2F91FFB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB4BF5E791388E8BD4DCC46DB10B6078 /* Build configuration list for PBXNativeTarget "SWXMLHash" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47CD370671CC612C223961E24E7CBDC0 /* Debug */,
-				B9D447DC6C4D61C14DB4FD848648D074 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEFAB5730582597732B145F15BADD61E /* Build configuration list for PBXNativeTarget "RMDateSelectionViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				21E5DE2C09248B18C9AC16CE925A1A11 /* Debug */,
-				9B8B5A98335FF360FF72E652250EA12F /* Release */,
+				22D8C3D15366F38389B1EEBCEFFDEEE2 /* Debug */,
+				BBA00E360C1DEB5F65C0BE5E99FEFE62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1293,6 +1284,15 @@
 			buildConfigurations = (
 				AAEE6EA9FEC51696A3ECA130C751771E /* Debug */,
 				43FB2D9FA128B93CF051372990DFAEE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC760D4FB4D2F993E0D3E1DBD40A88C9 /* Build configuration list for PBXNativeTarget "SWXMLHash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D17A28B81F4ABECF1F59DE56C8A1C866 /* Debug */,
+				5780C8507DE679C54E7A22F37BB186AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

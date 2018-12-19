@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02A4D09921A9740400427491"
-               BuildableName = "SmartContrakt.app"
-               BlueprintName = "SmartContrakt"
-               ReferencedContainer = "container:SmartContrakt.xcodeproj">
+               BuildableName = "Contract.app"
+               BlueprintName = "Contract"
+               ReferencedContainer = "container:Contract.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02A4D0B021A9740700427491"
-               BuildableName = "SmartContraktUITests.xctest"
-               BlueprintName = "SmartContraktUITests"
-               ReferencedContainer = "container:SmartContrakt.xcodeproj">
+               BuildableName = "ContractUITests.xctest"
+               BlueprintName = "ContractUITests"
+               ReferencedContainer = "container:Contract.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02A4D09921A9740400427491"
-            BuildableName = "SmartContrakt.app"
-            BlueprintName = "SmartContrakt"
-            ReferencedContainer = "container:SmartContrakt.xcodeproj">
+            BuildableName = "Contract.app"
+            BlueprintName = "Contract"
+            ReferencedContainer = "container:Contract.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02A4D09921A9740400427491"
-            BuildableName = "SmartContrakt.app"
-            BlueprintName = "SmartContrakt"
-            ReferencedContainer = "container:SmartContrakt.xcodeproj">
+            BuildableName = "Contract.app"
+            BlueprintName = "Contract"
+            ReferencedContainer = "container:Contract.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02A4D09921A9740400427491"
-            BuildableName = "SmartContrakt.app"
-            BlueprintName = "SmartContrakt"
-            ReferencedContainer = "container:SmartContrakt.xcodeproj">
+            BuildableName = "Contract.app"
+            BlueprintName = "Contract"
+            ReferencedContainer = "container:Contract.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
