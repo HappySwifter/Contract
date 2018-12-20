@@ -42,4 +42,36 @@ extension CheckListModel {
         return objects
         
     }
+    
+    @discardableResult class func saveMyCheckList(with id: String, requirementsTemplates: NSSet?) -> CheckListModel {
+        
+        let object: CheckListModel
+        if let c: CheckListModel = getObjects(withId: id).first {
+            object = c
+        } else {
+            object = createNew()
+            object.id = id
+        }
+        
+
+        if let requirementsTemplates = requirementsTemplates {
+            for template in requirementsTemplates {
+                if let template = template as? RequirementTemplate {
+                    let req = RequirementModel.createNew()
+                    req.title = template.name
+                    object.addToRequirements(req)
+                } else {
+                    assert(false)
+                }
+            }
+        } else {
+            assert(false, "empty requirements template array")
+        }
+
+        
+
+        appDelegate.saveContext()
+        return object
+        
+    }
 }

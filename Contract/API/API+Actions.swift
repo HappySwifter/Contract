@@ -14,6 +14,7 @@ extension API {
     enum Action {
         /// возвращает данные о юзере + guid
         case getSession(logn: String, pass: String)
+        
         /// проверяет guid на валидность
         case checkGUID
         

@@ -35,14 +35,18 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
   // MARK: Do something
   
     func getMyCheckLists(request: CheckLists.Something.Request) {
-        serverWorker?.getMyCheckLists(action: API.Action.getMyChecklists) { [weak self] result in
-            switch result {
-            case .Success(let checkLists):
-                self?.displayCheckLists(models: checkLists)
-            case .Failure(let error):
-                presentAlert(title: "Ошибка", text: error.localizedDescription)
-            }
-        }
+        
+        let models: [CheckListModel] = getObjects()
+        displayCheckLists(models: models)
+
+//        serverWorker?.getMyCheckLists(action: API.Action.getMyChecklists) { [weak self] result in
+//            switch result {
+//            case .Success(let checkLists):
+//                self?.displayCheckLists(models: checkLists)
+//            case .Failure(let error):
+//                presentAlert(title: "Ошибка", text: error.localizedDescription)
+//            }
+//        }
         
     }
     
@@ -57,8 +61,11 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
         api.createCheckListFromTemplate(action: action) { [weak self] (result) in
             switch result {
             case .Success(let id):
+                CheckListModel.saveMyCheckList(with: id, requirementsTemplates: request.model.requirementTemplates)
+               
                 let req = CheckLists.Something.Request()
                 self?.getMyCheckLists(request: req)
+                
             case .Failure(let error):
                 presentAlert(title: "Ошибка", text: error.localizedDescription)
             }
