@@ -7,6 +7,7 @@ target 'Contract' do
   pod 'SWXMLHash', '~> 4.7.0'
   pod 'DrawerController', '~> 4.0'
   pod 'RMDateSelectionViewController', '~> 2.3'
+  pod 'Kingfisher'
 end
 
 post_install do |installer|
