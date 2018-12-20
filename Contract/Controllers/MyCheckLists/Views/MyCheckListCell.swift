@@ -13,7 +13,7 @@ class MyCheckListCell: UITableViewCell {
     
     
     func configure(model: CheckListModel) {
-        textLabel?.text = model.id! + ": " + model.name!
+        textLabel?.text = model.id! + ": " + (model.name ?? "")
         textLabel?.numberOfLines = 0
         detailTextLabel?.text = model.requisits
         detailTextLabel?.numberOfLines = 0

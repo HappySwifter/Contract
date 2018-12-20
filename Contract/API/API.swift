@@ -40,6 +40,8 @@ protocol APIProtocol {
     
     func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[RequirementTemplate]>) -> Void)
 
+    func uploadImage(action: API.Action, cb: @escaping (Result<String>) -> Void)
+
 }
 
 class API: APIProtocol {
@@ -187,12 +189,39 @@ class API: APIProtocol {
         }
         switch action {
         case .getTemplateRequirementsFor(let templateCheckListId):
+//            Log("getting requir templates for checklistId: \(templateCheckListId)", type: .info)
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
                     let array = result["a:requirementsTemplate"]
+//                    print("requir template count: ", array.all.count, "checklistId: ", templateCheckListId)
                     let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
                     cb(Result.Success(data: templates))
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func uploadImage(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .setPhotoForRequiremenrt(let requirId, let photoString):
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    print(result)
+//                    let array = result["a:requirementsTemplate"]
+                    //                    print("requir template count: ", array.all.count, "checklistId: ", templateCheckListId)
+//                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+//                    cb(Result.Success(data: templates))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }

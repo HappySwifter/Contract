@@ -13,12 +13,17 @@ extension RequirementsViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ItemCell
-        cell.configure(model: checkListItems[indexPath.item])
+        if let req: [RequirementModel] = object?.requirements?.toArray() {
+            cell.configure(model: req[indexPath.row])
+        } else {
+            assert(false)
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return checkListItems.count
+        return object.requirements?.count ?? 0//checkListItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

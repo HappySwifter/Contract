@@ -5,6 +5,7 @@ PODS:
   - DrawerController/Core (4.0.0)
   - DrawerController/DrawerVisualStates (4.0.0):
     - DrawerController/Core
+  - Kingfisher (5.0.0)
   - RMActionController (1.3.1)
   - RMDateSelectionViewController (2.3.1):
     - RMActionController (~> 1.3.1)
@@ -12,22 +13,25 @@ PODS:
 
 DEPENDENCIES:
   - DrawerController (~> 4.0)
+  - Kingfisher
   - RMDateSelectionViewController (~> 2.3)
   - SWXMLHash (~> 4.7.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - DrawerController
+    - Kingfisher
     - RMActionController
     - RMDateSelectionViewController
     - SWXMLHash
 
 SPEC CHECKSUMS:
   DrawerController: eb1168e9f7185cc49f654ae8486917f0acb3dc88
+  Kingfisher: 2b0dd651e4fe5a07305b8242fde56f8e2d410f58
   RMActionController: 535715be9f3d9eb96a838485370dcccee0dda597
   RMDateSelectionViewController: 1157d34245e6a1dda700e8a9c44417321d181951
   SWXMLHash: 9d29f0d9f83ad07851572421cd55a5971c368e7f
 
-PODFILE CHECKSUM: b55fd383b88947e633ab6954b6e8af22e91250ad
+PODFILE CHECKSUM: dfa4e18fbdd294e2e874a59789badc44736c48c7
 
 COCOAPODS: 1.5.3

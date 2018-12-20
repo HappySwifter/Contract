@@ -31,7 +31,7 @@ extension RequirementTemplate {
         var objects = [RequirementTemplate]()
         for xml in xmlObjects {
     
-            if let name = xml["a:requirement"].element?.text, name.count > 0 {
+            if let name = xml["a:REQUIREMENT"].element?.text, name.count > 0 {
                 let object = createNew()
                 object.name = name
                 object.checkListId = checkListId

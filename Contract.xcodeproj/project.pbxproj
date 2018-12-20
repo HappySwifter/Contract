@@ -26,6 +26,8 @@
 		02278E8521AE757A00860BEC /* RequirementsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02278E8421AE757A00860BEC /* RequirementsViewController.storyboard */; };
 		02278E8721AE774700860BEC /* CheckListModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */; };
 		022FA99E21CAB6E700CC53F0 /* RequirementModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FA99D21CAB6E700CC53F0 /* RequirementModel+Extensions.swift */; };
+		0232618021CC28F60098301C /* CheckListModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232617E21CC28F60098301C /* CheckListModel+CoreDataClass.swift */; };
+		0232618121CC28F60098301C /* CheckListModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232617F21CC28F60098301C /* CheckListModel+CoreDataProperties.swift */; };
 		02620D9C21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */; };
 		0264588621B59CDF00CCA094 /* CheckListsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264588021B59CDF00CCA094 /* CheckListsPresenter.swift */; };
 		0264588721B59CDF00CCA094 /* CheckListsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264588121B59CDF00CCA094 /* CheckListsWorker.swift */; };
@@ -85,6 +87,8 @@
 		02278E8421AE757A00860BEC /* RequirementsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RequirementsViewController.storyboard; sourceTree = "<group>"; };
 		02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckListModel+Extensions.swift"; sourceTree = "<group>"; };
 		022FA99D21CAB6E700CC53F0 /* RequirementModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequirementModel+Extensions.swift"; sourceTree = "<group>"; };
+		0232617E21CC28F60098301C /* CheckListModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CheckListModel+CoreDataClass.swift"; path = "/Users/artemvaliev/Contract/Contract/Model/CheckListModel+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		0232617F21CC28F60098301C /* CheckListModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CheckListModel+CoreDataProperties.swift"; path = "/Users/artemvaliev/Contract/Contract/Model/CheckListModel+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequirementTemplate+Extensions.swift"; sourceTree = "<group>"; };
 		0264588021B59CDF00CCA094 /* CheckListsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListsPresenter.swift; sourceTree = "<group>"; };
 		0264588121B59CDF00CCA094 /* CheckListsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListsWorker.swift; sourceTree = "<group>"; };
@@ -293,11 +297,13 @@
 		02A4D0C721AA025800427491 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0232617E21CC28F60098301C /* CheckListModel+CoreDataClass.swift */,
+				0232617F21CC28F60098301C /* CheckListModel+CoreDataProperties.swift */,
+				02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */,
 				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
 				02A4D0C521AA025300427491 /* User+Extensions.swift */,
 				02278E6921ADB1EE00860BEC /* Template+Extensions.swift */,
 				02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */,
-				02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */,
 				022FA99D21CAB6E700CC53F0 /* RequirementModel+Extensions.swift */,
 			);
 			path = Model;
@@ -458,6 +464,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Contract/Pods-Contract-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DrawerController/DrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RMActionController/RMActionController.framework",
 				"${BUILT_PRODUCTS_DIR}/RMDateSelectionViewController/RMDateSelectionViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
@@ -465,6 +472,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMActionController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMDateSelectionViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
@@ -489,6 +497,7 @@
 				02FE0BB021B6BD6B007624E4 /* RequirementsPresenter.swift in Sources */,
 				0264589021B5B5EA00CCA094 /* MyCheckListCell.swift in Sources */,
 				029899B621B583AF00DEEC3B /* WorkMode.swift in Sources */,
+				0232618121CC28F60098301C /* CheckListModel+CoreDataProperties.swift in Sources */,
 				02A4D0A021A9740400427491 /* LoginViewController.swift in Sources */,
 				0264588721B59CDF00CCA094 /* CheckListsWorker.swift in Sources */,
 				0264588621B59CDF00CCA094 /* CheckListsPresenter.swift in Sources */,
@@ -515,6 +524,7 @@
 				02FE0BB521B6BD6B007624E4 /* RequirementsInteractor.swift in Sources */,
 				02FE0BB221B6BD6B007624E4 /* RequirementsRouter.swift in Sources */,
 				02278E8721AE774700860BEC /* CheckListModel+Extensions.swift in Sources */,
+				0232618021CC28F60098301C /* CheckListModel+CoreDataClass.swift in Sources */,
 				029899AD21B575F600DEEC3B /* TemplatesRouter.swift in Sources */,
 				02A4D0CB21AB147500427491 /* CurrentUser.swift in Sources */,
 				029899AE21B575F600DEEC3B /* TemplatesModels.swift in Sources */,

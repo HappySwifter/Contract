@@ -13,7 +13,7 @@ class ItemCell: UICollectionViewCell {
     @IBOutlet weak var textLabel: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
     var photos = [UIImage]()
-
+    var requirId: String!
     
     override func didMoveToWindow() {
         super.didMoveToWindow()
@@ -21,8 +21,9 @@ class ItemCell: UICollectionViewCell {
         contentView.layer.borderWidth = 1
     }
     
-    func configure(model: CheckListModel) {
-        textLabel.text = model.name
+    func configure(model: RequirementModel) {
+        self.requirId = String(model.id)
+        textLabel.text = model.title
         collectionView.reloadData()
     }
 }
@@ -35,9 +36,9 @@ extension ItemCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         if photos.count == 0 {
-            cell.configure(photo: UIImage(named: "AddButton")!)
+            cell.configure(photo: UIImage(named: "AddButton")!, requirId: requirId)
         } else {
-            cell.configure(photo: photos[indexPath.item])
+            cell.configure(photo: photos[indexPath.item], requirId: requirId)
         }
         return cell
     }
@@ -53,6 +54,10 @@ extension ItemCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         return CGSize(width: m, height: m)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     
 }
+
 

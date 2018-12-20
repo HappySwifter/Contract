@@ -15,6 +15,10 @@ extension CheckListModel {
         return NSEntityDescription.insertNewObject(forEntityName: "CheckListModel", into: context) as! CheckListModel
     }
     
+    /// Save from server responce
+    ///
+    /// - Parameter xmlObjects: xml
+    /// - Returns: array
     class func saveObjects(xmlObjects: [XMLIndexer]) -> [CheckListModel] {
         
         if xmlObjects.count == 0 {
@@ -43,7 +47,10 @@ extension CheckListModel {
         
     }
     
-    @discardableResult class func saveMyCheckList(with id: String, requirementsTemplates: NSSet?) -> CheckListModel {
+    @discardableResult class func saveMyCheckList(with id: String,
+                                                  name: String?,
+                                                  requisits: String?,
+                                                  requirementsTemplates: NSSet?) -> CheckListModel {
         
         let object: CheckListModel
         if let c: CheckListModel = getObjects(withId: id).first {
@@ -53,6 +60,8 @@ extension CheckListModel {
             object.id = id
         }
         
+        object.name = name
+        object.requisits = requisits
 
         if let requirementsTemplates = requirementsTemplates {
             for template in requirementsTemplates {

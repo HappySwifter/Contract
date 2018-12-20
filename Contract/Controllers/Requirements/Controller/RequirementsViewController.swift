@@ -67,14 +67,6 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
     let edgeInset = realSize(10)
     var object: CheckListModel!
     
-    var checkListItems = [CheckListModel]() {
-        didSet {
-            collectionView.reloadData()
-            delay(0.3) { [weak self] in
-                self?.configureBottomView()
-            }
-        }
-    }
     
     
     override func viewDidLoad() {
@@ -88,7 +80,7 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
     
     func configureBottomView() {
         if let index = collectionView.indexPathsForVisibleItems.first?.item {
-            bottomTextLabel.text = "\(index + 1) из \(checkListItems.count)"
+            bottomTextLabel.text = "\(index + 1) из \(object.requirements?.count ?? 0)"
         }
     }
     

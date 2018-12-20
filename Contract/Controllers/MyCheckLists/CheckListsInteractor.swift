@@ -61,7 +61,10 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
         api.createCheckListFromTemplate(action: action) { [weak self] (result) in
             switch result {
             case .Success(let id):
-                CheckListModel.saveMyCheckList(with: id, requirementsTemplates: request.model.requirementTemplates)
+                CheckListModel.saveMyCheckList(with: id,
+                                               name: request.model.name,
+                                               requisits: request.model.requisits,
+                                               requirementsTemplates: request.model.requirementTemplates)
                
                 let req = CheckLists.Something.Request()
                 self?.getMyCheckLists(request: req)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CheckListModel" representedClassName="CheckListModel" syncable="YES" codeGenerationType="class">
+    <entity name="CheckListModel" representedClassName="CheckListModel" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="requisits" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,9 +37,9 @@
     </entity>
     <elements>
         <element name="CheckListModel" positionX="211.80078125" positionY="-116.98046875" width="128" height="118"/>
+        <element name="RequirementModel" positionX="25.5703125" positionY="-86.34765625" width="128" height="88"/>
         <element name="RequirementTemplate" positionX="8.734375" positionY="40" width="128" height="88"/>
         <element name="TemplateModel" positionX="191.44140625" positionY="39.13671875" width="128" height="103"/>
         <element name="User" positionX="-368.4296875" positionY="-390.30859375" width="128" height="195"/>
-        <element name="RequirementModel" positionX="25.5703125" positionY="-86.34765625" width="128" height="88"/>
     </elements>
 </model>
