@@ -40,6 +40,13 @@ protocol APIProtocol {
     
     func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[RequirementTemplate]>) -> Void)
 
+    
+    func getPhotoDataByLink(action: API.Action, cb: @escaping (Result<String>) -> Void)
+    func deletePhoto(action: API.Action, cb: @escaping (Result<String>) -> Void)
+    func getPhotoLinksForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void)
+    func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<String>) -> Void)
+    func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void)
+    
     func uploadImage(action: API.Action, cb: @escaping (Result<String>) -> Void)
 
 }
@@ -218,10 +225,138 @@ class API: APIProtocol {
                 switch result {
                 case .Success(let result):
                     print(result)
+                    
+                    
+                    let action = API.Action.getPhotoLinksForRequirement(id: requirId)
+                    self.checkGuidAndSendRequest(with: action, cb: { (result) in
+                        print(result)
+                    })
 //                    let array = result["a:requirementsTemplate"]
                     //                    print("requir template count: ", array.all.count, "checklistId: ", templateCheckListId)
 //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
 //                    cb(Result.Success(data: templates))
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    
+    
+    func getPhotoDataByLink(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .getPhotoDataByLink:
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    //                    let array = result["a:requirementsTemplate"]
+                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+                    //                    cb(Result.Success(data: templates))
+                    break
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func deletePhoto(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .deletePhoto:
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    //                    let array = result["a:requirementsTemplate"]
+                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+                    //                    cb(Result.Success(data: templates))
+                    break
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func getPhotoLinksForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .getPhotoLinksForRequirement:
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    //                    let array = result["a:requirementsTemplate"]
+                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+                    //                    cb(Result.Success(data: templates))
+                    break
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .setPhotoForRequiremenrt:
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    //                    let array = result["a:requirementsTemplate"]
+                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+                    //                    cb(Result.Success(data: templates))
+                    break
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .deleteAllPhotosForRequirement:
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let result):
+                    //                    let array = result["a:requirementsTemplate"]
+                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
+                    //                    cb(Result.Success(data: templates))
+                    break
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }

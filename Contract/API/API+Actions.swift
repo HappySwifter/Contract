@@ -14,7 +14,6 @@ extension API {
     enum Action {
         /// возвращает данные о юзере + guid
         case getSession(logn: String, pass: String)
-        
         /// проверяет guid на валидность
         case checkGUID
         
@@ -35,15 +34,17 @@ extension API {
         /// требование сохраняется, возвращается id_requirement созданный
         case setRequirement(checkListId: String, requirementText: String, yesNo: Bool, note: String)
         
-        /// фото сохраняется, возвращается LinkPhoto
-        case setPhotoForRequiremenrt(id: String, photoData: String)
-        /// возвращается массив <LinkPhoto>
-        case getPhotoLinksForRequirement(id: String)
-        /// удалить фото
-        case deletePhoto(link: String)
+        
         /// возвращается массив <byte[]>
         case getPhotoDataByLink(link: String)
-        
+        /// удалить фото
+        case deletePhoto(link: String)
+        /// возвращается массив <LinkPhoto>
+        case getPhotoLinksForRequirement(id: String)
+        /// фото сохраняется, возвращается LinkPhoto
+        case setPhotoForRequiremenrt(id: String, photoData: String)
+        /// Удалить все фото для требования
+        case deleteAllPhotosForRequirement(id: String)
         
         var description: String {
             get {
@@ -66,14 +67,17 @@ extension API {
                     return "GetCheckList"
                 case .getRequirementsForMy:
                     return "GetRequirements"
+                    
+                case .getPhotoDataByLink:
+                    return "GetPhotoFromLink"
+                case .deletePhoto:
+                    return "DeletePhotoFromLink"
+                case .getPhotoLinksForRequirement:
+                    return "GetAllPhotoInRequirement"
                 case .setPhotoForRequiremenrt:
                     return "SetPhoto"
-                case .getPhotoLinksForRequirement:
-                    return "GetLinkPhoto"
-                case .deletePhoto:
-                    return "DeletePhoto"
-                case .getPhotoDataByLink:
-                    return "GetPhoto"
+                case .deleteAllPhotosForRequirement:
+                    return "DeleteAllPhotoInRequirement"
                 }
             }
         }
@@ -124,6 +128,8 @@ extension API {
                     <id_checkList>\(checkListId)</id_checkList>
                     """
                     return insertParamsToEnvelope(params: params, withToken: true)
+                    
+                    
                 case .setPhotoForRequiremenrt(let requirementId, let photoData):
                     let params = """
                     <id_requirement>\(requirementId)</id_requirement>
@@ -137,12 +143,17 @@ extension API {
                     return insertParamsToEnvelope(params: params, withToken: true)
                 case .deletePhoto(let link):
                     let params = """
-                    <link_photo>\(link)</link_photo>
+                    <linkPhoto>\(link)</linkPhoto>
                     """
                     return insertParamsToEnvelope(params: params, withToken: true)
                 case .getPhotoDataByLink(let link):
                     let params = """
-                    <link_photo>\(link)</link_photo>
+                    <linkPhoto>\(link)</linkPhoto>
+                    """
+                    return insertParamsToEnvelope(params: params, withToken: true)
+                case .deleteAllPhotosForRequirement(let requirementId):
+                    let params = """
+                    <id_requirement>\(requirementId)</id_requirement>
                     """
                     return insertParamsToEnvelope(params: params, withToken: true)
                 }
