@@ -14,7 +14,7 @@ import UIKit
 
 protocol RequirementsBusinessLogic
 {
-  func doSomething(request: Requirements.Something.Request)
+  func loadRequirementsIfEmpty(request: Requirements.Something.Request)
 }
 
 protocol RequirementsDataStore
@@ -25,17 +25,15 @@ protocol RequirementsDataStore
 class RequirementsInteractor: RequirementsBusinessLogic, RequirementsDataStore
 {
   var presenter: RequirementsPresentationLogic?
-  var worker: RequirementsWorker?
-  //var name: String = ""
   
-  // MARK: Do something
-  
-  func doSomething(request: Requirements.Something.Request)
+  func loadRequirementsIfEmpty(request: Requirements.Something.Request)
   {
-    worker = RequirementsWorker()
-    worker?.doSomeWork()
+
+    api.getRequirementsForCheckList(action: API.Action.getRequirementsForMy(checkListId: request.checkListId)) { (requirements) in
+        
+    }
     
     let response = Requirements.Something.Response()
-    presenter?.presentSomething(response: response)
+    presenter?.presentRequirements(response: response)
   }
 }

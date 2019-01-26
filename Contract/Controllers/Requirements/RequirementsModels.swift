@@ -20,6 +20,7 @@ enum Requirements
   {
     struct Request
     {
+        let checkListId: String
     }
     struct Response
     {

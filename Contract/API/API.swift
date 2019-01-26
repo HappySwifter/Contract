@@ -40,6 +40,7 @@ protocol APIProtocol {
     
     func getTemplateRequirementsFor(action: API.Action, cb: @escaping (Result<[RequirementTemplate]>) -> Void)
 
+    func getRequirementsForCheckList(action: API.Action, cb: @escaping (Result<[RequirementModel]>) -> Void)
     
     func getPhotoDataByLink(action: API.Action, cb: @escaping (Result<String>) -> Void)
     func deletePhoto(action: API.Action, cb: @escaping (Result<String>) -> Void)
@@ -47,7 +48,6 @@ protocol APIProtocol {
     func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<String>) -> Void)
     func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void)
     
-    func uploadImage(action: API.Action, cb: @escaping (Result<String>) -> Void)
 
 }
 
@@ -214,27 +214,20 @@ class API: APIProtocol {
         }
     }
     
-    func uploadImage(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+    func getRequirementsForCheckList(action: API.Action, cb: @escaping (Result<[RequirementModel]>) -> Void) {
         guard let _ = CurrentUser.getToken() else {
             cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
             return
         }
         switch action {
-        case .setPhotoForRequiremenrt(let requirId, let photoString):
+        case .getRequirementsForMy:
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-                    print(result)
-                    
-                    
-                    let action = API.Action.getPhotoLinksForRequirement(id: requirId)
-                    self.checkGuidAndSendRequest(with: action, cb: { (result) in
-                        print(result)
-                    })
 //                    let array = result["a:requirementsTemplate"]
-                    //                    print("requir template count: ", array.all.count, "checklistId: ", templateCheckListId)
 //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
 //                    cb(Result.Success(data: templates))
+                    break
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }

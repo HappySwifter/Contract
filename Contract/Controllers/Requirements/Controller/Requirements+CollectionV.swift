@@ -14,7 +14,7 @@ extension RequirementsViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ItemCell
         if let req: [RequirementModel] = object?.requirements?.toArray() {
-            cell.configure(model: req[indexPath.row])
+            cell.configure(model: req[indexPath.row], parent: self)
         } else {
             assert(false)
         }

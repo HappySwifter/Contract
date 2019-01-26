@@ -13,7 +13,7 @@
         <!--Requirements View Controller-->
         <scene sceneID="QhK-El-Wug">
             <objects>
-                <viewController storyboardIdentifier="RequirementsViewController" id="F2y-33-Jgg" customClass="RequirementsViewController" customModule="SmartContrakt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequirementsViewController" id="F2y-33-Jgg" customClass="RequirementsViewController" customModule="Contract" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23b-ba-5xU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dmN-vB-epy" customClass="ItemCell" customModule="SmartContrakt" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dmN-vB-epy" customClass="ItemCell" customModule="Contract" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="21" width="366" height="492"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -59,7 +59,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hQt-ER-Ycq" customClass="PhotoCell" customModule="SmartContrakt" customModuleProvider="target">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hQt-ER-Ycq" customClass="PhotoCell" customModule="Contract" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="3" width="50" height="50"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -102,19 +102,60 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="366" height="378.5"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sai-p0-49J">
-                                                            <rect key="frame" x="8" y="8" width="350" height="362.5"/>
+                                                            <rect key="frame" x="8" y="8" width="350" height="304.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnw-LW-gpW">
+                                                            <rect key="frame" x="8" y="320.5" width="350" height="50"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-PA-aDq">
+                                                                    <rect key="frame" x="8" y="8" width="35" height="34"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="35" id="YLz-xD-EFT"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-Bo-o8s">
+                                                                    <rect key="frame" x="51" y="6" width="299" height="37"/>
+                                                                    <nil key="textColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-DR-3mR">
+                                                                    <rect key="frame" x="51" y="49" width="299" height="1"/>
+                                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="1" id="Da7-Zb-6PO"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="IJS-Bo-o8s" secondAttribute="trailing" id="02f-zd-wHV"/>
+                                                                <constraint firstItem="Yh2-DR-3mR" firstAttribute="leading" secondItem="oiK-PA-aDq" secondAttribute="trailing" constant="8" id="0sD-0H-ceO"/>
+                                                                <constraint firstItem="IJS-Bo-o8s" firstAttribute="leading" secondItem="oiK-PA-aDq" secondAttribute="trailing" constant="8" id="2xP-Fl-jLm"/>
+                                                                <constraint firstItem="oiK-PA-aDq" firstAttribute="top" secondItem="hnw-LW-gpW" secondAttribute="top" constant="8" id="5oN-Jk-5y5"/>
+                                                                <constraint firstItem="Yh2-DR-3mR" firstAttribute="top" secondItem="IJS-Bo-o8s" secondAttribute="bottom" constant="6" id="8dV-hN-faP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Yh2-DR-3mR" secondAttribute="trailing" id="AVV-aT-AvF"/>
+                                                                <constraint firstItem="IJS-Bo-o8s" firstAttribute="top" secondItem="hnw-LW-gpW" secondAttribute="top" constant="6" id="B8b-it-urT"/>
+                                                                <constraint firstItem="oiK-PA-aDq" firstAttribute="leading" secondItem="hnw-LW-gpW" secondAttribute="leading" constant="8" id="CGA-Rw-ETP"/>
+                                                                <constraint firstAttribute="bottom" secondItem="oiK-PA-aDq" secondAttribute="bottom" constant="8" id="Gcb-dg-DOm"/>
+                                                                <constraint firstAttribute="height" constant="50" id="b9s-eg-yQK"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Yh2-DR-3mR" secondAttribute="bottom" id="kQc-Xg-0yC"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="hnw-LW-gpW" secondAttribute="bottom" constant="8" id="GKv-Vw-V3L"/>
                                                         <constraint firstItem="sai-p0-49J" firstAttribute="leading" secondItem="eHZ-es-6QE" secondAttribute="leading" constant="8" id="KAx-Kq-TVa"/>
-                                                        <constraint firstAttribute="bottom" secondItem="sai-p0-49J" secondAttribute="bottom" constant="8" id="LO8-zQ-oJc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hnw-LW-gpW" secondAttribute="trailing" constant="8" id="KOK-TB-wnG"/>
                                                         <constraint firstAttribute="trailing" secondItem="sai-p0-49J" secondAttribute="trailing" constant="8" id="Wqg-Sk-SgG"/>
                                                         <constraint firstItem="sai-p0-49J" firstAttribute="top" secondItem="eHZ-es-6QE" secondAttribute="top" constant="8" id="Y70-rO-aPu"/>
+                                                        <constraint firstItem="hnw-LW-gpW" firstAttribute="top" secondItem="sai-p0-49J" secondAttribute="bottom" constant="8" id="ZE0-MA-ubf"/>
+                                                        <constraint firstItem="hnw-LW-gpW" firstAttribute="leading" secondItem="eHZ-es-6QE" secondAttribute="leading" constant="8" id="jIr-6T-FZd"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -131,6 +172,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="collectionView" destination="BB0-gg-pX2" id="Y9J-M7-Ndy"/>
+                                            <outlet property="commentTextField" destination="IJS-Bo-o8s" id="XTU-js-DhL"/>
                                             <outlet property="textLabel" destination="sai-p0-49J" id="qZ1-kY-572"/>
                                         </connections>
                                     </collectionViewCell>

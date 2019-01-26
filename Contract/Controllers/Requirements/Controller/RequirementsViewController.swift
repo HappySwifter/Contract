@@ -76,6 +76,13 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
         lay.minimumInteritemSpacing = edgeInset * 2
         lay.minimumLineSpacing = edgeInset * 2
         
+        if let id = object.id {
+            let req = Requirements.Something.Request(checkListId: id)
+            interactor?.loadRequirementsIfEmpty(request: req)
+        } else {
+            assert(false)
+        }
+        
     }
     
     func configureBottomView() {

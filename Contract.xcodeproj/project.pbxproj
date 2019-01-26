@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020A7B6521FC48A4009B512D /* FullScrennImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A7B6421FC48A4009B512D /* FullScrennImageController.swift */; };
+		020A7B6721FC52F3009B512D /* Photo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A7B6621FC52F3009B512D /* Photo+Extensions.swift */; };
 		020C924521B30A0100135A65 /* Requirements+CollectionV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924421B30A0100135A65 /* Requirements+CollectionV.swift */; };
 		020C924721B30B2800135A65 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924621B30B2800135A65 /* ItemCell.swift */; };
 		020C924921B30E3400135A65 /* Requirements+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020C924821B30E3400135A65 /* Requirements+Action.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020A7B6421FC48A4009B512D /* FullScrennImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScrennImageController.swift; sourceTree = "<group>"; };
+		020A7B6621FC52F3009B512D /* Photo+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Extensions.swift"; sourceTree = "<group>"; };
 		020C924421B30A0100135A65 /* Requirements+CollectionV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requirements+CollectionV.swift"; sourceTree = "<group>"; };
 		020C924621B30B2800135A65 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		020C924821B30E3400135A65 /* Requirements+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requirements+Action.swift"; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				029899B521B583AF00DEEC3B /* WorkMode.swift */,
 				02278E6B21ADBEAD00860BEC /* Extensions.swift */,
 				02A4D0C821AA045600427491 /* Log.swift */,
+				020A7B6421FC48A4009B512D /* FullScrennImageController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */,
 				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
 				02A4D0C521AA025300427491 /* User+Extensions.swift */,
+				020A7B6621FC52F3009B512D /* Photo+Extensions.swift */,
 				02278E6921ADB1EE00860BEC /* Template+Extensions.swift */,
 				02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */,
 				022FA99D21CAB6E700CC53F0 /* RequirementModel+Extensions.swift */,
@@ -517,6 +523,7 @@
 				0264588921B59CDF00CCA094 /* CheckListsModels.swift in Sources */,
 				022FA99E21CAB6E700CC53F0 /* RequirementModel+Extensions.swift in Sources */,
 				0264588821B59CDF00CCA094 /* CheckListsRouter.swift in Sources */,
+				020A7B6721FC52F3009B512D /* Photo+Extensions.swift in Sources */,
 				029899B421B580C400DEEC3B /* NetworkReachability.swift in Sources */,
 				020C924D21B32B9700135A65 /* PhotoCell.swift in Sources */,
 				02A4D0C621AA025300427491 /* User+Extensions.swift in Sources */,
@@ -532,6 +539,7 @@
 				02FE0BB321B6BD6B007624E4 /* RequirementsModels.swift in Sources */,
 				02A4D0A621A9740400427491 /* SmartContrakt.xcdatamodeld in Sources */,
 				02CC8B2B21AB188F006112E4 /* ProfileViewController.swift in Sources */,
+				020A7B6521FC48A4009B512D /* FullScrennImageController.swift in Sources */,
 				0264588A21B59CDF00CCA094 /* CheckListsViewController.swift in Sources */,
 				020C924521B30A0100135A65 /* Requirements+CollectionV.swift in Sources */,
 				029899B021B575F600DEEC3B /* TemplatesInteractor.swift in Sources */,

@@ -14,7 +14,7 @@ import UIKit
 
 protocol RequirementsPresentationLogic
 {
-  func presentSomething(response: Requirements.Something.Response)
+  func presentRequirements(response: Requirements.Something.Response)
 }
 
 class RequirementsPresenter: RequirementsPresentationLogic
@@ -23,7 +23,7 @@ class RequirementsPresenter: RequirementsPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Requirements.Something.Response)
+  func presentRequirements(response: Requirements.Something.Response)
   {
     let viewModel = Requirements.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)

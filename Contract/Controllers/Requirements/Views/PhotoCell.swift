@@ -13,49 +13,24 @@ import Kingfisher
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     var requirId: String!
-
-    override func didMoveToWindow() {
-        super.didMoveToWindow()
-        imageView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTap))
-        imageView.addGestureRecognizer(tap)
+    var photoCellType = PhotoCellType.add
+    
+    enum PhotoCellType {
+        case photo(photo: UIImage)
+        case add
     }
     
-    func configure(photo: UIImage, requirId: String) {
+    
+    func configure(photoCellType: PhotoCellType, requirId: String) {
         self.requirId = requirId
-        imageView.image = photo
-    }
-    
-    @objc func imageTap() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        UIViewController.topMostViewController()?.present(imagePicker, animated: true, completion: nil)
-    }
-}
-
-extension PhotoCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let url = info[.imageURL] as! URL? {
-            picker.dismiss(animated: true, completion: { [weak self] in
-                guard let sSelf = self else { return }
-                let provider = LocalFileImageDataProvider(fileURL: url)
-                sSelf.imageView.kf.setImage(with: provider)
-                
-                if let data = try? Data(contentsOf: url) {
-                    
-                    let string = data.base64EncodedString()
-                    api.uploadImage(action: API.Action.setPhotoForRequiremenrt(id: sSelf.requirId, photoData: string), cb: { (result) in
-                        
-                    })
-                }
-            })
+        self.photoCellType = photoCellType
+        
+        switch photoCellType {
+        case .add:
+            imageView.image = UIImage(named: "AddButton")!
+        case .photo(let photo):
+            imageView.image = photo
         }
-    }
-    
-    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
     
 }
