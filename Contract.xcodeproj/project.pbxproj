@@ -307,10 +307,10 @@
 				02278E8621AE774700860BEC /* CheckListModel+Extensions.swift */,
 				02A4D0A421A9740400427491 /* SmartContrakt.xcdatamodeld */,
 				02A4D0C521AA025300427491 /* User+Extensions.swift */,
-				020A7B6621FC52F3009B512D /* Photo+Extensions.swift */,
 				02278E6921ADB1EE00860BEC /* Template+Extensions.swift */,
 				02620D9B21B92B80001B8CD7 /* RequirementTemplate+Extensions.swift */,
 				022FA99D21CAB6E700CC53F0 /* RequirementModel+Extensions.swift */,
+				020A7B6621FC52F3009B512D /* Photo+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +471,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Contract/Pods-Contract-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DrawerController/DrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RMActionController/RMActionController.framework",
 				"${BUILT_PRODUCTS_DIR}/RMDateSelectionViewController/RMDateSelectionViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
@@ -479,6 +480,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMActionController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMDateSelectionViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",

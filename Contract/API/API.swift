@@ -32,6 +32,9 @@ extension Formatter {
 //print(formatter.string(from: date))
 
 protocol APIProtocol {
+    
+    func isConnectedToInternet() -> Bool
+    
     func login(action: API.Action, cb: @escaping (Result<(user: User, token: String)>) -> Void)
     func getTemplates(action: API.Action, cb: @escaping (Result<[TemplateModel]>) -> Void)
     func getMyCheckLists(action: API.Action, cb: @escaping (Result<[CheckListModel]>) -> Void)
@@ -254,10 +257,8 @@ class API: APIProtocol {
                 case .Success(let res):
                     let requirementId = res.element!.text
                     Log("Got server requirement id: \(requirementId)", type: .info)
-                    let requirementModel = RequirementModel.saveRequirement(checkListId: checkListId,
+                    let requirementModel = RequirementModel.setServerId(checkListId: checkListId,
                                                                             requirementId: requirementId,
-                                                                            note: note,
-                                                                            yesNo: yesNo,
                                                                             text: requirementText)
                     if let requirementModel = requirementModel {
                         cb(Result.Success(data: requirementModel))
@@ -286,12 +287,7 @@ class API: APIProtocol {
                 case .Success(let res):
                     let deleted = res.element!.text
                     Log("Requirement \(requirementId) deleted from server", type: .info)
-                    
-//                    if let requirementModel = requirementModel {
-                        cb(Result.Success(data: true))
-//                    } else {
-//                        cb(Result.Failure(error: CustomError.CannotCreate("Не удалось удалить требование с сервера")))
-//                    }
+                    cb(Result.Success(data: true))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }
@@ -386,7 +382,7 @@ class API: APIProtocol {
                 switch result {
                 case .Success(let result):
                     let photoId = result.element!.text
-                    if let photo = Photo.savePhoto(id: photoId, data: photoData, requirementId: requirementId) {
+                    if let photo = Photo.setServerId(id: photoId, data: photoData, requirementId: requirementId) {
                         cb(Result.Success(data: photo))
                     } else {
                          cb(Result.Failure(error: CustomError.CannotCreate("Не удалось сохранить фото")))

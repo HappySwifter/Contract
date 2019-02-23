@@ -19,7 +19,6 @@ class ItemCell: UICollectionViewCell {
     var photos = [Photo]()
     var requir: RequirementModel!
     var parent: UIViewController!
-    var yesNoHandler: ((ItemCell) -> Void)?
     
     enum ViewType {
         case empty
@@ -57,12 +56,22 @@ class ItemCell: UICollectionViewCell {
             segmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
         }
         
+        reloadPhotosFromDB()
+    }
+    
+     func reloadPhotosFromDB() {
         photos = requir.photos?.toArray() ?? []
         photosCollectionView.reloadData()
     }
     
-    @IBAction func yesNoTouched() {
-        yesNoHandler?(self)
+    func saveNewPhotoFrom(url: URL) {
+        if let data = try? Data(contentsOf: url) {
+            let image = UIImage(data: data)
+            let scaledImagedata = image!.jpegData(compressionQuality: 0.2)
+            let string = scaledImagedata!.base64EncodedString()
+            Photo.savePhotoFor(requirement: requir, data: string)
+            reloadPhotosFromDB()
+        }
     }
 }
 
@@ -77,21 +86,15 @@ extension ItemCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         
         switch collectionViewValueType {
         case .empty:
-            cell.configure(photoCellType: .add, requirId: requir.id)
+            cell.configure(photoCellType: .add)
         case .valueFrom1To4:
             if indexPath.item + 1 > photos.count {
-                cell.configure(photoCellType: .add, requirId: requir.id)
+                cell.configure(photoCellType: .add)
             } else {
-                let base64 = photos[indexPath.item].data!
-                let data = Data(base64Encoded: base64)!
-                let image = UIImage(data: data)!
-                cell.configure(photoCellType: .photo(photo: image), requirId: requir.id!)
+                cell.configure(photoCellType: .photo(photo: photos[indexPath.item]))
             }
         case .full:
-            let base64 = photos[indexPath.item].data!
-            let data = Data(base64Encoded: base64)!
-            let image = UIImage(data: data)!
-            cell.configure(photoCellType: .photo(photo: image), requirId: requir.id!)
+            cell.configure(photoCellType: .photo(photo: photos[indexPath.item]))
             
         }
         return cell
@@ -122,52 +125,60 @@ extension ItemCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell {
             switch cell.photoCellType {
             case .add:
-                if let _ = requir.id {
-                    let imagePicker = UIImagePickerController()
-                    imagePicker.sourceType = .photoLibrary
-                    imagePicker.delegate = self
-                    UIViewController.topMostViewController()?.present(imagePicker, animated: true, completion: nil)
-                } else {
-                    presentAlert(title: "Сначала выберите Да или Нет", text: "")
-                }
+                let imagePicker = UIImagePickerController()
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.delegate = self
+                UIViewController.topMostViewController()?.present(imagePicker, animated: true, completion: nil)
+
                 
             case .photo(let photo):
                 let contr = FullScreenImageVC()
                 contr.removeHandler = { [weak self] in
                     contr.dismiss(animated: true, completion: { [weak self] in
-                        self?.deletePhotos()
+                        self?.deletePhoto(at: indexPath.row)
                     })
-                    
                 }
-                contr.image = photo
+                contr.image = UIImage(data: Data(base64Encoded: photo.data!)!)!
                 parent.present(contr, animated: true, completion: nil)
             }
         }
     }
-    
-    private func deletePhotos() {
+}
+
+
+
+extension ItemCell {
+    private func deletePhoto(at index: Int) {
         
-        if let reqId = requir.id {
-            let alert = UIAlertController(title: "Удалить фото?", message: "Будут удалены все фото данного требованияы", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
-                api.deleteAllPhotosForRequirement(action: API.Action.deleteAllPhotosForRequirement(id: reqId), cb: { [weak self] (result) in
-                    switch result {
-                    case .Success:
-                        self?.photos.removeAll()
-                        self?.photosCollectionView.reloadData()
-                    case .Failure(let error):
-                        presentAlert(title: "Ошибка", text: error.localizedDescription)
-                    }
-                })
-            })
-            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-            alert.addAction(okAction)
-            alert.addAction(cancelAction)
-            UIViewController.topMostViewController()?.present(alert, animated: true, completion: nil)
-   
+        let photo = photos[index]
+        if photo.isUploaded {
+            presentAlert(title: "Нельзя удалить", text: "В данный момент нельзя удалить фотографии, которые уже были отправлены на сервер")
         } else {
-            Log("No id for requirement!", type: .error)
+            photo.deleteLocalPhotoFor(requirement: requir)
+            reloadPhotosFromDB()
         }
+        
+//        if let reqId = requir.id {
+//            let alert = UIAlertController(title: "Удалить фото?", message: "Будут удалены все фото данного требованияы", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+//                api.deleteAllPhotosForRequirement(action: API.Action.deleteAllPhotosForRequirement(id: reqId), cb: { [weak self] (result) in
+//                    switch result {
+//                    case .Success:
+//                        self?.photos.removeAll()
+//                        self?.photosCollectionView.reloadData()
+//                    case .Failure(let error):
+//                        presentAlert(title: "Ошибка", text: error.localizedDescription)
+//                    }
+//                })
+//            })
+//            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+//            alert.addAction(okAction)
+//            alert.addAction(cancelAction)
+//            UIViewController.topMostViewController()?.present(alert, animated: true, completion: nil)
+//
+//        } else {
+//            Log("No id for requirement!", type: .error)
+//        }
     }
 }
 
@@ -177,21 +188,7 @@ extension ItemCell: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let url = info[.imageURL] as! URL? {
             picker.dismiss(animated: true, completion: { [weak self] in
-                guard let sSelf = self else { return }
-                if let data = try? Data(contentsOf: url) {
-                    let image = UIImage(data: data)
-                    let scaledImagedata = image!.jpegData(compressionQuality: 0.2)
-                    let string = scaledImagedata!.base64EncodedString()
-                    api.setPhotoForRequiremenrt(action: API.Action.setPhotoForRequiremenrt(id: sSelf.requir.id!, photoData: string), cb: { [weak self] (result) in
-                        switch result {
-                        case .Success(let photo):
-                            self?.photos.append(photo)
-                            self?.photosCollectionView.reloadData()
-                        case .Failure(let error):
-                            Log(error.localizedDescription, type: .error)
-                        }
-                    })
-                }
+                self?.saveNewPhotoFrom(url: url)
             })
         }
     }

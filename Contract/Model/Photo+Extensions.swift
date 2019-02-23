@@ -16,26 +16,48 @@ extension Photo {
         return NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as! Photo
     }
     
+    /// Сохраняем локальное фото
+    @discardableResult class func savePhotoFor(requirement: RequirementModel, data: String) -> Photo {
+        let photo: Photo = createNew()
+        photo.data = data
+        photo.isUploaded = false
+        requirement.addToPhotos(photo)
+        appDelegate.saveContext()
+        return photo
+    }
     
-    class func savePhoto(id: String, data: String, requirementId: String) -> Photo? {
-        
-        guard let requirementModel: RequirementModel = getObjects(withId: requirementId).first else {
-            Log("Нет такого требования в базе", type: .error)
+    func deleteLocalPhotoFor(requirement: RequirementModel) {
+        requirement.removeFromPhotos(self)
+        managedObjectContext?.delete(self)
+        appDelegate.saveContext()
+    }
+    
+    
+    /// Сохраняем ответ от сервера
+    class func setServerId(id: String, data: String, requirementId: String) -> Photo? {
+        if let photo = findLocalPhotoBy(reqId: requirementId, and: data) {
+            photo.id = id
+            photo.isUploaded = true
+            appDelegate.saveContext()
+            return photo
+        } else {
             assert(false)
             return nil
         }
-        
-        let photo: Photo
-        if let c: Photo = getObjects(withId: id).first {
-            photo = c
-        } else {
-            photo = createNew()
-            photo.id = id
-            requirementModel.addToPhotos(photo)
+    }
+    
+    class func findLocalPhotoBy(reqId: String, and data: String) -> Photo? {
+        let fetchRequest = NSFetchRequest<Photo>(entityName: "Photo")
+        fetchRequest.fetchLimit = 1
+        let predicate = NSPredicate(format: "requirement.id = %@ and data = %@", reqId, data)
+        fetchRequest.predicate = predicate
+        do {
+            let result = try context.fetch(fetchRequest).first
+            return result
+        } catch {
+            Log("Error \(error.localizedDescription)", type: .error)
+            return nil
         }
-        photo.data = data
-        appDelegate.saveContext()
-        return photo
     }
     
     class func removeAllPhotosFor(requirementId: String) {
@@ -70,6 +92,7 @@ extension Photo {
                     photo = createNew()
                     //            photo.id = id
                 }
+                photo.isUploaded = true
             }
             appDelegate.saveContext()
         }

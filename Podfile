@@ -8,6 +8,7 @@ target 'Contract' do
   pod 'DrawerController', '~> 4.0'
   pod 'RMDateSelectionViewController', '~> 2.3'
   pod 'Kingfisher'
+  pod 'PKHUD', '~> 5.0'
 end
 
 post_install do |installer|

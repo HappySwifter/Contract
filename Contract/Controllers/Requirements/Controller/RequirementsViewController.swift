@@ -70,6 +70,12 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let leftDrawerButton =  UIBarButtonItem(image: UIImage(named: "send"), style: .plain, target: self, action: #selector(self.sendToServerTouched))
+//        leftDrawerButton.tintColor = .black
+        self.navigationItem.setRightBarButton(leftDrawerButton, animated: false)
+        
+        
         let lay = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         lay.sectionInset = UIEdgeInsets(top: edgeInset, left: edgeInset, bottom: edgeInset, right: edgeInset)
         lay.minimumInteritemSpacing = edgeInset * 2
@@ -89,12 +95,8 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
     func displaySomething(viewModel: Requirements.Something.ViewModel) {
         let req = viewModel.requirements
         Log("\(req.count) requirements in checklist", type: .info)
-        Log("\(req.compactMap({$0.title})) \n", type: .info)
+//        Log("\(req.compactMap({$0.title})) \n", type: .info)
         self.requirements = req
         collectionView.reloadData()
-    }
-    
-    func handleYesNoPress(request : Requirements.SetRequirement.Request) {
-        interactor?.setRequirementInCell(request: request)
     }
 }

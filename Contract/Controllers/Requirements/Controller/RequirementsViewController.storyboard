@@ -48,9 +48,6 @@
                                                                 <segment title="Да"/>
                                                                 <segment title="Нет"/>
                                                             </segments>
-                                                            <connections>
-                                                                <action selector="yesNoTouched" destination="dmN-vB-epy" eventType="valueChanged" id="KZD-zG-CYn"/>
-                                                            </connections>
                                                         </segmentedControl>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-gg-pX2">
                                                             <rect key="frame" x="20" y="53" width="326" height="55.5"/>
@@ -72,15 +69,25 @@
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddButton" translatesAutoresizingMaskIntoConstraints="NO" id="dZ0-iG-1w3">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             </imageView>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="bUw-0k-Anl">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="17.5" height="17.5"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="bUw-0k-Anl" secondAttribute="height" multiplier="1:1" id="4dA-ht-8qu"/>
+                                                                                </constraints>
+                                                                            </imageView>
                                                                         </subviews>
                                                                     </view>
                                                                     <constraints>
+                                                                        <constraint firstItem="bUw-0k-Anl" firstAttribute="top" secondItem="hQt-ER-Ycq" secondAttribute="top" id="8Km-7N-g9m"/>
+                                                                        <constraint firstItem="bUw-0k-Anl" firstAttribute="height" secondItem="dZ0-iG-1w3" secondAttribute="height" multiplier="0.35" id="G3X-dV-K3c"/>
                                                                         <constraint firstAttribute="trailing" secondItem="dZ0-iG-1w3" secondAttribute="trailing" id="Hwc-Yd-vEe"/>
                                                                         <constraint firstAttribute="bottom" secondItem="dZ0-iG-1w3" secondAttribute="bottom" id="dpu-jE-PdD"/>
                                                                         <constraint firstItem="dZ0-iG-1w3" firstAttribute="top" secondItem="hQt-ER-Ycq" secondAttribute="top" id="eW1-hh-m4h"/>
+                                                                        <constraint firstItem="bUw-0k-Anl" firstAttribute="leading" secondItem="hQt-ER-Ycq" secondAttribute="leading" id="iQ3-VH-giG"/>
                                                                         <constraint firstItem="dZ0-iG-1w3" firstAttribute="leading" secondItem="hQt-ER-Ycq" secondAttribute="leading" id="pO6-4O-MP8"/>
                                                                     </constraints>
                                                                     <connections>
+                                                                        <outlet property="checkImageView" destination="bUw-0k-Anl" id="eJK-55-ypQ"/>
                                                                         <outlet property="imageView" destination="dZ0-iG-1w3" id="loa-1p-LZT"/>
                                                                     </connections>
                                                                 </collectionViewCell>
@@ -316,6 +323,7 @@
     </scenes>
     <resources>
         <image name="AddButton" width="60" height="60"/>
+        <image name="checkmark" width="22.5" height="22.5"/>
         <image name="left" width="486" height="980"/>
         <image name="note" width="100" height="100"/>
         <image name="right" width="486" height="980"/>

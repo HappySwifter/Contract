@@ -12,24 +12,35 @@ import Kingfisher
 
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
-    var requirId: String?
+    @IBOutlet weak var checkImageView: UIImageView!
+    
     var photoCellType = PhotoCellType.add
     
     enum PhotoCellType {
-        case photo(photo: UIImage)
+        case photo(photo: Photo)
         case add
     }
     
     
-    func configure(photoCellType: PhotoCellType, requirId: String?) {
-        self.requirId = requirId
+    func configure(photoCellType: PhotoCellType) {
         self.photoCellType = photoCellType
+        
         
         switch photoCellType {
         case .add:
             imageView.image = UIImage(named: "AddButton")!
+            checkImageView.isHidden = true
         case .photo(let photo):
-            imageView.image = photo
+            let base64 = photo.data!
+            let data = Data(base64Encoded: base64)!
+            let image = UIImage(data: data)!
+            imageView.image = image
+            
+            if photo.isUploaded {
+                checkImageView.isHidden = false
+            } else {
+                checkImageView.isHidden = true
+            }
         }
     }
     

@@ -75,7 +75,7 @@ class MenuVC: UITableViewController {
         case .Profile:
             contr = getController(forName: ProfileViewController.self, showMenuButton: true)
         case .CheckList:
-            contr = getController(forName: TemplatesViewController.self, showMenuButton: true)
+            contr = getController(forName: CheckListsViewController.self, showMenuButton: true)
         case .Exit:
             CurrentUser.logout()
             evo_drawerController?.toggleDrawerSide(.left, animated: true, completion: nil)

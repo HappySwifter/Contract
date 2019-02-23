@@ -14,19 +14,7 @@ extension RequirementsViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ItemCell
         cell.configure(model: requirements[indexPath.row], parent: self)
-        cell.yesNoHandler = { [weak self] targetCell in
-            if let ip = collectionView.indexPath(for: targetCell) {
-                if let requirement = self?.requirements[ip.row] {
-                    let request = Requirements.SetRequirement.Request(requirementId: requirement.id,
-                                                                  requirementText: targetCell.textLabel.text,
-                                                                  yesNo: targetCell.segmentedControl.selectedSegmentIndex == 0,
-                                                                  note: targetCell.commentTextField.text)
-                    self?.handleYesNoPress(request: request)
-                }
-                
-            }
-            
-        }
+
         return cell
     }
     

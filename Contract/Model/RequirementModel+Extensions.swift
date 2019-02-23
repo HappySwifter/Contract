@@ -16,6 +16,32 @@ extension RequirementModel {
         return NSEntityDescription.insertNewObject(forEntityName: "RequirementModel", into: context) as! RequirementModel
     }
 
+    /// Сохраняем локальное требование
+    @discardableResult class func saveLocalRequirFor(checkListId: String, title: String, note: String, yesNo: Bool) -> RequirementModel? {
+        
+//        guard let checkListModel: CheckListModel = getObjects(withId: checkListId).first else {
+//            Log("Нет такого чеклиста в базе", type: .error)
+//            assert(false)
+//            return nil
+//        }
+        
+        let req: RequirementModel
+        if let c: RequirementModel = getLocalRequirementFor(checllistId: checkListId, title: title) {
+            req = c
+        } else {
+            req = createNew()
+//            req.title = title
+//            checkListModel.addToRequirements(req)
+            assert(false)
+        }
+        
+        req.yesNo = yesNo as NSNumber
+        req.note = note
+        appDelegate.saveContext()
+        return req
+    }
+    
+    
     /// Сохраняем новое требование в локальной базе и присваиваем его чеклисту
     ///
     /// - Parameters:
@@ -25,30 +51,16 @@ extension RequirementModel {
     ///   - yesNo: да нет
     ///   - text: текст требования
     /// - Returns: возвращает модель требования
-    class func saveRequirement(checkListId: String, requirementId: String, note: String, yesNo: Bool, text: String) -> RequirementModel? {
-        
-        guard let checkListModel: CheckListModel = getObjects(withId: checkListId).first else {
-            Log("Нет такого чеклиста в базе", type: .error)
+    class func setServerId(checkListId: String, requirementId: String, text: String) -> RequirementModel? {
+        if let model = getLocalRequirementFor(checllistId: checkListId, title: text) {
+            Log("found local requirement. Setting server id \(requirementId) to it", type: .info)
+            model.id = requirementId
+            appDelegate.saveContext()
+            return model
+        } else {
             assert(false)
             return nil
         }
-        
-        let req: RequirementModel
-        if let c: RequirementModel = getLocalRequirementFor(checllistId: checkListId, title: text) {
-            Log("found local requirement. Setting server id \(requirementId) to it", type: .info)
-            req = c
-        } else {
-            Log("Not found any local requirement with checkListId: \(checkListId) and title: \(text)", type: .error)
-            req = createNew()
-            req.title = text
-            checkListModel.addToRequirements(req)
-        }
-        req.id = requirementId
-        req.yesNo = yesNo as NSNumber
-        req.note = note
-        
-        appDelegate.saveContext()
-        return req
     }
     
     

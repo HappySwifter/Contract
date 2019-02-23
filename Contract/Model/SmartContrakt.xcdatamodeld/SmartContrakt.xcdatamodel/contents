@@ -8,10 +8,10 @@
         <relationship name="requirements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RequirementModel" inverseName="checkList" inverseEntity="RequirementModel" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
+        <attribute name="createDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isUploaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="requirement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RequirementModel" inverseName="photos" inverseEntity="RequirementModel" syncable="YES"/>
     </entity>
     <entity name="RequirementModel" representedClassName="RequirementModel" syncable="YES" codeGenerationType="class">
