@@ -30,7 +30,8 @@ class CheckListsRouter: NSObject, CheckListsRoutingLogic, CheckListsDataPassing
     
     func routeToRequirements(checkList: CheckListModel) {
         let contr = getController(forName: RequirementsViewController.self, showMenuButton: false)
-        contr.object = checkList
+        var destinationDS = contr.router!.dataStore!
+        destinationDS.checkListId = checkList.id!
         viewController?.navigationController?.pushViewController(contr, animated: true)
     }
   // MARK: Routing

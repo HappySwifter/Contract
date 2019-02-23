@@ -65,8 +65,7 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
     @IBOutlet weak var bottomTextLabel: UILabel!
     
     let edgeInset = realSize(10)
-    var object: CheckListModel!
-    
+    var requirements = [RequirementModel]()
     
     
     override func viewDidLoad() {
@@ -76,24 +75,26 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
         lay.minimumInteritemSpacing = edgeInset * 2
         lay.minimumLineSpacing = edgeInset * 2
         
-        if let id = object.id {
-            let req = Requirements.Something.Request(checkListId: id)
-            interactor?.loadRequirementsIfEmpty(request: req)
-        } else {
-            assert(false)
-        }
-        
+        let req = Requirements.Something.Request()
+        interactor?.loadRequirements(request: req)
     }
     
     func configureBottomView() {
         if let index = collectionView.indexPathsForVisibleItems.first?.item {
-            bottomTextLabel.text = "\(index + 1) из \(object.requirements?.count ?? 0)"
+            bottomTextLabel.text = "\(index + 1) из \(requirements.count)"
         }
     }
     
 
     func displaySomething(viewModel: Requirements.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+        let req = viewModel.requirements
+        Log("\(req.count) requirements in checklist", type: .info)
+        Log("\(req.compactMap({$0.title})) \n", type: .info)
+        self.requirements = req
+        collectionView.reloadData()
     }
     
+    func handleYesNoPress(request : Requirements.SetRequirement.Request) {
+        interactor?.setRequirementInCell(request: request)
+    }
 }

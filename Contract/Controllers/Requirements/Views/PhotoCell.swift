@@ -12,7 +12,7 @@ import Kingfisher
 
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
-    var requirId: String!
+    var requirId: String?
     var photoCellType = PhotoCellType.add
     
     enum PhotoCellType {
@@ -21,7 +21,7 @@ class PhotoCell: UICollectionViewCell {
     }
     
     
-    func configure(photoCellType: PhotoCellType, requirId: String) {
+    func configure(photoCellType: PhotoCellType, requirId: String?) {
         self.requirId = requirId
         self.photoCellType = photoCellType
         

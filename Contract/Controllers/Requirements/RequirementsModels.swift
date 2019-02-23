@@ -20,13 +20,48 @@ enum Requirements
   {
     struct Request
     {
-        let checkListId: String
     }
     struct Response
     {
+        let requirements: [RequirementModel]
     }
     struct ViewModel
     {
+        let requirements: [RequirementModel]
     }
   }
+    
+    enum SetRequirement
+    {
+        struct Request
+        {
+            /// если требование серверное, то id будет присутствовать
+            let requirementId: String?
+            let requirementText: String
+            let yesNo: Bool
+            let note: String?
+        }
+        
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
+    }
+    
+    enum DeleteRequirement
+    {
+        struct Request
+        {
+            let requirementId: String
+        }
+        
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
+    }
 }

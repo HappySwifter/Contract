@@ -33,7 +33,8 @@ extension API {
         case getRequirementsForMy(checkListId: String)
         /// требование сохраняется, возвращается id_requirement созданный
         case setRequirement(checkListId: String, requirementText: String, yesNo: Bool, note: String)
-        
+        /// удаляем требование с сервера (вызываем перед тем, как обновить данные у существующего серверного требования)
+        case deleteRequirement(requirementId: String)
         
         /// возвращается массив <byte[]>
         case getPhotoDataByLink(link: String)
@@ -67,6 +68,8 @@ extension API {
                     return "GetCheckList"
                 case .getRequirementsForMy:
                     return "GetRequirements"
+                case .deleteRequirement:
+                    return "DeleteRequirement"
                     
                 case .getPhotoDataByLink:
                     return "GetPhotoFromLink"
@@ -119,6 +122,11 @@ extension API {
                     <requirement>\(requirementText)</requirement>
                     <availability>\(yesNoString)</availability>
                     <note>\(note)</note>
+                    """
+                    return insertParamsToEnvelope(params: params, withToken: true)
+                case .deleteRequirement(let requirementId):
+                    let params = """
+                    <id_requirement>\(requirementId)</id_requirement>
                     """
                     return insertParamsToEnvelope(params: params, withToken: true)
                 case .getMyChecklists:

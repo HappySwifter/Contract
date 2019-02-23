@@ -42,17 +42,21 @@ protocol APIProtocol {
 
     func getRequirementsForCheckList(action: API.Action, cb: @escaping (Result<[RequirementModel]>) -> Void)
     
+    /// создать новое требование
+    /// - Returns: возвращает локальное требование
+    func setRequirement(action: API.Action, cb: @escaping (Result<RequirementModel>) -> Void)
+    func deleteRequirement(action: API.Action, cb: @escaping (Result<Bool>) -> Void)
+    
     func getPhotoDataByLink(action: API.Action, cb: @escaping (Result<String>) -> Void)
     func deletePhoto(action: API.Action, cb: @escaping (Result<String>) -> Void)
-    func getPhotoLinksForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void)
-    func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<String>) -> Void)
-    func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void)
+    func getPhotoLinksForRequirement(action: API.Action, cb: @escaping (Result<Bool>) -> Void)
+    func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<Photo>) -> Void)
+    func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<Bool>) -> Void)
     
 
 }
 
 class API: APIProtocol {
-
     
     let serviceURL = "http://195.128.127.188:54321/SmartService/Service1.svc"
     init() {
@@ -220,14 +224,13 @@ class API: APIProtocol {
             return
         }
         switch action {
-        case .getRequirementsForMy:
+        case .getRequirementsForMy(let checkListId):
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-//                    let array = result["a:requirementsTemplate"]
-//                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
-//                    cb(Result.Success(data: templates))
-                    break
+                    let array = result["a:requirements"]
+                    let requirModels = RequirementModel.saveServerRequirements(checkListId: checkListId, xmlObjects: array.all)
+                    cb(Result.Success(data: requirModels))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }
@@ -239,6 +242,65 @@ class API: APIProtocol {
     }
     
     
+    func setRequirement(action: API.Action, cb: @escaping (Result<RequirementModel>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .setRequirement(let checkListId, let requirementText, let yesNo, let note):
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let res):
+                    let requirementId = res.element!.text
+                    Log("Got server requirement id: \(requirementId)", type: .info)
+                    let requirementModel = RequirementModel.saveRequirement(checkListId: checkListId,
+                                                                            requirementId: requirementId,
+                                                                            note: note,
+                                                                            yesNo: yesNo,
+                                                                            text: requirementText)
+                    if let requirementModel = requirementModel {
+                        cb(Result.Success(data: requirementModel))
+                    } else {
+                        cb(Result.Failure(error: CustomError.CannotCreate("Не удалось создать локальную модель RequirementModel")))
+                    }
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
+    
+    func deleteRequirement(action: API.Action, cb: @escaping (Result<Bool>) -> Void) {
+        guard let _ = CurrentUser.getToken() else {
+            cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
+            return
+        }
+        switch action {
+        case .deleteRequirement(let requirementId):
+            checkGuidAndSendRequest(with: action) { result in
+                switch result {
+                case .Success(let res):
+                    let deleted = res.element!.text
+                    Log("Requirement \(requirementId) deleted from server", type: .info)
+                    
+//                    if let requirementModel = requirementModel {
+                        cb(Result.Success(data: true))
+//                    } else {
+//                        cb(Result.Failure(error: CustomError.CannotCreate("Не удалось удалить требование с сервера")))
+//                    }
+                case .Failure(let error):
+                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                }
+            }
+        default:
+            assert(false)
+            break
+        }
+    }
     
     func getPhotoDataByLink(action: API.Action, cb: @escaping (Result<String>) -> Void) {
         guard let _ = CurrentUser.getToken() else {
@@ -274,6 +336,7 @@ class API: APIProtocol {
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
+                    print(result)
                     //                    let array = result["a:requirementsTemplate"]
                     //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
                     //                    cb(Result.Success(data: templates))
@@ -288,20 +351,20 @@ class API: APIProtocol {
         }
     }
     
-    func getPhotoLinksForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+    func getPhotoLinksForRequirement(action: API.Action, cb: @escaping (Result<Bool>) -> Void) {
         guard let _ = CurrentUser.getToken() else {
             cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
             return
         }
         switch action {
-        case .getPhotoLinksForRequirement:
+        case .getPhotoLinksForRequirement(let reqId):
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-                    //                    let array = result["a:requirementsTemplate"]
-                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
-                    //                    cb(Result.Success(data: templates))
-                    break
+                    print(result)
+                    let array = result.all
+                    Photo.saveServerPhotos(xmlObjects: array, reqId: reqId)
+                    cb(Result.Success(data: true))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }
@@ -312,22 +375,24 @@ class API: APIProtocol {
         }
     }
     
-    func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+    func setPhotoForRequiremenrt(action: API.Action, cb: @escaping (Result<Photo>) -> Void) {
         guard let _ = CurrentUser.getToken() else {
             cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
             return
         }
         switch action {
-        case .setPhotoForRequiremenrt:
+        case .setPhotoForRequiremenrt(let requirementId, let photoData):
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-                    //                    let array = result["a:requirementsTemplate"]
-                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
-                    //                    cb(Result.Success(data: templates))
-                    break
+                    let photoId = result.element!.text
+                    if let photo = Photo.savePhoto(id: photoId, data: photoData, requirementId: requirementId) {
+                        cb(Result.Success(data: photo))
+                    } else {
+                         cb(Result.Failure(error: CustomError.CannotCreate("Не удалось сохранить фото")))
+                    }
                 case .Failure(let error):
-                    cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
+                    cb(Result.Failure(error: CustomError.CannotCreate(error.localizedDescription)))
                 }
             }
         default:
@@ -336,20 +401,22 @@ class API: APIProtocol {
         }
     }
     
-    func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<String>) -> Void) {
+    func deleteAllPhotosForRequirement(action: API.Action, cb: @escaping (Result<Bool>) -> Void) {
         guard let _ = CurrentUser.getToken() else {
             cb(Result.Failure(error: CustomError.CannotFetch("Токен не обнаружен")))
             return
         }
         switch action {
-        case .deleteAllPhotosForRequirement:
+        case .deleteAllPhotosForRequirement(let reqId):
             checkGuidAndSendRequest(with: action) { result in
                 switch result {
                 case .Success(let result):
-                    //                    let array = result["a:requirementsTemplate"]
-                    //                    let templates = RequirementTemplate.saveObjects(checkListId: templateCheckListId, xmlObjects: array.all)
-                    //                    cb(Result.Success(data: templates))
-                    break
+                    let text = result.element?.text
+                    if let text = text, text == "Incorrect syntax near \'*\'." {
+                        cb(Result.Failure(error: CustomError.CannotDelete(text)))
+                    } else {
+                        Photo.removeAllPhotosFor(requirementId: reqId)
+                    }
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }

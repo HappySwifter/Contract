@@ -11,11 +11,11 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var organizationLabel: UILabel!
-    @IBOutlet weak var otdelLabel: UILabel!
-    @IBOutlet weak var doljnostLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var organizationLabel: UITextField!
+    @IBOutlet weak var otdelLabel: UITextField!
+    @IBOutlet weak var doljnostLabel: UITextField!
+    @IBOutlet weak var emailLabel: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,13 @@ class ProfileViewController: UIViewController {
             otdelLabel.text = user.otdel
             doljnostLabel.text = user.doljnost
             emailLabel.text = user.mail
-//            photoView.image = user.photoString
+            
+            if let photo = user.photoString {
+                let data = Data(base64Encoded: photo)!
+                let image = UIImage(data: data)!
+                photoView.image = image
+            }
+            
         } else {
             CurrentUser.logout()
             let contr = getController(forName: LoginViewController.self, showMenuButton: false)

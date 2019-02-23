@@ -210,6 +210,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bfk-CD-x7w"/>
                     </view>
+                    <connections>
+                        <outlet property="doljnostLabel" destination="uo9-rp-gIX" id="LFo-WP-DcQ"/>
+                        <outlet property="emailLabel" destination="lE4-fK-dse" id="RBL-iX-TZc"/>
+                        <outlet property="nameLabel" destination="iS6-f2-ANF" id="fTs-OX-xxh"/>
+                        <outlet property="organizationLabel" destination="2oT-Re-hb4" id="kHe-la-Qjg"/>
+                        <outlet property="otdelLabel" destination="87n-rZ-s16" id="adP-VI-zgj"/>
+                        <outlet property="photoView" destination="VZ5-vs-Fzr" id="8z3-1q-QbH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npf-f9-fpg" sceneMemberID="firstResponder"/>
             </objects>

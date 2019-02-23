@@ -14,8 +14,9 @@ private let offsetLeft: CGFloat = 10
 class FullScreenImageVC: UIViewController {
     
     var didDismissHandler: (() -> Void)?
+    var removeHandler: (() -> Void)?
+    
     var imageView: UIImageView!
-    let loadingIndicator = UIActivityIndicatorView(frame: .zero)
     var image: UIImage!
     var activityViewController: UIActivityViewController!
     let closeButton = UIButton(type: .custom)
@@ -41,16 +42,11 @@ class FullScreenImageVC: UIViewController {
     }()
     
     @objc func deleteImage() {
-        
+        removeHandler?()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .whiteLarge
-        loadingIndicator.startAnimating()
-        view.addSubview(loadingIndicator)
-        //        dLog("")
         
         let closeImage = UIImage(named: "close_white")
         closeButton.setImage(closeImage, for: .normal)
@@ -139,7 +135,6 @@ class FullScreenImageVC: UIViewController {
         self.scrollView.contentSize = UIScreen.main.bounds.size
         self.imageView.center = self.contentCenter(forBoundingSize: UIScreen.main.bounds.size, contentSize: UIScreen.main.bounds.size)
         
-        loadingIndicator.center = imageView.center
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

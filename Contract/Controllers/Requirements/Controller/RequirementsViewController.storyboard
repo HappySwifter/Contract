@@ -48,6 +48,9 @@
                                                                 <segment title="Да"/>
                                                                 <segment title="Нет"/>
                                                             </segments>
+                                                            <connections>
+                                                                <action selector="yesNoTouched" destination="dmN-vB-epy" eventType="valueChanged" id="KZD-zG-CYn"/>
+                                                            </connections>
                                                         </segmentedControl>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-gg-pX2">
                                                             <rect key="frame" x="20" y="53" width="326" height="55.5"/>
@@ -111,7 +114,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnw-LW-gpW">
                                                             <rect key="frame" x="8" y="320.5" width="350" height="50"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-PA-aDq">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-PA-aDq">
                                                                     <rect key="frame" x="8" y="8" width="35" height="34"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="35" id="YLz-xD-EFT"/>
@@ -171,8 +174,9 @@
                                             <constraint firstItem="k8V-JD-ZuP" firstAttribute="height" secondItem="eHZ-es-6QE" secondAttribute="height" multiplier="0.3" id="pRF-aA-WOA"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="collectionView" destination="BB0-gg-pX2" id="Y9J-M7-Ndy"/>
                                             <outlet property="commentTextField" destination="IJS-Bo-o8s" id="XTU-js-DhL"/>
+                                            <outlet property="photosCollectionView" destination="BB0-gg-pX2" id="KAG-7J-TgV"/>
+                                            <outlet property="segmentedControl" destination="fln-Rd-4SY" id="4Z8-5R-d9A"/>
                                             <outlet property="textLabel" destination="sai-p0-49J" id="qZ1-kY-572"/>
                                         </connections>
                                     </collectionViewCell>
@@ -313,6 +317,7 @@
     <resources>
         <image name="AddButton" width="60" height="60"/>
         <image name="left" width="486" height="980"/>
+        <image name="note" width="100" height="100"/>
         <image name="right" width="486" height="980"/>
     </resources>
 </document>

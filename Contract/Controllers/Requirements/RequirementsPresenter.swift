@@ -25,7 +25,7 @@ class RequirementsPresenter: RequirementsPresentationLogic
   
   func presentRequirements(response: Requirements.Something.Response)
   {
-    let viewModel = Requirements.Something.ViewModel()
+    let viewModel = Requirements.Something.ViewModel(requirements: response.requirements)
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

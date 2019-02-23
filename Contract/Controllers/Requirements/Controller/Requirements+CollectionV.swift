@@ -13,17 +13,25 @@ extension RequirementsViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ItemCell
-        if let req: [RequirementModel] = object?.requirements?.toArray() {
-            cell.configure(model: req[indexPath.row], parent: self)
-        } else {
-            assert(false)
+        cell.configure(model: requirements[indexPath.row], parent: self)
+        cell.yesNoHandler = { [weak self] targetCell in
+            if let ip = collectionView.indexPath(for: targetCell) {
+                if let requirement = self?.requirements[ip.row] {
+                    let request = Requirements.SetRequirement.Request(requirementId: requirement.id,
+                                                                  requirementText: targetCell.textLabel.text,
+                                                                  yesNo: targetCell.segmentedControl.selectedSegmentIndex == 0,
+                                                                  note: targetCell.commentTextField.text)
+                    self?.handleYesNoPress(request: request)
+                }
+                
+            }
+            
         }
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return object.requirements?.count ?? 0//checkListItems.count
+        return requirements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -40,5 +48,7 @@ extension RequirementsViewController: UICollectionViewDelegate, UICollectionView
             didEndScroll()
         }
     }
+    
+    
     
 }

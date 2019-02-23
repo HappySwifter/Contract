@@ -9,13 +9,16 @@
     </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isUploaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="requirement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RequirementModel" inverseName="photos" inverseEntity="RequirementModel" syncable="YES"/>
     </entity>
     <entity name="RequirementModel" representedClassName="RequirementModel" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yesNo" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="checkList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckListModel" inverseName="requirements" inverseEntity="CheckListModel" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="requirement" inverseEntity="Photo" syncable="YES"/>
     </entity>
@@ -44,10 +47,10 @@
     </entity>
     <elements>
         <element name="CheckListModel" positionX="211.80078125" positionY="-116.98046875" width="128" height="118"/>
-        <element name="RequirementModel" positionX="19.09375" positionY="-146.23828125" width="128" height="103"/>
+        <element name="Photo" positionX="-156.87109375" positionY="-133.921875" width="128" height="118"/>
+        <element name="RequirementModel" positionX="19.09375" positionY="-146.23828125" width="128" height="133"/>
         <element name="RequirementTemplate" positionX="8.734375" positionY="40" width="128" height="88"/>
         <element name="TemplateModel" positionX="191.44140625" positionY="39.13671875" width="128" height="103"/>
         <element name="User" positionX="-368.4296875" positionY="-390.30859375" width="128" height="195"/>
-        <element name="Photo" positionX="-156.87109375" positionY="-133.921875" width="128" height="103"/>
     </elements>
 </model>

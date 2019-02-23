@@ -14,26 +14,129 @@ import UIKit
 
 protocol RequirementsBusinessLogic
 {
-  func loadRequirementsIfEmpty(request: Requirements.Something.Request)
+    func loadRequirements(request: Requirements.Something.Request)
+    func setRequirementInCell(request: Requirements.SetRequirement.Request)
 }
 
 protocol RequirementsDataStore
 {
-  //var name: String { get set }
+  var checkListId: String! { get set }
 }
 
 class RequirementsInteractor: RequirementsBusinessLogic, RequirementsDataStore
 {
-  var presenter: RequirementsPresentationLogic?
+    var checkListId: String!
+    var presenter: RequirementsPresentationLogic?
   
-  func loadRequirementsIfEmpty(request: Requirements.Something.Request)
-  {
-
-    api.getRequirementsForCheckList(action: API.Action.getRequirementsForMy(checkListId: request.checkListId)) { (requirements) in
+    func loadRequirements(request: Requirements.Something.Request) {
         
+        let localReq = getLocalRequirements()
+        if localReq.count > 0 {
+            Log("Есть локальные требования, показываем их", type: .info)
+            show(requirements: localReq)
+        } else {
+            Log("Локальных требований нет, загружаем с сервера", type: .info)
+            api.getRequirementsForCheckList(action: API.Action.getRequirementsForMy(checkListId: checkListId)) { [weak self] (result) in
+                guard let sSelf = self else { return }
+                switch result {
+                case .Success(let serverRequirements):
+                    Log("Получили с сервера \(serverRequirements.count) требований", type: .info)
+                    for serverRequirement in serverRequirements {
+                        if let serverRequirId = serverRequirement.id {
+                            api.getPhotoLinksForRequirement(action: API.Action.getPhotoLinksForRequirement(id: serverRequirId), cb: { (result) in
+                                sSelf.show(requirements: sSelf.getLocalRequirements())
+                            })
+                        } else {
+                            Log("No id for server requirement", type: .error)
+                            assert(false)
+                        }
+                    }
+                case .Failure(let error):
+                    Log(error.localizedDescription, type: .error)
+                }
+            }
+        }
+
     }
     
-    let response = Requirements.Something.Response()
-    presenter?.presentRequirements(response: response)
-  }
+    
+    
+    /// проверяем, есть ли требование на сервере, если есть то удаляем, потом создаем новое. Если на сервере такого нет, то просто создаем
+    func setRequirementInCell(request: Requirements.SetRequirement.Request) {
+        
+        if let requirementId = request.requirementId {
+            Log("going to update requirement with id: \(requirementId)", type: .info)
+            // такое требование уже есть на сервере, вначале удалим его, чтобы не создавать дупликат
+            Log("Удаляем требование с сервера", type: .info)
+            deleteRequirement(request: Requirements.DeleteRequirement.Request(requirementId: requirementId)) { [weak self] (success) in
+                if success {
+                    Log("Удалили требование с сервера", type: .info)
+                    self?.createRequirement(request: request)
+                } else {
+                    Log("Не удалось удалить требование с сервера", type: .error)
+                }
+            }
+        } else {
+            Log("going to create new requirement on server", type: .info)
+            createRequirement(request: request)
+        }
+    }
+    
+    
+    
+    
+    
+    /// создаем требование на сервере
+    private func createRequirement(request: Requirements.SetRequirement.Request) {
+        Log("Создаем новое требование", type: .info)
+        let action = API.Action.setRequirement(checkListId: checkListId,
+                                               requirementText: request.requirementText,
+                                               yesNo: request.yesNo,
+                                               note: request.note ?? "")
+        api.setRequirement(action: action) { [weak self] (result) in
+            guard let sSelf = self else { return }
+            switch result {
+            case .Success(let _):
+                Log("Успешно создали требование на сервере", type: .info)
+                sSelf.show(requirements: sSelf.getLocalRequirements())
+            case .Failure(let error):
+                Log(error.localizedDescription, type: .error)
+            }
+        }
+    }
+    
+    
+    
+    /// Удаляем требование на сервере (для того, чтобы обновить)
+    private func deleteRequirement(request: Requirements.DeleteRequirement.Request, cb: @escaping (Bool) -> Void) {
+        let action = API.Action.deleteRequirement(requirementId: request.requirementId)
+        api.deleteRequirement(action: action) { (result) in
+            switch result {
+            case .Success(let success):
+                cb(success)
+            case .Failure(let error):
+                Log(error.localizedDescription, type: .error)
+                cb(false)
+            }
+        }
+    }
+    
+    private func getLocalRequirements() -> [RequirementModel] {
+        if let checklist: CheckListModel = getObjects(withId: checkListId).first {
+            if let requirements: [RequirementModel] = checklist.requirements?.toArray() {
+                return requirements.sorted(by: { ($0.title ?? "") < ($1.title ?? "") })
+            } else {
+                Log("No requirements for checklist", type: .warning)
+                return []
+            }
+        } else {
+            Log("local checklist not found", type: .error)
+            assert(false)
+        }
+    }
+    
+    private func show(requirements: [RequirementModel]) {
+        presenter?.presentRequirements(response: Requirements.Something.Response(requirements: requirements))
+    }
+
 }

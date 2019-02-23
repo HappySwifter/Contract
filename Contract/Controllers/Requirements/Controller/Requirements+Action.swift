@@ -11,7 +11,7 @@ import  UIKit
 
 extension RequirementsViewController {
     @IBAction func rightPressed(sender: UIButton) {
-        if let index = collectionView.indexPathsForVisibleItems.first?.item, index < (object.requirements?.count ?? 0) - 1 {
+        if let index = collectionView.indexPathsForVisibleItems.first?.item, index < (requirements.count) - 1 {
             sender.isEnabled = false
             collectionView.scrollToItem(at: IndexPath(item: index + 1, section: 0), at: .centeredHorizontally, animated: true)
             delay(0.3) { [weak self] in
