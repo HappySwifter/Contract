@@ -46,6 +46,37 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataCell" rowHeight="82" id="6ba-6h-2v5">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ba-6h-2v5" id="3yp-A8-W6r">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас еще нет чеклистов, создайте новый из шаблона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAP-Dd-Jmp">
+                                                    <rect key="frame" x="10" y="5" width="275" height="71.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="ccC-tR-ABa">
+                                                    <rect key="frame" x="295" y="0.0" width="70" height="71.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="J2M-C3-m2I"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="zAP-Dd-Jmp" secondAttribute="bottom" constant="5" id="57k-39-fIV"/>
+                                                <constraint firstItem="ccC-tR-ABa" firstAttribute="leading" secondItem="zAP-Dd-Jmp" secondAttribute="trailing" constant="10" id="624-Wr-vLy"/>
+                                                <constraint firstItem="zAP-Dd-Jmp" firstAttribute="leading" secondItem="3yp-A8-W6r" secondAttribute="leading" constant="10" id="Bif-zS-1K6"/>
+                                                <constraint firstAttribute="bottom" secondItem="ccC-tR-ABa" secondAttribute="bottom" constant="10" id="C6C-Nt-Oml"/>
+                                                <constraint firstItem="ccC-tR-ABa" firstAttribute="top" secondItem="3yp-A8-W6r" secondAttribute="top" id="Cyz-R9-0U2"/>
+                                                <constraint firstItem="zAP-Dd-Jmp" firstAttribute="top" secondItem="3yp-A8-W6r" secondAttribute="top" constant="5" id="KYR-Gy-DrG"/>
+                                                <constraint firstAttribute="trailing" secondItem="ccC-tR-ABa" secondAttribute="trailing" constant="10" id="s91-dG-9G6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ygc-w8-m3b" id="sjw-ba-hkf"/>
@@ -96,4 +127,7 @@
             <point key="canvasLocation" x="116" y="244.22788605697153"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="up" width="225" height="225"/>
+    </resources>
 </document>

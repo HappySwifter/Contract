@@ -60,6 +60,8 @@
 		02A4D0CB21AB147500427491 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4D0CA21AB147500427491 /* CurrentUser.swift */; };
 		02CC8B2B21AB188F006112E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CC8B2A21AB188F006112E4 /* ProfileViewController.swift */; };
 		02CC8B3221AB1AF7006112E4 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CC8B3121AB1AF7006112E4 /* ProfileViewController.storyboard */; };
+		02F428C022227A5500D249C1 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F428BF22227A5500D249C1 /* NoteViewController.swift */; };
+		02F428C222227DDA00D249C1 /* NoteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F428C122227DDA00D249C1 /* NoteViewController.storyboard */; };
 		02FE0BB021B6BD6B007624E4 /* RequirementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE0BAA21B6BD6B007624E4 /* RequirementsPresenter.swift */; };
 		02FE0BB121B6BD6B007624E4 /* RequirementsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE0BAB21B6BD6B007624E4 /* RequirementsWorker.swift */; };
 		02FE0BB221B6BD6B007624E4 /* RequirementsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE0BAC21B6BD6B007624E4 /* RequirementsRouter.swift */; };
@@ -125,6 +127,8 @@
 		02A4D0CA21AB147500427491 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		02CC8B2A21AB188F006112E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02CC8B3121AB1AF7006112E4 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		02F428BF22227A5500D249C1 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		02F428C122227DDA00D249C1 /* NoteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoteViewController.storyboard; sourceTree = "<group>"; };
 		02FE0BAA21B6BD6B007624E4 /* RequirementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsPresenter.swift; sourceTree = "<group>"; };
 		02FE0BAB21B6BD6B007624E4 /* RequirementsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsWorker.swift; sourceTree = "<group>"; };
 		02FE0BAC21B6BD6B007624E4 /* RequirementsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsRouter.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 		02278E8121AE755600860BEC /* Requirements */ = {
 			isa = PBXGroup;
 			children = (
+				02F428BE22227A3600D249C1 /* Note */,
 				02FE0BAA21B6BD6B007624E4 /* RequirementsPresenter.swift */,
 				02FE0BAB21B6BD6B007624E4 /* RequirementsWorker.swift */,
 				02FE0BAC21B6BD6B007624E4 /* RequirementsRouter.swift */,
@@ -326,6 +331,15 @@
 				02278E6F21ADBF7A00860BEC /* Menu */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		02F428BE22227A3600D249C1 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				02F428BF22227A5500D249C1 /* NoteViewController.swift */,
+				02F428C122227DDA00D249C1 /* NoteViewController.storyboard */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		02FE0BA921B6BD47007624E4 /* Views */ = {
@@ -436,6 +450,7 @@
 				02A4D0A821A9740700427491 /* Assets.xcassets in Resources */,
 				02278E8021ADCCDE00860BEC /* TemplatesViewController.storyboard in Resources */,
 				02CC8B3221AB1AF7006112E4 /* ProfileViewController.storyboard in Resources */,
+				02F428C222227DDA00D249C1 /* NoteViewController.storyboard in Resources */,
 				02278E7721ADBFC200860BEC /* MenuVC.storyboard in Resources */,
 				02A4D0A321A9740400427491 /* LoginViewController.storyboard in Resources */,
 			);
@@ -540,6 +555,7 @@
 				029899AF21B575F600DEEC3B /* TemplatesViewController.swift in Sources */,
 				02FE0BB321B6BD6B007624E4 /* RequirementsModels.swift in Sources */,
 				02A4D0A621A9740400427491 /* SmartContrakt.xcdatamodeld in Sources */,
+				02F428C022227A5500D249C1 /* NoteViewController.swift in Sources */,
 				02CC8B2B21AB188F006112E4 /* ProfileViewController.swift in Sources */,
 				020A7B6521FC48A4009B512D /* FullScrennImageController.swift in Sources */,
 				0264588A21B59CDF00CCA094 /* CheckListsViewController.swift in Sources */,

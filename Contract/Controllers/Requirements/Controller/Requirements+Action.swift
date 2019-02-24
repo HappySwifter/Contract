@@ -20,6 +20,7 @@ extension RequirementsViewController {
                 sender.isEnabled = true
             }
         }
+//        saveLocaly()
     }
     
     @IBAction func leftPressed(sender: UIButton) {
@@ -31,29 +32,14 @@ extension RequirementsViewController {
                 sender.isEnabled = true
             }
         }
+//        saveLocaly()
     }
     
     @objc func sendToServerTouched() {
-        guard let ip = collectionView.indexPathsForVisibleItems.first, let cell = collectionView.visibleCells.first as? ItemCell else {
-            assert(false)
+        guard let request = getRequestForRequirementSave() else {
             return
         }
-        let yesOrNo = cell.segmentedControl.selectedSegmentIndex
-        guard yesOrNo == 0 || yesOrNo == 1  else {
-            presentAlert(title: "Вначале выберите Да или Нет", text: "")
-            return
-        }
-            
-        let requirement = requirements[ip.row]
-        let request = Requirements.SetRequirement.Request(requirementId: requirement.id,
-                                                          requirementText: cell.textLabel.text,
-                                                          yesNo: yesOrNo == 0,
-                                                          note: cell.commentTextField.text)
-        
-        RequirementModel.saveLocalRequirFor(checkListId: interactor!.checkListId,
-                                                        title: request.requirementText,
-                                                        note: request.note ?? "",
-                                                        yesNo: request.yesNo)
+        saveLocaly(request: request)
         
         if api.isConnectedToInternet() {
             HUD.show(.progress)
@@ -77,6 +63,40 @@ extension RequirementsViewController {
         }
 
     }
+    
+    
+    
+    func saveLocaly(request: Requirements.SetRequirement.Request? = nil) {
+        if let request = request ?? getRequestForRequirementSave() {
+            RequirementModel.saveLocalRequirFor(checkListId: interactor!.checkListId,
+                                                title: request.requirementText,
+                                                note: request.note ?? "",
+                                                yesNo: request.yesNo)
+        }
+    }
+    
+    
+    
+    fileprivate func getRequestForRequirementSave() -> Requirements.SetRequirement.Request? {
+        guard let ip = collectionView.indexPathsForVisibleItems.first, let cell = collectionView.visibleCells.first as? ItemCell else {
+            assert(false)
+            return nil
+        }
+        print("!!!!!", ip.row)
+        let yesOrNo = cell.segmentedControl.selectedSegmentIndex
+        guard yesOrNo == 0 || yesOrNo == 1  else {
+            presentAlert(title: "Вначале выберите Да или Нет", text: "")
+            return nil
+        }
+        
+        let requirement = requirements[ip.row]
+        let request = Requirements.SetRequirement.Request(requirementId: requirement.id,
+                                                          requirementText: cell.textLabel.text,
+                                                          yesNo: yesOrNo == 0,
+                                                          note: cell.commentLabel.text)
+        return request
+    }
+    
     
     
     fileprivate func uploadPhotosFor(requir: RequirementModel, cb: @escaping (Bool) -> Void) {

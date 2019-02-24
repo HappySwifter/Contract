@@ -36,17 +36,17 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
   
     func getMyCheckLists(request: CheckLists.Something.Request) {
         
-        let models: [CheckListModel] = getObjects()
+        let models: [CheckListModel] = getObjects(sortDescriptors: [NSSortDescriptor(key: "date", ascending: true)])
         displayCheckLists(models: models)
 
-//        serverWorker?.getMyCheckLists(action: API.Action.getMyChecklists) { [weak self] result in
-//            switch result {
-//            case .Success(let checkLists):
-//                self?.displayCheckLists(models: checkLists)
-//            case .Failure(let error):
-//                presentAlert(title: "Ошибка", text: error.localizedDescription)
-//            }
-//        }
+        serverWorker?.getMyCheckLists(action: API.Action.getMyChecklists) { [weak self] result in
+            switch result {
+            case .Success(let checkLists):
+                self?.displayCheckLists(models: checkLists)
+            case .Failure(let error):
+                presentAlert(title: "Ошибка", text: error.localizedDescription)
+            }
+        }
         
     }
     
@@ -64,7 +64,8 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
                 CheckListModel.saveMyCheckList(with: id,
                                                name: request.model.name,
                                                requisits: request.model.requisits,
-                                               requirementsTemplates: request.model.requirementTemplates)
+                                               requirementsTemplates: request.model.requirementTemplates,
+                                               date: request.date)
                
                 let req = CheckLists.Something.Request()
                 self?.getMyCheckLists(request: req)
@@ -79,6 +80,7 @@ class CheckListsInteractor: CheckListsBusinessLogic, CheckListsDataStore
         api.removeCheckList(action: API.Action.deleteCheckList(checkListId: request.id)) { [weak self] (result) in
             switch result {
             case .Success:
+                CheckListModel.removeWith(id: request.id)
                 let req = CheckLists.Something.Request()
                 self?.getMyCheckLists(request: req)
             case .Failure(let error):

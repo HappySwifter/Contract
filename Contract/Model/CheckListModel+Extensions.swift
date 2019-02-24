@@ -19,15 +19,14 @@ extension CheckListModel {
     ///
     /// - Parameter xmlObjects: xml
     /// - Returns: array
-    class func saveObjects(xmlObjects: [XMLIndexer]) -> [CheckListModel] {
+    class func saveObjects(xmlObjects: [XMLIndexer]) {
         
         if xmlObjects.count == 0 {
             print("Пришел пустой массив чеклистов")
         }
-        var objects = [CheckListModel]()
         
         for xml in xmlObjects {
-            if let id = xml["a:ID"].element?.text, id.count > 0 {
+            if let id = xml["a:ID"].element?.text, id.count > 0, let title = xml["a:TITLE"].element?.text, !title.isEmpty {
                 let object: CheckListModel
                 if let c: CheckListModel = getObjects(withId: id).first {
                     object = c
@@ -35,22 +34,20 @@ extension CheckListModel {
                     object = createNew()
                     object.id = id
                 }
-                object.name = xml["a:TITLE"].element!.text
+                object.name = title
                 object.requisits = xml["a:REQUISITES"].element!.text
-                objects.append(object)
             } else {
-                Log("ID is empty", type: .warning)
+                Log("ID or Title is empty", type: .warning)
             }
         }
         appDelegate.saveContext()
-        return objects
-        
     }
     
     @discardableResult class func saveMyCheckList(with id: String,
                                                   name: String?,
                                                   requisits: String?,
-                                                  requirementsTemplates: NSSet?) -> CheckListModel {
+                                                  requirementsTemplates: NSSet?,
+                                                  date: Date) -> CheckListModel {
         
         let object: CheckListModel
         if let c: CheckListModel = getObjects(withId: id).first {
@@ -62,12 +59,14 @@ extension CheckListModel {
         
         object.name = name
         object.requisits = requisits
-
+        object.date = date
+        
         if let requirementsTemplates = requirementsTemplates {
             for template in requirementsTemplates {
                 if let template = template as? RequirementTemplate {
                     let req = RequirementModel.createNew()
                     req.title = template.name
+                    req.isUploaded = false
                     object.addToRequirements(req)
                 } else {
                     assert(false)
@@ -82,5 +81,12 @@ extension CheckListModel {
         appDelegate.saveContext()
         return object
         
+    }
+    
+    class func removeWith(id: String) {
+        if let check: CheckListModel = getObjects(withId: id).first {
+            context.delete(check)
+            appDelegate.saveContext()
+        }
     }
 }

@@ -45,6 +45,9 @@ class RequirementsInteractor: RequirementsBusinessLogic, RequirementsDataStore
                 case .Success(let serverRequirements):
                     Log("Получили с сервера \(serverRequirements.count) требований", type: .info)
                     
+                    
+
+                    
                     let gr = DispatchGroup()
                     for serverRequirement in serverRequirements {
                         if let serverRequirId = serverRequirement.id {

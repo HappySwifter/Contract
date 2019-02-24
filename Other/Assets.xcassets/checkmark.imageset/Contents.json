@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "checkmark-clipart-circle.png",
+      "filename" : "Check_green_icon.svg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "checkmark-clipart-circle-1.png",
+      "filename" : "checkX2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "checkmark-clipart-circle-2.png",
+      "filename" : "checkX3.png",
       "scale" : "3x"
     }
   ],

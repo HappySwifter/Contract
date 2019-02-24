@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         api = API()
         
         let centerViewController: UIViewController
-        if CurrentUser.getToken() != nil {
+        if CurrentUser.getUser() != nil {
             let contr = getController(forName: CheckListsViewController.self, showMenuButton: true)
             let nav = UINavigationController(rootViewController: contr)
             centerViewController = nav

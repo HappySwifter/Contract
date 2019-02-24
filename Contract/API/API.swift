@@ -120,8 +120,9 @@ class API: APIProtocol {
                 switch result {
                 case .Success(let result):
                     let array = result["a:checkList_"]
-                    let serverTemplates = TemplateModel.saveObjects(xmlObjects: array.all)
-                    cb(Result.Success(data: serverTemplates))
+                    TemplateModel.saveObjects(xmlObjects: array.all)
+                    let templates: [TemplateModel] = getObjects()
+                    cb(Result.Success(data: templates))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))
                 }
@@ -163,7 +164,8 @@ class API: APIProtocol {
                 switch result {
                 case .Success(let result):
                     let array = result["a:checkList_"]
-                    let obj = CheckListModel.saveObjects(xmlObjects: array.all)
+                    CheckListModel.saveObjects(xmlObjects: array.all)
+                    let obj: [CheckListModel] = getObjects()
                     cb(Result.Success(data: obj))
                 case .Failure(let error):
                     cb(Result.Failure(error: CustomError.CannotFetch(error.localizedDescription)))

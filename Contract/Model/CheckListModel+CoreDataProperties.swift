@@ -22,6 +22,8 @@ extension CheckListModel {
     @NSManaged public var trebovaniya: NSObject?
     @NSManaged public var requirements: NSSet?
 
+    @NSManaged public var date: Date?
+
 }
 
 // MARK: Generated accessors for requirements

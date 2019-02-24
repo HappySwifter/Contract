@@ -12,8 +12,8 @@
         <!--Login View Controller-->
         <scene sceneID="9L1-zT-bGk">
             <objects>
-                <tableViewController storyboardIdentifier="LoginViewController" id="jGg-pk-Ph4" customClass="LoginViewController" customModule="SmartContrakt" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jo4-dZ-hKw">
+                <tableViewController storyboardIdentifier="LoginViewController" id="jGg-pk-Ph4" customClass="LoginViewController" customModule="Contract" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jo4-dZ-hKw">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TGQ-xN-AbJ" id="xxY-gq-rS8">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="959.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJn-Mx-9Au">
@@ -70,7 +70,7 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.86240096830000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="0fP-gl-XyV" firstAttribute="top" secondItem="5ho-wV-dff" secondAttribute="bottom" constant="30" id="1b0-uv-WoH"/>
                                                         <constraint firstItem="0fP-gl-XyV" firstAttribute="trailing" secondItem="5ho-wV-dff" secondAttribute="trailing" id="2CY-NP-xQo"/>

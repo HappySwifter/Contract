@@ -43,9 +43,9 @@ func cancel_delay(_ closure: dispatch_cancelable_closure?) {
     }
 }
 
-func presentAlert(title: String, text: String) {
+func presentAlert(title: String, text: String, cb: ((Any) -> Void)? = nil) {
     let contr = UIAlertController(title: title, message: text, preferredStyle: .alert)
-    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: cb)
     contr.addAction(okAction)
     UIViewController.topMostViewController()?.present(contr, animated: true, completion: nil)
 }

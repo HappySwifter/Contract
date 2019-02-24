@@ -19,7 +19,7 @@ enum MenuObject: Int, CustomStringConvertible, CaseIterable {
         case .Profile:
             return "Профиль"
         case .CheckList:
-            return "Чек листы"
+            return "Чек-листы"
         case .Exit:
             return "Выход"
         }
@@ -28,11 +28,11 @@ enum MenuObject: Int, CustomStringConvertible, CaseIterable {
     var image: UIImage {
         switch self {
         case .Profile:
-            return UIImage(named: "settingsMenu")!
+            return UIImage(named: "profile_menu")!
         case .CheckList:
-            return UIImage(named: "settingsMenu")!
+            return UIImage(named: "check_menu")!
         case .Exit:
-            return UIImage(named: "settingsMenu")!
+            return UIImage(named: "exit")!
         }
     }
 

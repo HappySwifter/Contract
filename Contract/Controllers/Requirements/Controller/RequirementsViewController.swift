@@ -63,7 +63,7 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
   
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bottomTextLabel: UILabel!
-    
+
     let edgeInset = realSize(10)
     var requirements = [RequirementModel]()
     
@@ -95,8 +95,20 @@ class RequirementsViewController: UIViewController, RequirementsDisplayLogic {
     func displaySomething(viewModel: Requirements.Something.ViewModel) {
         let req = viewModel.requirements
         Log("\(req.count) requirements in checklist", type: .info)
-//        Log("\(req.compactMap({$0.title})) \n", type: .info)
+
+        if req.isEmpty {
+            presentAlert(title: "Чек-лист пустой", text: "Создайте новый чек-лист") { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+        
+
         self.requirements = req
         collectionView.reloadData()
+        delay(0.2) { [weak self] in
+            self?.configureBottomView()
+        }
+        
     }
 }

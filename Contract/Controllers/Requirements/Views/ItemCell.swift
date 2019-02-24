@@ -8,17 +8,24 @@
 
 import Foundation
 import UIKit
-import Kingfisher
+//import Kingfisher
+
+
+//protocol ItemCellDelegate: class {
+//    func commentPressed()
+//}
 
 class ItemCell: UICollectionViewCell {
     @IBOutlet weak var textLabel: UITextView!
-    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var uploadedView: UIView!
 
     var photos = [Photo]()
     var requir: RequirementModel!
     var parent: UIViewController!
+//    weak var delegate: ItemCellDelegate?
     
     enum ViewType {
         case empty
@@ -39,6 +46,12 @@ class ItemCell: UICollectionViewCell {
         super.didMoveToWindow()
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.layer.borderWidth = 1
+        textLabel.isEditable = false
+        textLabel.font = UIFont.systemFont(ofSize: realSize(14))
+        commentLabel.font = UIFont.systemFont(ofSize: realSize(12))
+        commentLabel.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(commentTouched))
+        commentLabel.addGestureRecognizer(tap)
     }
     
     func configure(model: RequirementModel, parent: UIViewController) {
@@ -49,12 +62,14 @@ class ItemCell: UICollectionViewCell {
         } else {
             textLabel.text = "Без описания"
         }
-        commentTextField.text = model.note
+        commentLabel.text = model.note
+
         if let yesNo = model.yesNo as? Bool {
             segmentedControl.selectedSegmentIndex = yesNo ? 0 : 1
         } else {
             segmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
         }
+        uploadedView.isHidden = !model.isUploaded
         
         reloadPhotosFromDB()
     }
@@ -72,6 +87,33 @@ class ItemCell: UICollectionViewCell {
             Photo.savePhotoFor(requirement: requir, data: string)
             reloadPhotosFromDB()
         }
+    }
+    
+    func somethindDidChange() {
+        requir.isUploaded = false
+        appDelegate.saveContext()
+        uploadedView.isHidden = !requir.isUploaded
+    }
+    
+    
+    @IBAction func yesNoChanged() {
+        somethindDidChange()
+    }
+    
+    @objc func commentTouched() {
+//        delegate?.commentPressed()
+        
+        let navContr = UIStoryboard(name: "NoteViewController", bundle: Bundle.main)
+            .instantiateViewController(withIdentifier: "NoteViewController") as! UINavigationController
+        let contr = navContr.topViewController as! NoteViewController
+        
+//        let contr = getController(forName: NoteViewController.self)
+        contr.initaltext = commentLabel.text
+        contr.completionHandler = { [weak self] text in
+            self?.commentLabel.text = text
+            self?.somethindDidChange()
+        }
+        UIViewController.topMostViewController()?.present(navContr, animated: true, completion: nil)
     }
 }
 

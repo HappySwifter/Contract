@@ -24,6 +24,7 @@ extension RequirementTemplate {
         if xmlObjects.count == 0 {
             print("Пришел пустой массив объектов")
         } else {
+            Log("Загружено \(xmlObjects.count) шаблонов вопросов", type: .info)
             clearRequirementsTemplateFor(checkListId: checkListId)
 //            let _: RequirementTemplate? = clearEntity()
         }

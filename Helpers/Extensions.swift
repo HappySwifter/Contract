@@ -54,7 +54,7 @@ extension UIViewController {
     
     func addMenuButton() {
         let leftDrawerButton =  UIBarButtonItem(image: UIImage(named: "mobile-menu"), style: .plain, target: self, action: #selector(self.leftDrawerButtonPress))
-        leftDrawerButton.tintColor = .black
+//        leftDrawerButton.tintColor = .black
         self.navigationItem.setLeftBarButton(leftDrawerButton, animated: false)
     }
     

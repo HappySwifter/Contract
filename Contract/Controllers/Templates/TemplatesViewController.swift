@@ -106,11 +106,19 @@ extension TemplatesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let obj = objects[indexPath.row]
-        let count = obj.requirementTemplates?.count ?? 0
-        cell.textLabel?.text = "\(count): " + obj.name!
+        cell.textLabel?.text = obj.name
         cell.textLabel?.numberOfLines = 0
         cell.detailTextLabel?.text = obj.requisits
         cell.detailTextLabel?.numberOfLines = 0
+        
+        let count = obj.requirementTemplates?.count ?? 0
+        if count == 0 {
+            cell.textLabel?.textColor = .gray
+            cell.detailTextLabel?.textColor = .gray
+        } else {
+            cell.textLabel?.textColor = .black
+            cell.detailTextLabel?.textColor = .black
+        }
         return cell
         
     }
@@ -118,6 +126,11 @@ extension TemplatesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let obj = objects[indexPath.row]
-        selectHandler?(obj)
+        let count = obj.requirementTemplates?.count ?? 0
+        if count == 0 {
+            presentAlert(title: "Выберите другой", text: "у этого чеклиста нет вопросов, выберите другой из списка")
+        } else {
+            selectHandler?(obj)
+        }
     }
 }

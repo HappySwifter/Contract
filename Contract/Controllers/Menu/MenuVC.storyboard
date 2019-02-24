@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--MenuVC-->
         <scene sceneID="dIV-rQ-YDD">
             <objects>
-                <tableViewController storyboardIdentifier="MenuVC" id="Bch-s5-giC" customClass="MenuVC" customModule="Machine" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuVC" id="Bch-s5-giC" customClass="MenuVC" customModule="Contract" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="MEb-Qi-gJ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +20,7 @@
                         <color key="separatorColor" red="0.53446810229999997" green="0.53446810229999997" blue="0.53446810229999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="71" id="MRY-tk-xWi" customClass="MenuCell" customModule="Machine" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="71" id="MRY-tk-xWi" customClass="MenuCell" customModule="Contract" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MRY-tk-xWi" id="seT-Cg-JJO">
@@ -36,14 +35,14 @@
                                             </constraints>
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tf9-Fe-grd">
-                                            <rect key="frame" x="8" y="23" width="25" height="25"/>
+                                            <rect key="frame" x="13" y="23" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="25" id="Cxb-bG-EAh"/>
                                                 <constraint firstAttribute="width" secondItem="tf9-Fe-grd" secondAttribute="height" multiplier="1:1" id="neT-ot-qSe"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-Ma-3a1">
-                                            <rect key="frame" x="50" y="23" width="317" height="25"/>
+                                            <rect key="frame" x="55" y="23" width="312" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="81b-O2-RhO"/>
                                             </constraints>
@@ -53,7 +52,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tf9-Fe-grd" firstAttribute="leading" secondItem="seT-Cg-JJO" secondAttribute="leading" constant="8" id="BDc-vp-F0T"/>
+                                        <constraint firstItem="tf9-Fe-grd" firstAttribute="leading" secondItem="seT-Cg-JJO" secondAttribute="leading" constant="13" id="BDc-vp-F0T"/>
                                         <constraint firstAttribute="trailing" secondItem="BpI-Ma-3a1" secondAttribute="trailing" constant="8" id="ECN-K2-2Ji"/>
                                         <constraint firstItem="BpI-Ma-3a1" firstAttribute="centerY" secondItem="seT-Cg-JJO" secondAttribute="centerY" id="eTI-s0-Q4b"/>
                                         <constraint firstItem="tf9-Fe-grd" firstAttribute="centerY" secondItem="seT-Cg-JJO" secondAttribute="centerY" id="kQQ-aX-BD1"/>

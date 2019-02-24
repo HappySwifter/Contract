@@ -69,7 +69,7 @@ extension User {
         user.phone_home = xml["a:MOBILEPHONE"].element!.text
         user.phone_work = xml["a:WORKPHONE"].element!.text
         user.photoString = xml["a:PHOTO"].element!.text
-        
+        appDelegate.saveContext()
         return user
     }
 }

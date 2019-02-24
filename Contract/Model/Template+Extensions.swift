@@ -15,17 +15,16 @@ extension TemplateModel {
         return NSEntityDescription.insertNewObject(forEntityName: "TemplateModel", into: context) as! TemplateModel
     }
     
-    class func saveObjects(xmlObjects: [XMLIndexer]) -> [TemplateModel] {
+    class func saveObjects(xmlObjects: [XMLIndexer]) {
         
         if xmlObjects.count == 0 {
             print("Пришел пустой массив объектов")
+        } else {
+            Log("Загружено \(xmlObjects.count) шаблонов чклистов", type: .info)
         }
         
-        var objects = [TemplateModel]()
         for xml in xmlObjects {
-            
             let id = xml["a:ID"].element!.text
-            
             let model: TemplateModel
             if let c: TemplateModel = getObjects(withId: id).first {
                 model = c
@@ -33,15 +32,10 @@ extension TemplateModel {
                 model = createNew()
                 model.id = id
             }
-            
             model.name = xml["a:TITLE"].element!.text
             model.requisits = xml["a:REQUISITES"].element!.text
-            
-            objects.append(model)
         }
         appDelegate.saveContext()
-        return objects
-        
     }
     
     func addRequirementTemplates(data: [RequirementTemplate]) {

@@ -88,6 +88,7 @@ class CheckListsViewController: UIViewController, CheckListsDisplayLogic
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
   // MARK: Do something
@@ -131,7 +132,7 @@ class CheckListsViewController: UIViewController, CheckListsDisplayLogic
         let cancelAction = RMAction<UIDatePicker>(title: "Отмена", style: .cancel) { _ in
         }
         
-        let actionController = RMDateSelectionViewController(style: .white, title: nil, message: nil, select: selectAction, andCancel: cancelAction)!
+        let actionController = RMDateSelectionViewController(style: .white, title: "Выберите дату чеклиста", message: nil, select: selectAction, andCancel: cancelAction)!
         
         actionController.disableBouncingEffects = true
         actionController.disableMotionEffects = true
@@ -148,30 +149,58 @@ class CheckListsViewController: UIViewController, CheckListsDisplayLogic
 
 extension CheckListsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyCheckListCell
-        cell.configure(model: data[indexPath.row])
-        return cell
+        
+        if data.isEmpty {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NoDataCell", for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyCheckListCell
+            cell.configure(model: data[indexPath.row])
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return data.isEmpty ? 1 : data.count
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            if let modelId = data[indexPath.row].id {
-                let req = CheckLists.RemoveCheckList.Request(id: modelId)
-                interactor?.removeCheckList(request: req)
+            if !data.isEmpty {
+                if let modelId = data[indexPath.row].id {
+                    
+                    let alert = UIAlertController(title: "Подтверидте", message: "Вы действительно хотите удалить этот чек-лист?", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+                    let ok = UIAlertAction(title: "Да", style: .destructive) { [weak self] (_) in
+                        let req = CheckLists.RemoveCheckList.Request(id: modelId)
+                        self?.interactor?.removeCheckList(request: req)
+                    }
+                    alert.addAction(cancel)
+                    alert.addAction(ok)
+                    present(alert, animated: true, completion: nil)
+                }
             }
         default:
             break
         }
     }
     
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return !data.isEmpty
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = data[indexPath.row]
-        router?.routeToRequirements(checkList: model)
+        if !data.isEmpty {
+            let model = data[indexPath.row]
+//            if let requirs: [RequirementModel] = model.requirements?.toArray(), !requirs.isEmpty {
+                router?.routeToRequirements(checkList: model)
+//            } else {
+//                presentAlert(title: "Чек-лист пустой", text: "Создайте новый чек-лист")
+//            }
+            
+        }
     }
 }

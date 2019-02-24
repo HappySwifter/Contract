@@ -37,6 +37,9 @@ extension RequirementsViewController: UICollectionViewDelegate, UICollectionView
         }
     }
     
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        saveLocaly()
+//    }
     
     
 }

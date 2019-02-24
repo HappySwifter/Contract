@@ -16,29 +16,19 @@ extension RequirementModel {
         return NSEntityDescription.insertNewObject(forEntityName: "RequirementModel", into: context) as! RequirementModel
     }
 
-    /// Сохраняем локальное требование
+    /// Находим требование по ид чеклиста и тексту требования и устанавливаем у него новые поля
+    ///   - note: заметка
+    ///   - yesNo: да нет
     @discardableResult class func saveLocalRequirFor(checkListId: String, title: String, note: String, yesNo: Bool) -> RequirementModel? {
-        
-//        guard let checkListModel: CheckListModel = getObjects(withId: checkListId).first else {
-//            Log("Нет такого чеклиста в базе", type: .error)
-//            assert(false)
-//            return nil
-//        }
-        
-        let req: RequirementModel
-        if let c: RequirementModel = getLocalRequirementFor(checllistId: checkListId, title: title) {
-            req = c
+        if let req = findLocalRequirementFor(checllistId: checkListId, title: title) {
+            req.yesNo = yesNo as NSNumber
+            req.note = note
+            req.isUploaded = false // установили новые данные локально. На сервере их еще нет
+            appDelegate.saveContext()
+            return req
         } else {
-            req = createNew()
-//            req.title = title
-//            checkListModel.addToRequirements(req)
-            assert(false)
+            return nil
         }
-        
-        req.yesNo = yesNo as NSNumber
-        req.note = note
-        appDelegate.saveContext()
-        return req
     }
     
     
@@ -47,14 +37,13 @@ extension RequirementModel {
     /// - Parameters:
     ///   - checkListId: id чеклиста
     ///   - requirementId: id требования, полученное от сервера
-    ///   - note: заметка
-    ///   - yesNo: да нет
     ///   - text: текст требования
     /// - Returns: возвращает модель требования
     class func setServerId(checkListId: String, requirementId: String, text: String) -> RequirementModel? {
-        if let model = getLocalRequirementFor(checllistId: checkListId, title: text) {
-            Log("found local requirement. Setting server id \(requirementId) to it", type: .info)
+        if let model = findLocalRequirementFor(checllistId: checkListId, title: text) {
+            Log("Setting server id \(requirementId) for requirement", type: .info)
             model.id = requirementId
+            model.isUploaded = true // этот ответ пришел от сервера. Устанавливаем, что загружено на сервер
             appDelegate.saveContext()
             return model
         } else {
@@ -64,7 +53,7 @@ extension RequirementModel {
     }
     
     
-    class func getLocalRequirementFor(checllistId: String, title: String) -> RequirementModel? {
+    private class func findLocalRequirementFor(checllistId: String, title: String) -> RequirementModel? {
 
         let fetchRequest = NSFetchRequest<RequirementModel>(entityName: "RequirementModel")
         fetchRequest.fetchLimit = 1
@@ -102,49 +91,32 @@ extension RequirementModel {
         
         for xml in xmlObjects {
             
-            let id = xml["a:ID"].element!.text
-            
-            let model: RequirementModel
-            if let c: RequirementModel = getObjects(withId: id).first {
-                model = c
-            } else {
-                model = createNew()
-                model.id = id
-                checkListModel.addToRequirements(model)
+            if let id = xml["a:ID"].element?.text, !id.isEmpty {
+                let model: RequirementModel
+                if let c: RequirementModel = getObjects(withId: id).first {
+                    model = c
+                } else {
+                    model = createNew()
+                    model.id = id
+                    checkListModel.addToRequirements(model)
+                }
+                
+                model.title = xml["a:REQUIREMENT"].element!.text
+                model.note = xml["a:NOTE"].element!.text
+                
+                if let yesNo = xml["a:AVAILABILITY"].element?.text, !yesNo.isEmpty {
+                    model.yesNo = yesNo == "False" ? NSNumber(value: false) : NSNumber(value: true)
+                } else {
+                    model.yesNo = nil
+                }
+                model.isUploaded = true // раз загружено с сервера, значит там оно есть
+                objects.append(model)
             }
-            
-            model.title = xml["a:REQUIREMENT"].element!.text
-            model.note = xml["a:NOTE"].element!.text
-
-            if let yesNo = xml["a:AVAILABILITY"].element?.text, !yesNo.isEmpty {
-                model.yesNo = yesNo == "False" ? NSNumber(value: false) : NSNumber(value: true)
-            } else {
-                model.yesNo = nil
-            }
-            
-            
-            
-            objects.append(model)
         }
-
         appDelegate.saveContext()
         return objects
     }
     
-//    class func clearRequirementsTemplateFor(checkListId: String) {
-//        let fetchRequest = RequirementTemplate.requirementTemplateFetchRequest()
-//        let predicate = NSPredicate(format: "checkListId = %@", checkListId)
-//        fetchRequest.predicate = predicate
-//
-//        do {
-//            let result = try context.fetch(fetchRequest)
-//            result.forEach { (templ) in
-//                context.delete(templ)
-//            }
-//        } catch {
-//            assert(false, error.localizedDescription)
-//        }
-//    }
 }
 
 
