@@ -151,6 +151,7 @@ class RequirementsInteractor: RequirementsBusinessLogic, RequirementsDataStore
         } else {
             Log("local checklist not found", type: .error)
             assert(false)
+            return []
         }
     }
     

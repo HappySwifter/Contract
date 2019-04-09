@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class LoginViewController: UITableViewController {
 
@@ -33,7 +34,7 @@ class LoginViewController: UITableViewController {
         guard let login = loginTextField.text, !login.isEmpty, let pass = passwordTextField.text, !pass.isEmpty else {
             return
         }
-        
+        HUD.show(.progress)
         api.login(action: API.Action.getSession(logn: login, pass: pass)) { [weak self] result in
             switch result {
             case .Success(let tuple):
@@ -43,6 +44,7 @@ class LoginViewController: UITableViewController {
             case .Failure(let error):
                 print(error.localizedDescription)
             }
+            HUD.hide()
         }
     }
     

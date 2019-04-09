@@ -64,6 +64,7 @@ extension Photo {
         guard let requirementModel: RequirementModel = getObjects(withId: requirementId).first else {
             Log("Нет такого требования в базе", type: .error)
             assert(false)
+            return
         }
         if let photos = requirementModel.photos {
             requirementModel.removeFromPhotos(photos)

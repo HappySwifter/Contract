@@ -31,7 +31,7 @@
                                                     <rect key="frame" x="224" y="305" width="320" height="350"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="XMm-Fh-A14">
-                                                            <rect key="frame" x="5" y="0.0" width="310" height="103"/>
+                                                            <rect key="frame" x="5" y="0.0" width="310" height="103.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="XMm-Fh-A14" secondAttribute="height" multiplier="6:2" id="GeM-Ta-Znd"/>
                                                             </constraints>
@@ -57,7 +57,7 @@
                                                             </constraints>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ho-wV-dff">
                                                             <rect key="frame" x="16" y="170" width="288" height="40"/>
